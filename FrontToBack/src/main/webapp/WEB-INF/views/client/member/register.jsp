@@ -138,9 +138,22 @@
                                     <p>비밀번호 확인<span>*</span></p>
                                     <input type="password" id="confirmPasswd" placeholder="비밀번호 재확인 부탁드립니다." required="required">
                               
+                                    
+                                    <p>우편번호<span>*</span></p>
+                                    <input type="text" id="zipcode" name="zipcode" style="width: 50%;">
+                                    <input type="button" value="검색" onclick="execDaumPostcode();" style="width: 20%; padding-left: 0">
+                                    
+                                    <p>도로명 주소 <span>*</span></p>
+                                    <input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소를 입력하세요.">
+                                 	
+                                 	<p>지번 주소 <span>*</span></p>
+                                    <input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소를 입력하세요.">
+                                    
+                                     <p>나머지 주소 <span>*</span></p>
+                                    <input type="text" id="namujiAddress" name="namujiAddress" placeholder="나머지주소를 입력하세요.">
+                                    
                                     <p>email <span>*</span></p>
                                     <input type="email" name="email" placeholder="이메일을 입력해주세요.">
-                                 
                                 </div>
                             </div>
                             

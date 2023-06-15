@@ -24,6 +24,10 @@
 				#{email},
 				#{emailstsYn},
 				#{sort},
+				#{zipcode},
+				#{roadAddress},
+				#{jibunAddress},
+				#{namujiAddress},
 				NOW()
 				
 			
