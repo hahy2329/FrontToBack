@@ -19,8 +19,8 @@
 			INSERT INTO MEMBER
 			VALUES(
 				#{memberId},
-				#{memberNm},
 				#{passwd},
+				#{memberNm},
 				#{email},
 				#{emailstsYn},
 				#{sort},

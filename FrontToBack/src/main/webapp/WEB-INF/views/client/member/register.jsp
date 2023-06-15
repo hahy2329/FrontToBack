@@ -10,6 +10,8 @@
 <script>
 
 	var isValidId = false;
+	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+	
 	
 	$().ready(function(){
 		
@@ -21,6 +23,22 @@
 				alert("ID를 입력하세요.");
 				return;
 			}
+			
+			
+			if(memberId.search(/\s/) != -1){
+				
+				alert("공백은 허용할 수 없습니다.");
+				return false;
+			}//공백 체크
+			if(special_pattern.test(memberId) == true) {
+				alert("특수문자는 허용할 수 없습니다.");
+				return false;
+			}//특수문자 체크
+			
+			
+			
+			
+			
 			
 			$.ajax({
 				
@@ -43,6 +61,7 @@
 		
 		$("form").submit(function(){
 			
+			
 			if($("#smsstsYn").val() != "Y"){
 				$(this).val("N");
 			}
@@ -52,15 +71,8 @@
 			}
 			if(isValidId==true){
 				if($("#passwd").val() == $("#confirmPasswd").val()){
-					if($("#answer").val() == "Y"){
-						alert("가입을 축하드립니다.");
-						return true;
-					}
-					else{
-						alert("가입 체크박스를 선택해주세요.");
-						return false;
-						
-					}
+					alert("가입을 축하드립니다.");
+					return true;
 					
 				}
 			
@@ -70,6 +82,9 @@
 				}
 				
 			}
+			
+			
+			
 			
 			
 		});
@@ -132,14 +147,14 @@
                               
                            
                             <div class="col-lg-12">
-                                <div class="checkout__form__checkbox">
+                                
                                     <label for="acc">
                                         	이메일 수신 동의하시겠습니까?
-                                        <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y">
+                                       <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y">
                                         <span class="checkmark"></span>
                                     </label>
                                     <p>이메일 수신을 동의하실 경우, 사이트 내 새로운 정보가 업데이트 시 정기적으로 알림이 갈 예정입니다.</p>
-                                    </div>
+                                    
                                 </div>
                                 
                                 <div>
@@ -157,11 +172,8 @@
                                 <h5>알림</h5>
                                 
                                 <div class="checkout__order__widget">
-                                    <label for="o-acc">
+                                   
                                        	정말로 가입하시겠습니까?
-                                        <input type="checkbox" id="answer" value="Y">
-                                        <span class="checkmark"></span>
-                                    </label>
                                     <p>가입을 원치 않으실 경우 뒤로가기 버튼을 눌러주시고, 가입을 계속 진행하실 경우 아래의 전송버튼을 눌러주세요.</p>
                                   
                                 </div>
