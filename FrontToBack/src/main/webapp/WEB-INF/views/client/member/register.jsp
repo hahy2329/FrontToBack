@@ -131,7 +131,7 @@
                                     <input type="button" id="btnOverlapped" value="중복확인">
                                     
                                     <p>이름 <span>*</span></p>
-                                    <input type="text" name="memberNm" placeholder="이름을 입력해주세요.">
+                                    <input type="text" name="memberNm" placeholder="이름을 입력해주세요." required="required">
                                     
                                      <p>비밀번호 <span>*</span></p>
                                     <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력해주세요." required="required">
@@ -140,20 +140,20 @@
                               
                                     
                                     <p>우편번호<span>*</span></p>
-                                    <input type="text" id="zipcode" name="zipcode" style="width: 50%;">
+                                    <input type="text" id="zipcode" name="zipcode" style="width: 50%;" required="required">
                                     <input type="button" value="검색" onclick="execDaumPostcode();" style="width: 20%; padding-left: 0">
                                     
                                     <p>도로명 주소 <span>*</span></p>
-                                    <input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소를 입력하세요.">
+                                    <input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소를 입력하세요." required="required">
                                  	
                                  	<p>지번 주소 <span>*</span></p>
-                                    <input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소를 입력하세요.">
+                                    <input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소를 입력하세요." required="required">
                                     
                                      <p>나머지 주소 <span>*</span></p>
                                     <input type="text" id="namujiAddress" name="namujiAddress" placeholder="나머지주소를 입력하세요.">
                                     
                                     <p>email <span>*</span></p>
-                                    <input type="email" name="email" placeholder="이메일을 입력해주세요.">
+                                    <input type="email" name="email" placeholder="이메일을 입력해주세요." required="required">
                                 </div>
                             </div>
                             
