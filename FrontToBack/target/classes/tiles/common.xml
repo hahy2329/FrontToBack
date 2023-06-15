@@ -9,7 +9,7 @@
 	</definition>
 	
 	<definition name="/main" extends="baseLayout">
-		<put-attribute name="title" value="Main"></put-attribute>
+		<put-attribute name="title" value="메인페이지"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/common/layout/main.jsp"></put-attribute>
 	
 	

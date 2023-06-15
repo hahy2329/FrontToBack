@@ -21,7 +21,7 @@
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="${contextPath }/">Home</a></li>
                             <li><a href="#">Women’s</a></li>
                             <li><a href="#">Men’s</a></li>
                             <li><a href="./shop.html">Shop</a></li>
@@ -42,7 +42,7 @@
                     <div class="header__right">
                         <div class="header__right__auth">
                             <a href="#">Login</a>
-                            <a href="#">Register</a>
+                            <a href="${contextPath }/member/register">Register</a>
                         </div>
                         <ul class="header__right__widget">
                             <li><span class="icon_search search-switch"></span></li>
