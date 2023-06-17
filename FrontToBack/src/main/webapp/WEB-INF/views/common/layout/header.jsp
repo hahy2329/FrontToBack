@@ -15,44 +15,42 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-2">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="${contextPath }/resources/ashion-master/img/logo.png" alt=""></a>
+                        <a href="${contextPath }/"><img src="${contextPath }/resources/ashion-master/img/logo.png" alt=""></a>
                     </div>
                 </div>
+                <!-- admin카테고리 기능 및 로그인 페이지에 admin표기 즉 2가지 도 추가해야함 -->
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="${contextPath }/">Home</a></li>
-                            <li><a href="#">Women’s</a></li>
-                            <li><a href="#">Men’s</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./product-details.html">Product Details</a></li>
-                                    <li><a href="./shop-cart.html">Shop Cart</a></li>
-                                    <li><a href="./checkout.html">Checkout</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="${contextPath }/api">IT뉴스</a></li>
+                            <li><a href="./shop.html">커뮤니티</a></li>
+                          <c:if test="${sessionScope.memberId ne null}">  
+                            <li><a href="./blog.html">my활동내역</a></li>
+                            <li><a href="./contact.html">개인정보변경</a></li>
+                          </c:if>
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                        <div class="header__right__auth">
-                            <a href="#">Login</a>
-                            <a href="${contextPath }/member/register">Register</a>
-                        </div>
-                        <ul class="header__right__widget">
-                            <li><span class="icon_search search-switch"></span></li>
-                            <li><a href="#"><span class="icon_heart_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                            <li><a href="#"><span class="icon_bag_alt"></span>
-                                <div class="tip">2</div>
-                            </a></li>
-                        </ul>
+                    <c:choose>
+                    	<c:when test="${sessionScope.memberId eq null }">
+	                        <div class="header__right__auth">
+	                            <a href="${contextPath }/member/login">Login</a>
+	                            <a href="${contextPath }/member/register">Register</a>
+	                        </div>
+                        </c:when>
+                        <c:otherwise>
+                        	 <div class="header__right__auth">
+	                            <a>${sessionScope.memberId }님 로그인 </a>
+	                            <a href="${contextPath }/member/logout"> logout</a>
+	                        </div>
+                        </c:otherwise>
+                        
+                    </c:choose>
+                        
                     </div>
                 </div>
             </div>

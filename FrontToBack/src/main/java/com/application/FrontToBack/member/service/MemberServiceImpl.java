@@ -31,4 +31,23 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public MemberDTO loginMember(MemberDTO memberDTO) throws Exception {
+		
+		
+		if(bCryptPasswordEncoder.matches(memberDTO.getPasswd(), memberDAO.getEncodePasswd(memberDTO.getMemberId()))) {
+			
+			MemberDTO memberData = memberDAO.getMemberOneData(memberDTO);
+			
+			return memberData;
+			
+		}
+		else {
+			
+			return null;
+		}
+		
+		
+	}
+
 }

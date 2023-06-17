@@ -36,6 +36,33 @@
 			
 		
 		</insert>
+		
+		<select id="selectGetEncodePasswd" parameterType="String" resultType="String">
+		
+			
+			SELECT
+				PASSWD
+			FROM
+				MEMBER
+			WHERE
+				MEMBER_ID =#{memberId}
+			
+		
+		
+		</select>
+		
+		
+		<select id="selectGetOneMemberData" parameterType="MemberDTO" resultType="MemberDTO">
+		
+			SELECT 
+				*
+			FROM
+				MEMBER
+			WHERE
+				MEMBER_ID = #{memberId}
+		
+		
+		</select>
 	
 	
 	</mapper>

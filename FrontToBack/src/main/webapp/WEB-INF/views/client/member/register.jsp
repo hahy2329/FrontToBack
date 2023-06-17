@@ -102,7 +102,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <span>Register</span>
                     </div>
                 </div>
@@ -173,11 +173,11 @@
                                 <div>
                                  <strong>포지션<span>*</span></strong><p></p>
                                     
-                                    	프론트엔드&nbsp; <input type="radio" name="sort" value="front">
-                                    	백엔드&nbsp;<input type="radio" name="sort" value="back">
-                                    	AI&nbsp; <input type="radio" name="sort" value="ai">
-                                    	데이터 분석&nbsp; <input type="radio" name="sort" value="data">
-                                    	기타 &nbsp;<input type="radio" name="sort" value="all">
+                                    	프론트엔드&nbsp; <input type="radio" name="sort" value="front" required="required">
+                                    	백엔드&nbsp;<input type="radio" name="sort" value="back" required="required">
+                                    	AI&nbsp; <input type="radio" name="sort" value="ai" required="required">
+                                    	데이터 분석&nbsp; <input type="radio" name="sort" value="data" required="required">
+                                    	기타 &nbsp;<input type="radio" name="sort" value="all" required="required">
                                  </div>
                                 
                                 

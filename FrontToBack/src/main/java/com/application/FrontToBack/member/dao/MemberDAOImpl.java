@@ -23,4 +23,16 @@ public class MemberDAOImpl implements MemberDAO {
 		
 	}
 
+	@Override
+	public String getEncodePasswd(String memberId) throws Exception {
+		String passwd = sqlSession.selectOne("member.selectGetEncodePasswd", memberId);
+		return passwd;
+	}
+
+	@Override
+	public MemberDTO getMemberOneData(MemberDTO memberDTO) throws Exception {
+		MemberDTO memberData = sqlSession.selectOne("member.selectGetOneMemberData", memberDTO);
+		return memberData;
+	}
+
 }

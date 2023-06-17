@@ -3,6 +3,7 @@ package com.application.FrontToBack.member.controller;
 import org.springframework.http.HttpHeaders;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class MemberController {
 	
 	
 	@GetMapping("/register")
-	public ModelAndView register() throws Exception {
+	public ModelAndView registerMember() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/member/register");
 		return mv;
@@ -38,7 +39,7 @@ public class MemberController {
 	}
 	
 	@PostMapping("/register")
-	public ResponseEntity<Object> register(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> registerMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		
 		memberService.addMember(memberDTO);
 		
@@ -52,6 +53,52 @@ public class MemberController {
 		
 		
 		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/login")
+	public ModelAndView loginMember() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/member/login");
+		return mv;
+	}
+	
+	
+	@PostMapping("/login")
+	public ResponseEntity<Object> loginMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
+		
+		String message = "";
+		
+			MemberDTO memberData = memberService.loginMember(memberDTO);
+			
+			if(memberData != null) {
+				HttpSession session = request.getSession();
+				session.setAttribute("memberId", memberData.getMemberId());
+				session.setAttribute("sort", memberData.getSort());
+				session.setMaxInactiveInterval(1800);//초 단위 (1800 ==30분)
+				
+				message = "<script>";
+				message +="alert('로그인 되었습니다.');";
+				message +="location.href='" + request.getContextPath()+"/';";
+				message +="</script>";
+			}
+			else {
+				
+				message ="<script>";
+				message +="alert('아이디 혹은 패스워드를 다시 확인해주세요.');";
+				message +="history.go(-1)";
+				message +="</script>";
+				
+				
+			}
+			HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+			
+			return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+			
+		
+		
+		
 	}
 	
 	
