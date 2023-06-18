@@ -18,10 +18,9 @@
                     <div class="categories__item categories__large__item set-bg"
                     data-setbg="img/categories/category-1.jpg">
                     <div class="categories__text">
-                        <h1>Women’s fashion</h1>
-                        <p>Sitamet, consectetur adipiscing elit, sed do eiusmod tempor incidid-unt labore
-                        edolore magna aliquapendisse ultrices gravida.</p>
-                        <a href="#">Shop now</a>
+                        <h1>FrontToBack</h1>
+                        <p>안녕하세요. 개발자 한주석입니다. 여러분들과 함께 IT지식을 공유하고, 개발에 한 걸음 더 흥미를 느낄수 있도록 나아가고 싶습니다. 감사합니다.</p>
+                        <a href="#">지금 시작하기</a>
                     </div>
                 </div>
             </div>
@@ -30,36 +29,36 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/category-2.jpg">
                             <div class="categories__text">
-                                <h4>Men’s fashion</h4>
+                                <h4>지식</h4>
                                 <p>358 items</p>
-                                <a href="#">Shop now</a>
+                                <a href="#">이동하기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/category-3.jpg">
                             <div class="categories__text">
-                                <h4>Kid’s fashion</h4>
+                                <h4>Q&A</h4>
                                 <p>273 items</p>
-                                <a href="#">Shop now</a>
+                                <a href="#">이동하기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/category-4.jpg">
                             <div class="categories__text">
-                                <h4>Cosmetics</h4>
+                                <h4>스터디 그룹</h4>
                                 <p>159 items</p>
-                                <a href="#">Shop now</a>
+                                <a href="#">이동하기</a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/category-5.jpg">
                             <div class="categories__text">
-                                <h4>Accessories</h4>
+                                <h4>도서 추천!</h4>
                                 <p>792 items</p>
-                                <a href="#">Shop now</a>
+                                <a href="#">이동하기</a>
                             </div>
                         </div>
                     </div>

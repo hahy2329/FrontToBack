@@ -24,9 +24,16 @@
                         <ul>
                             <li class="active"><a href="${contextPath }/">Home</a></li>
                             <li><a href="">공지사항</a></li>
-                          <c:if test="${sessionScope.memberId ne null}"> 
+                          <c:if test="${sessionScope.memberId ne null}">
+                          	 <li><a href="#">커뮤니티</a>
+                                <ul class="dropdown">
+                                    <li><a href="">지식</a></li>
+                                    <li><a href="">Q&A</a></li>
+                                    <li><a href="">스터디 그룹</a></li>
+                                    <li><a href="">도서 추천!</a></li>
+                                </ul>
+                            </li>
                             <li><a href="${contextPath }/api">도서검색</a></li>
-                            <li><a href="./shop.html">커뮤니티</a></li>  
                             <li><a href="./blog.html">my활동내역</a></li>
                             <li><a href="./contact.html">개인정보변경</a></li>
                           </c:if>
