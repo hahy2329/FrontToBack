@@ -35,4 +35,18 @@ public class MemberDAOImpl implements MemberDAO {
 		return memberData;
 	}
 
+	@Override
+	public MemberDTO getDetailMember(String memberId) throws Exception {
+		MemberDTO memberDTO = sqlSession.selectOne("member.selectOneDetailMember", memberId);
+		return memberDTO;
+	}
+
+	@Override
+	public void updateMember(MemberDTO memberDTO) throws Exception {
+		sqlSession.update("member.updateOneMember", memberDTO);
+		
+	}
+	
+	
+
 }

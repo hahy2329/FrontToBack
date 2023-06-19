@@ -13,6 +13,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/client/member/login.jsp"></put-attribute>
 	
 	</definition>
+	
+	<definition name="/member/update" extends="baseLayout">
+		<put-attribute name="title" value="개인정보변경"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/member/update.jsp"></put-attribute>
+	</definition>
 
 
 </tiles-definitions>

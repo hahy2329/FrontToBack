@@ -8,4 +8,6 @@ public interface MemberDAO {
 	public void insertMember(MemberDTO memberDTO) throws Exception;
 	public String getEncodePasswd(String memberId) throws Exception;
 	public MemberDTO getMemberOneData(MemberDTO memberDTO) throws Exception;
+	public MemberDTO getDetailMember(String memberId) throws Exception;
+	public void updateMember(MemberDTO memberDTO) throws Exception;
 }

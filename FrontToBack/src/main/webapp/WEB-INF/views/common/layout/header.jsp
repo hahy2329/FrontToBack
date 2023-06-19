@@ -35,9 +35,9 @@
                             </li>
                             <li><a href="${contextPath }/api">도서검색</a></li>
                             <li><a href="">my활동내역</a></li>
-                            <li><a href="./contact.html">개인정보변경</a>
+                            <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">
-                            		<li><a href="${contextPath }/member/update?memberId={sessionScope.memberId}">비밀번호 변경</a></li>
+                            		<li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보 변경</a></li>
                             		<li><a href="${contextPath }/member/remove?memberId={sessionScope.memberId}">회원탈퇴</a></li>
                             	</ul>
                             

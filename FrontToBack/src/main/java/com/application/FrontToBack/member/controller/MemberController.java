@@ -38,6 +38,13 @@ public class MemberController {
 		return new ResponseEntity<String>(memberService.checkDuplicatedId(memberId),HttpStatus.OK);
 	}
 	
+	@GetMapping("/checkDuplicatedPasswd")
+	public ResponseEntity<String> checkDuplicatedpasswd(@RequestParam("passwd") String passwd, @RequestParam("memberId") String memberId) throws Exception{
+		
+		return new ResponseEntity<String>(memberService.checkDuplicatedPasswd(passwd, memberId), HttpStatus.OK);
+		
+	}
+	
 	@PostMapping("/register")
 	public ResponseEntity<Object> registerMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		
@@ -96,6 +103,58 @@ public class MemberController {
 			
 			return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
 			
+		
+		
+		
+	}
+	
+	
+	@GetMapping("/updateMember")
+	public ModelAndView updateMember(@RequestParam("memberId") String memberId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberData = memberService.getDetailMember(memberId);
+		mv.addObject("memberDTO", memberData);
+		mv.setViewName("/member/update");
+		
+		return mv;
+		
+		
+		
+	}
+	
+	@PostMapping("/updateMember")
+	public ResponseEntity<Object> updateMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
+		
+		
+		String message = "";
+		
+		if(memberService.updateMember(memberDTO)) {
+			
+			
+			message = "<script>";
+			message +="alert('확인 결과, 정상적으로 수정 완료되었습니다.');";
+			message +="location.href='" + request.getContextPath() +"/';";
+			message +="</script>";
+			
+			HttpSession session = request.getSession();
+			session.invalidate();
+		}
+		else {
+			message ="<script>";
+			message +="alert('확인 결과, 패스워드가 올바르지 않습니다.');";
+			message +="history.go(-1)";
+			message +="</script>";
+			
+			
+		}
+			HttpHeaders responseHeaders = new HttpHeaders();
+			responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+			
+			
+			return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+			
+		
 		
 		
 		

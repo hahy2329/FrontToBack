@@ -21,6 +21,12 @@ public class MemberServiceImpl implements MemberService {
 		if(memberDAO.selectDuplicatedId(memberId) ==null) return "duplicate";
 		else		return "notDuplicate";
 	}
+	
+	@Override
+	public String checkDuplicatedPasswd(String passwd, String memberId) throws Exception {
+		if(bCryptPasswordEncoder.matches(passwd, memberDAO.getEncodePasswd(memberId))) return "duplicate";
+		else return "notDuplicated";
+	}
 
 	@Override
 	public void addMember(MemberDTO memberDTO) throws Exception {
@@ -49,5 +55,25 @@ public class MemberServiceImpl implements MemberService {
 		
 		
 	}
+
+	@Override
+	public MemberDTO getDetailMember(String memberId) throws Exception {
+		MemberDTO memberDTO = memberDAO.getDetailMember(memberId);
+		return memberDTO;
+	}
+
+	@Override
+	public boolean updateMember(MemberDTO memberDTO) throws Exception {
+		boolean isUpdate = false;
+		
+		if(bCryptPasswordEncoder.matches(memberDTO.getPasswd(), memberDAO.getEncodePasswd(memberDTO.getMemberId()) )) {
+			isUpdate = true;
+			memberDAO.updateMember(memberDTO);
+		}
+		
+		return isUpdate;
+	}
+
+
 
 }

@@ -63,6 +63,41 @@
 		
 		
 		</select>
+		
+		<select id="selectOneDetailMember" parameterType="String" resultType="MemberDTO">
+			SELECT 
+				*
+			FROM 
+				MEMBER
+			WHERE 
+				MEMBER_ID = #{memberId}
+				
+		
+		
+		</select>
+		
+		<update id="updateOneMember" parameterType="MemberDTO">
+			
+			UPDATE 
+				MEMBER 
+				
+			SET 
+				
+				MEMBER_NM = #{memberNm},
+				EMAIL = #{email},
+				EMAILSTS_YN = #{emailstsYn},
+				SORT = #{sort},
+				ZIPCODE = #{zipcode},
+				ROAD_ADDRESS = #{roadAddress},
+				JIBUN_ADDRESS = #{jibunAddress},
+				NAMUJI_ADDRESS = #{namujiAddress},
+				JOIN_DT = NOW()
+				
+			WHERE 
+				MEMBER_ID = #{memberId}
+		
+		
+		</update>
 	
 	
 	</mapper>
