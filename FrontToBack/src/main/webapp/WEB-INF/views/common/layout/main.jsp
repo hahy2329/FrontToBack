@@ -18,7 +18,7 @@
                     <div class="categories__item categories__large__item set-bg"
                     data-setbg="img/categories/category-1.jpg">
                     <div class="categories__text">
-                        <h1>FrontToBack</h1>
+                        <h1>FRONTTOBack</h1>
                         <p>안녕하세요. 개발자 한주석입니다. 여러분들과 함께 IT지식을 공유하고, 개발에 한 걸음 더 흥미를 느낄수 있도록 나아가고 싶습니다. 감사합니다.</p>
                         <a href="#">지금 시작하기</a>
                     </div>

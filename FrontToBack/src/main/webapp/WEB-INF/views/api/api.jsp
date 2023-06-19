@@ -77,13 +77,13 @@ $().ready(function(){
     <!-- Shop Cart Section Begin -->
     <section class="shop-cart spad">
     	
-    	<div class="row">
+    	<div class="row" align="center">
                 <div class="col-lg-6">
                     <div class="discount__content">
-                        <h6>Discount codes</h6>
+                        <h6>도서 검색</h6>
                         <form action="#">
-                            <input type="text" id="keyword" placeholder="Enter your coupon code">
-                            <button type="submit" id="click" class="site-btn">Apply</button>
+                            <input type="text" id="keyword" placeholder="도서를 입력해주세요.">
+                            <button type="submit" id="click" class="site-btn">검색</button>
                         </form>
                     </div>
                 </div>
