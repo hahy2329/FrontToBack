@@ -68,6 +68,8 @@ public class MemberServiceImpl implements MemberService {
 		
 		if(bCryptPasswordEncoder.matches(memberDTO.getPasswd(), memberDAO.getEncodePasswd(memberDTO.getMemberId()) )) {
 			isUpdate = true;
+			
+			if(memberDTO.getEmailstsYn() ==null) memberDTO.setEmailstsYn("N");
 			memberDAO.updateMember(memberDTO);
 		}
 		
