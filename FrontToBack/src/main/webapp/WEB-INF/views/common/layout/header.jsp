@@ -38,7 +38,7 @@
                             <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">
                             		<li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보 변경</a></li>
-                            		<li><a href="${contextPath }/member/remove?memberId={sessionScope.memberId}">회원탈퇴</a></li>
+                            		<li><a href="${contextPath }/member/removeMember?memberId=${sessionScope.memberId}">회원탈퇴</a></li>
                             	</ul>
                             
                             </li>
@@ -51,14 +51,14 @@
                     <c:choose>
                     	<c:when test="${sessionScope.memberId eq null }">
 	                        <div class="header__right__auth">
-	                            <a href="${contextPath }/member/login">Login</a>
-	                            <a href="${contextPath }/member/register">Register</a>
+	                            <a href="${contextPath }/member/loginMember">Login</a>
+	                            <a href="${contextPath }/member/registerMember">Register</a>
 	                        </div>
                         </c:when>
                         <c:otherwise>
                         	 <div class="header__right__auth">
 	                            <a>${sessionScope.memberId }님 로그인 </a>
-	                            <a href="${contextPath }/member/logout"> logout</a>
+	                            <a href="${contextPath }/member/logoutMember"> logout</a>
 	                        </div>
                         </c:otherwise>
                         

@@ -119,7 +119,7 @@
                     <h6 class="coupon__link"><span class="icon_tag_alt"></span> <a href="${contextPath }/">메인화면으로 돌아가기</a></h6>
                 </div>
             </div>
-            <form action="${contextPath }/member/register" class="checkout__form" method="post">
+            <form action="${contextPath }/member/registerMember" class="checkout__form" method="post">
                 <div class="row">
                     <div class="col-lg-8">
                         <h5>회원가입</h5>
@@ -173,11 +173,11 @@
                                 <div>
                                  <strong>포지션<span>*</span></strong><p></p>
                                     
-                                    	프론트엔드&nbsp; <input type="radio" name="sort" value="front" required="required">
-                                    	백엔드&nbsp;<input type="radio" name="sort" value="back" required="required">
-                                    	AI&nbsp; <input type="radio" name="sort" value="ai" required="required">
-                                    	데이터 분석&nbsp; <input type="radio" name="sort" value="data" required="required">
-                                    	기타 &nbsp;<input type="radio" name="sort" value="all" required="required">
+                                    	<input type="radio" name="sort" value="front" required="required"> 프론트엔드&nbsp;
+                                    	<input type="radio" name="sort" value="back" required="required"> 백엔드&nbsp;
+                                    	<input type="radio" name="sort" value="ai" required="required"> AI&nbsp;
+                                    	<input type="radio" name="sort" value="data" required="required"> 데이터 분석&nbsp;
+                                    	<input type="radio" name="sort" value="all" required="required"> 기타 &nbsp;
                                  </div>
                                 
                                 

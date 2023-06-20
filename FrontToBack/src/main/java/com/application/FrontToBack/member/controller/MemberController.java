@@ -26,10 +26,10 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
-	@GetMapping("/register")
+	@GetMapping("/registerMember")
 	public ModelAndView registerMember() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/member/register");
+		mv.setViewName("/member/registerMember");
 		return mv;
 	}
 	
@@ -45,7 +45,7 @@ public class MemberController {
 		
 	}
 	
-	@PostMapping("/register")
+	@PostMapping("/registerMember")
 	public ResponseEntity<Object> registerMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		
 		memberService.addMember(memberDTO);
@@ -63,15 +63,15 @@ public class MemberController {
 	}
 	
 	
-	@GetMapping("/login")
+	@GetMapping("/loginMember")
 	public ModelAndView loginMember() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/member/login");
+		mv.setViewName("/member/loginMember");
 		return mv;
 	}
 	
 	
-	@PostMapping("/login")
+	@PostMapping("/loginMember")
 	public ResponseEntity<Object> loginMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		
 		String message = "";
@@ -115,7 +115,7 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		MemberDTO memberData = memberService.getDetailMember(memberId);
 		mv.addObject("memberDTO", memberData);
-		mv.setViewName("/member/update");
+		mv.setViewName("/member/updateMember");
 		
 		return mv;
 		
@@ -159,6 +159,71 @@ public class MemberController {
 		
 		
 	}
+	
+	@GetMapping("/removeMember")
+	public ModelAndView removeMember(@RequestParam("memberId") String memberId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		MemberDTO memberData = memberService.getDetailMember(memberId);
+		mv.addObject("memberDTO", memberData);
+		mv.setViewName("/member/removeMember");
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/removeMember")
+	public ResponseEntity<Object> removeMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
+		
+		
+		String message = "";
+		
+		if(memberService.removeMember(memberDTO)) {
+		
+			HttpSession session = request.getSession();
+			session.invalidate();
+			
+			message="<script>";
+			message +="alert('정상적으로 회원탈퇴가 완료되었습니다.');";
+			message +="location.href='" + request.getContextPath() +"/';";
+			message +="</script>";
+		}
+		else {
+			
+			message ="<script>";
+			message +="alert('패스워드를 다시 확인해주세요.');";
+			message +="history.go(-1)";
+			message +="</script>";
+			
+			
+		}
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/logoutMember")
+	public ResponseEntity<Object> logoutMember(HttpServletRequest request) throws Exception{
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		String message = "<script>";
+		message += "alert('로그아웃 되었습니다.');";
+		message += "location.href='"+request.getContextPath() + "/';";
+		message +="</script>";
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	
 	
 	
 }

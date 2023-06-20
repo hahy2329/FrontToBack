@@ -46,6 +46,12 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.update("member.updateOneMember", memberDTO);
 		
 	}
+
+	@Override
+	public void removeMember(MemberDTO memberDTO) throws Exception {
+		sqlSession.delete("member.removeOneMember", memberDTO);
+		
+	}
 	
 	
 

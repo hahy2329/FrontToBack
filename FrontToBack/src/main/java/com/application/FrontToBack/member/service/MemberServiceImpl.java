@@ -76,6 +76,20 @@ public class MemberServiceImpl implements MemberService {
 		return isUpdate;
 	}
 
+	@Override
+	public boolean removeMember(MemberDTO memberDTO) throws Exception {
+		
+			
+		boolean isRemove = false;
+		
+		if(bCryptPasswordEncoder.matches(memberDTO.getPasswd(), memberDAO.getEncodePasswd(memberDTO.getMemberId()))) {
+			memberDAO.removeMember(memberDTO);
+			isRemove = true;
+		}
+		
+		return isRemove;
+	}
+
 
 
 }

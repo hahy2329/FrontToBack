@@ -19,7 +19,7 @@
                         
                         <div class="contact__form" align="center">
                             <h5>로그인</h5>
-                            <form action="${contextPath }/member/login" method="post">
+                            <form action="${contextPath }/member/loginMember" method="post">
                             
                             	<p>아이디<span>*</span></p>
                                 <input type="text" name="memberId" placeholder="아이디를 입력해주세요." required="required">

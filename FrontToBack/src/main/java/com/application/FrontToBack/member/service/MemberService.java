@@ -9,7 +9,7 @@ public interface MemberService {
 	public MemberDTO loginMember(MemberDTO memberDTO) throws Exception;
 	public MemberDTO getDetailMember(String memberId) throws Exception;
 	public boolean updateMember(MemberDTO memberDTO) throws Exception;
-	
+	public boolean removeMember(MemberDTO memberDTO) throws Exception;
 	
 	
 }

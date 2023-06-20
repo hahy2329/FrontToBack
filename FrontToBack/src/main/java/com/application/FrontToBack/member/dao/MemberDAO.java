@@ -10,4 +10,5 @@ public interface MemberDAO {
 	public MemberDTO getMemberOneData(MemberDTO memberDTO) throws Exception;
 	public MemberDTO getDetailMember(String memberId) throws Exception;
 	public void updateMember(MemberDTO memberDTO) throws Exception;
+	public void removeMember(MemberDTO memberDTO) throws Exception;
 }

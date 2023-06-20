@@ -98,6 +98,13 @@
 		
 		
 		</update>
+		<delete id="removeOneMember" parameterType="MemberDTO">
+		
+			DELETE FROM MEMBER
+			WHERE 
+				MEMBER_ID = #{memberId}
+		
+		</delete>
 	
 	
 	</mapper>
