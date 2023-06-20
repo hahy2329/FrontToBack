@@ -45,6 +45,13 @@ public class MemberController {
 		
 	}
 	
+	@GetMapping("/checkDuplicatedEmail")
+	public ResponseEntity<String> checkDuplicatedEmail(@RequestParam("email") String email) throws Exception{
+		
+		return new ResponseEntity<String>(memberService.checkDuplicatedEmail(email),HttpStatus.OK);
+		
+	}
+	
 	@PostMapping("/registerMember")
 	public ResponseEntity<Object> registerMember(MemberDTO memberDTO, HttpServletRequest request) throws Exception{
 		

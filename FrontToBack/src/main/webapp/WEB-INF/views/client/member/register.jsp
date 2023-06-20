@@ -11,7 +11,7 @@
 
 	var isValidId = false;
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-	
+	var isValidEmail = false;
 	
 	$().ready(function(){
 		
@@ -59,6 +59,33 @@
 			
 		});
 		
+		$("#btnOverlappedEmail").click(function(){
+			var email = $("#email").val();
+			
+			$.ajax({
+				
+				type : "get",
+				url  : "${contextPath}/member/checkDuplicatedEmail?email="+email,
+				success : function(data){
+					
+					if(data == "duplicate"){
+						alert("사용할 수 있는 이메일입니다.");
+						isValidEmail = true;
+					}
+					
+					else{
+						alert("사용할 수 없는 이메일입니다.");
+						isValidEmail = false;
+					}
+				}		
+				
+				
+				
+			});
+			
+			
+		});
+		
 		$("form").submit(function(){
 			
 			
@@ -69,7 +96,11 @@
 				alert("아이디를 확인해주세요.");
 				return false;
 			}
-			if(isValidId==true){
+			if(isValidEmail == false){
+				alert("이메일을 확인해주세요.");
+				return false;
+			}
+			if(isValidId==true && isValidEmail==true){
 				if($("#passwd").val() == $("#confirmPasswd").val()){
 					alert("가입을 축하드립니다.");
 					return true;
@@ -127,7 +158,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>아이디 <span>*</span></p>
-                                    <input type="text" id="memberId" name="memberId" required="required" placeholder="아이디를 입력해주세요.">
+                                    <input type="text" id="memberId" name="memberId" required="required" placeholder="아이디를 입력해주세요." maxlength="15">
                                     <input type="button" id="btnOverlapped" value="중복확인">
                                     
                                     <p>이름 <span>*</span></p>
@@ -153,7 +184,8 @@
                                     <input type="text" id="namujiAddress" name="namujiAddress" placeholder="나머지주소를 입력하세요.">
                                     
                                     <p>email <span>*</span></p>
-                                    <input type="email" name="email" placeholder="이메일을 입력해주세요." required="required">
+                                    <input type="email" name="email" id="email" placeholder="이메일을 입력해주세요." required="required">
+                                    <input type="button" id="btnOverlappedEmail" value="중복확인">
                                 </div>
                             </div>
                             

@@ -27,6 +27,12 @@ public class MemberServiceImpl implements MemberService {
 		if(bCryptPasswordEncoder.matches(passwd, memberDAO.getEncodePasswd(memberId))) return "duplicate";
 		else return "notDuplicated";
 	}
+	
+	@Override
+	public String checkDuplicatedEmail(String email) throws Exception {
+		if(memberDAO.selectDuplicatedEmail(email) == null) return "duplicate";
+		else		return "notDuplicate";
+	}
 
 	@Override
 	public void addMember(MemberDTO memberDTO) throws Exception {
@@ -89,6 +95,8 @@ public class MemberServiceImpl implements MemberService {
 		
 		return isRemove;
 	}
+
+	
 
 
 

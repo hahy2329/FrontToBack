@@ -14,6 +14,17 @@
 		
 		</select>
 		
+		<select id="selectDuplicatedEmail" parameterType="String" resultType="String">
+			
+			SELECT 
+				EMAIL
+			FROM 
+				MEMBER
+			WHERE
+				EMAIL = #{email}
+		
+		</select>
+		
 		<insert id="insertMember" parameterType="MemberDTO">
 			
 			INSERT INTO MEMBER

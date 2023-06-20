@@ -18,6 +18,15 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
+	public String selectDuplicatedEmail(String email) throws Exception {
+		
+		String answer= sqlSession.selectOne("member.selectDuplicatedEmail", email);
+		
+		return answer;
+	}
+	
+	
+	@Override
 	public void insertMember(MemberDTO memberDTO) throws Exception {
 		sqlSession.insert("member.insertMember",memberDTO);
 		
@@ -52,6 +61,8 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.delete("member.removeOneMember", memberDTO);
 		
 	}
+
+	
 	
 	
 
