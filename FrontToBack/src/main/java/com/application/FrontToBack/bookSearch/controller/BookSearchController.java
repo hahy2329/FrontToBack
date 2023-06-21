@@ -1,17 +1,17 @@
-package com.application.FrontToBack.api.controller;
+package com.application.FrontToBack.bookSearch.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ApiController {
+public class BookSearchController {
 
 	
-	@GetMapping("/api")
-	public ModelAndView api() {
+	@GetMapping("/bookSearch")
+	public ModelAndView bookSearch() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/api");
+		mv.setViewName("/bookSearch");
 		return mv;
 	}
 }

@@ -2,9 +2,9 @@
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-	<definition name="/api" extends="baseLayout">
+	<definition name="/bookSearch" extends="baseLayout">
 		<put-attribute name="title" value="API검색"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/api/api.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/bookSearch.jsp"></put-attribute>
 	
 	
 	</definition>

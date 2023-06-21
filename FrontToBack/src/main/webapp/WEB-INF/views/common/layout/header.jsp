@@ -27,13 +27,13 @@
                           <c:if test="${sessionScope.memberId ne null}">
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">
-                                    <li><a href="">지식</a></li>
+                                    <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
                                     <li><a href="">Q&A</a></li>
                                     <li><a href="">스터디 그룹</a></li>
                                     <li><a href="">도서 추천!</a></li>
                                 </ul>
                             </li>
-                            <li><a href="${contextPath }/api">도서검색</a></li>
+                            <li><a href="${contextPath }/bookSearch">도서검색</a></li>
                             <li><a href="">my활동내역</a></li>
                             <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">

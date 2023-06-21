@@ -198,7 +198,7 @@
                                        <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y">
                                         <span class="checkmark"></span>
                                     </label>
-                                    <p>이메일 수신을 동의하실 경우, 사이트 내 새로운 정보가 업데이트 시 정기적으로 알림이 갈 예정입니다.</p>
+                                    <p>이메일 수신을 동의하실 경우, 사이트 내 새로운 정보가 업데이트 시 정기적으로 알림이 전송 될 예정입니다.</p>
                                     
                                 </div>
                                 
