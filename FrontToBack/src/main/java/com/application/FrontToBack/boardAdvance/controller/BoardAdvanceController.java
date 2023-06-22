@@ -27,9 +27,9 @@ public class BoardAdvanceController {
 	private BoardAdvanceService boardAdvanceService;
 	
 	
-	//1.지식관련 게시판 기능 
+	//-------------------1.지식관련 게시판 기능-------------------------------------- 
 	
-	@GetMapping("/knowledgeList")
+	@GetMapping("/knowledgeList") 
 	public ModelAndView knowledge(HttpServletRequest request) throws Exception {
 		
 		ModelAndView mv = new ModelAndView();

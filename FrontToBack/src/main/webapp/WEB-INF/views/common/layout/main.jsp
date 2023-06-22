@@ -279,23 +279,30 @@
                 <div class="banner__slider owl-carousel">
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
+                            <span>FRONTTOBACK</span>
+                            <h1>Knowledge</h1>
+                            <a href="#">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
+                            <span>FRONTTOBACK</span>
+                            <h1>Q&A</h1>
+                            <a href="#">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
-                            <span>The Chloe Collection</span>
-                            <h1>The Project Jacket</h1>
-                            <a href="#">Shop now</a>
+                            <span>FRONTTOBACK</span>
+                            <h1>Study Group</h1>
+                            <a href="#">이동하기</a>
+                        </div>
+                    </div>
+                    <div class="banner__item">
+                        <div class="banner__text">
+                            <span>FRONTTOBACK</span>
+                            <h1>Book Recommend!</h1>
+                            <a href="#">이동하기</a>
                         </div>
                     </div>
                 </div>
