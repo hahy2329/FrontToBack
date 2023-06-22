@@ -40,4 +40,25 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		
 	}
 
+
+	@Override
+	public KnowledgeDTO getKnowledgeBoardDetail(long boardId, boolean increaseRead) throws Exception {
+		
+		if(increaseRead) {
+			boardAdvanceDAO.updateReadCnt(boardId);
+		}
+			
+		KnowledgeDTO knowledgeDTO = boardAdvanceDAO.getKnowledgeBoardDetail(boardId);
+		
+		
+		return knowledgeDTO;
+	}
+
+
+	@Override
+	public void updateKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception {
+		boardAdvanceDAO.updateKnowledgeBoard(knowledgeDTO);
+		
+	}
+
 }

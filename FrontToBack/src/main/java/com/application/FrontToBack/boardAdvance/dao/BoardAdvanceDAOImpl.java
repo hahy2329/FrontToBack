@@ -31,4 +31,23 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 		
 	}
 
+	@Override
+	public void updateReadCnt(long boardId) throws Exception {
+		sqlSession.update("knowledge.updateKnowledgeReadCnt", boardId);
+		
+	}
+
+	@Override
+	public KnowledgeDTO getKnowledgeBoardDetail(long boardId) throws Exception {
+		KnowledgeDTO knowledgeDTO = sqlSession.selectOne("knowledge.getKnowledgeBoardDetail", boardId);
+		return knowledgeDTO;
+	}
+
+	@Override
+	public void updateKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception {
+		sqlSession.update("knowledge.updateKnowledgeBoard", knowledgeDTO);
+		
+	}
+
+
 }

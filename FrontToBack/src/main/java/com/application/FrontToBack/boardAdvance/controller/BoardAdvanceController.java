@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
@@ -135,6 +136,51 @@ public class BoardAdvanceController {
 		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
 		
 		
+	}
+	
+	@GetMapping("/knowledgeDetail")
+	public ModelAndView knowledgeDetail(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		KnowledgeDTO knowledgeDTO = boardAdvanceService.getKnowledgeBoardDetail(boardId, true);
+		mv.addObject("knowledgeDTO", knowledgeDTO);
+		mv.setViewName("/boardAdvance/knowledgeDetail");
+		
+		return mv;
+		
+		
+	}
+	
+	@GetMapping("/knowledgeUpdateBoard")
+	public ModelAndView knowledgeUpdateBoard(@RequestParam("boardId") long boardId) throws Exception {
+		
+		
+		ModelAndView mv = new ModelAndView();
+		KnowledgeDTO knowledgeDTO = boardAdvanceService.getKnowledgeBoardDetail(boardId, false);
+		mv.addObject("knowledgeDTO", knowledgeDTO);
+		System.out.println(knowledgeDTO);
+		mv.setViewName("/boardAdvance/knowledgeUpdate");
+		
+		return mv;
+		
+		
+	}
+	
+	
+	@PostMapping("/knowledgeUpdateBoard")
+	public ResponseEntity<Object> knowledgeUpdateBoard(KnowledgeDTO knowledgeDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.updateKnowledgeBoard(knowledgeDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/boardAdvance/knowledgeList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
 	}
 	
 	

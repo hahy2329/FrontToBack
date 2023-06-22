@@ -117,6 +117,42 @@
 			)
 		
 		</insert>
+		
+		<update id="updateKnowledgeReadCnt" parameterType="Long">
+			
+			UPDATE 
+				KNOWLEDGE
+			SET
+				READ_CNT = READ_CNT +1
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		</update>
+		
+		
+		
+		<select id="getKnowledgeBoardDetail" parameterType="Long" resultType="KnowledgeDTO">
+			
+			SELECT 
+				*
+			FROM 
+				KNOWLEDGE
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		</select>
+		<update id="updateKnowledgeBoard" parameterType="KnowledgeDTO">
+			
+			UPDATE 
+				KNOWLEDGE
+			SET
+				SUBJECT = #{subject},
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		</update>
 	
 	
 	

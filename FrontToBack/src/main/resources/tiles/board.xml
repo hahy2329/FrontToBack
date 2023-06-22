@@ -8,11 +8,20 @@
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeAdd" extends="baseLayout">
-		<put-attribute name="title" value="지식게시판(추가)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeAdd.jsp"></put-attribute>
-	
+		<put-attribute name="title" value="게시글 추가"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeAdd.jsp"></put-attribute>	
 	</definition>
-
+	
+	<definition name="/boardAdvance/knowledgeDetail" extends="baseLayout">
+		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/knowledgeUpdate" extends="baseLayout">
+		<put-attribute name="title" value="게시글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeUpdate.jsp"></put-attribute>
+	</definition>
+	
 
 
 </tiles-definitions>

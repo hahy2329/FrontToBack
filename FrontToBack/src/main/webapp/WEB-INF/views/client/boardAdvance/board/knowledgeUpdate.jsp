@@ -80,12 +80,20 @@
 
 	<div align="center" style="padding-top: 100px">
 	<fieldset>
-		<form action="${contextPath }/boardAdvance/knowledgeAddBoard" method="post">	
+		<form action="${contextPath }/boardAdvance/knowledgeUpdateBoard" method="post">	
 		<table border="1" style="width: 700px; text-align: left">
+			<colgroup>
+				<col width="20%">
+				<col width="80%">
+			</colgroup>
+			<tr>
+				<td>작성일</td>
+				<td><fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/></td>
+			</tr>
 			<tr>
 				<td>아이디</td>
 				<td>
-					<input type="text" name="memberId" id="memberId" value="${sessionScope.memberId }" readonly="readonly">
+					<input type="text" name="memberId" id="memberId" value="${knowledgeDTO.memberId }" readonly="readonly">
 				</td>
 			</tr>
 			<tr>
@@ -99,23 +107,24 @@
 			<tr>
 				<td>제목</td>
 				<td>
-					<input type="text" name="subject" required="required">
+					<input type="text" name="subject"  value="${knowledgeDTO.subject }" required="required">
 				</td>
 			</tr>
 			<tr>
 				<td>내용</td>
 				<td>
-					<textarea rows="10" cols="50" name="content" required="required"></textarea>
+					<textarea rows="10" cols="50" name="content" required="required">${knowledgeDTO.content }</textarea>
 					<script>CKEDITOR.replace("content")</script>
 				</td>
 			</tr>
 			<tr>
 				<td>포지션</td>
-				<td><input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly"></td>
+				<td><input type="text" name="sort" value="${knowledgeDTO.sort }" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<td colspan="2" align="right">
-					<input type="submit" value="글쓰기">
+					<input type="submit" value="수정">
+					<input type="hidden" name="boardId" value="${knowledgeDTO.boardId }">
 					<input type="reset" value="재작성">
 					<input type="button" onclick="location.href='${contextPath}/boardAdvance/knowledgeList'" value="목록보기">
 				</td>
