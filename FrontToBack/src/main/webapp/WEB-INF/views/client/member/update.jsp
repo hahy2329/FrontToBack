@@ -142,11 +142,11 @@
                                 <div>
                                  <strong>포지션<span>*</span></strong><p></p>
                                     
-                                    	프론트엔드&nbsp; <input type="radio" name="sort" value="front" required="required">
-                                    	백엔드&nbsp;<input type="radio" name="sort" value="back" required="required">
-                                    	AI&nbsp; <input type="radio" name="sort" value="ai" required="required">
-                                    	데이터 분석&nbsp; <input type="radio" name="sort" value="data" required="required">
-                                    	기타 &nbsp;<input type="radio" name="sort" value="all" required="required">
+                                    	<input type="radio" name="sort" value="프론트엔드" required="required"> 프론트엔드&nbsp;
+                                    	<input type="radio" name="sort" value="백엔드" required="required"> 백엔드&nbsp;
+                                    	<input type="radio" name="sort" value="AI" required="required"> AI&nbsp;
+                                    	<input type="radio" name="sort" value="데이터분석" required="required"> 데이터 분석&nbsp;
+                                    	<input type="radio" name="sort" value="기타" required="required"> 기타 &nbsp;
                                  </div>
                                 
                                 

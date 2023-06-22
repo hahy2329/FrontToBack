@@ -89,7 +89,7 @@ public class MemberController {
 				HttpSession session = request.getSession();
 				session.setAttribute("memberId", memberData.getMemberId());
 				session.setAttribute("sort", memberData.getSort());
-				session.setMaxInactiveInterval(1800);//초 단위 (1800 ==30분)
+				session.setMaxInactiveInterval(3600);//초 단위 (3600 ==60분)
 				
 				message = "<script>";
 				message +="alert('로그인 되었습니다.');";

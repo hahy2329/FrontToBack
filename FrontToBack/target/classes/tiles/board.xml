@@ -3,8 +3,14 @@
 
 <tiles-definitions>
 	<definition name="/boardAdvance/knowledgeList" extends="baseLayout">
-		<put-attribute name="title" value="지식"></put-attribute>
+		<put-attribute name="title" value="지식게시판"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/knowledgeAdd" extends="baseLayout">
+		<put-attribute name="title" value="지식게시판(추가)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/knowledgeAdd.jsp"></put-attribute>
+	
 	</definition>
 
 

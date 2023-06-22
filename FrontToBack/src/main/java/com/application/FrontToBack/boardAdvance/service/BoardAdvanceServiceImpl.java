@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.application.FrontToBack.boardAdvance.dao.BoardAdvanceDAO;
@@ -15,6 +16,9 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	@Autowired
 	private BoardAdvanceDAO boardAdvanceDAO;
 	
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
 	
 	@Override
 	public int getAllBoardCnt(Map<String, String> searchCntMap) throws Exception {
@@ -25,6 +29,15 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	@Override
 	public List<KnowledgeDTO> getBoardList(Map<String, Object> searchMap) throws Exception {
 		return boardAdvanceDAO.selectListBoard(searchMap);
+	}
+
+
+	@Override
+	public void insertKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception {
+		knowledgeDTO.setPasswd(bCryptPasswordEncoder.encode(knowledgeDTO.getPasswd()));
+		
+		boardAdvanceDAO.insertKnowledgeBoard(knowledgeDTO);
+		
 	}
 
 }

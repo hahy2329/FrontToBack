@@ -9,4 +9,5 @@ public interface BoardAdvanceService {
 
 	public int getAllBoardCnt(Map<String,String> searchCntMap) throws Exception;
 	public List<KnowledgeDTO> getBoardList(Map<String,Object> searchMap) throws Exception;
+	public void insertKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception;
 }

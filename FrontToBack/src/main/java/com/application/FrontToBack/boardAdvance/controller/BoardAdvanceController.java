@@ -1,16 +1,21 @@
 package com.application.FrontToBack.boardAdvance.controller;
 
+import org.springframework.http.HttpHeaders;
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.service.BoardAdvanceService;
 
 @Controller
@@ -20,6 +25,9 @@ public class BoardAdvanceController {
 	
 	@Autowired
 	private BoardAdvanceService boardAdvanceService;
+	
+	
+	//1.지식관련 게시판 기능 
 	
 	@GetMapping("/knowledgeList")
 	public ModelAndView knowledge(HttpServletRequest request) throws Exception {
@@ -100,6 +108,32 @@ public class BoardAdvanceController {
 		
 		
 		return mv;
+		
+	}
+	
+	@GetMapping("/knowledgeAddBoard")
+	public ModelAndView knowledgeAddBoard() throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/boardAdvance/knowledgeAdd");
+		return mv;
+	}
+	
+	@PostMapping("/knowledgeAddBoard")
+	public ResponseEntity<Object> knowledgeAddBoard(KnowledgeDTO knowledgeDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.insertKnowledgeBoard(knowledgeDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/boardAdvance/knowledgeList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
 		
 	}
 	

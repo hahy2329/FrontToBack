@@ -25,4 +25,10 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 		return sqlSession.selectList("knowledge.selectListBoard", searchMap);
 	}
 
+	@Override
+	public void insertKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception {
+		sqlSession.insert("knowledge.insertKnowledgeBoard", knowledgeDTO);
+		
+	}
+
 }

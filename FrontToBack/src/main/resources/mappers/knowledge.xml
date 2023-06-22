@@ -103,6 +103,20 @@
 		
 		
 		</select>
+		
+		<insert id="insertKnowledgeBoard" parameterType="KnowledgeDTO">
+			INSERT INTO KNOWLEDGE(MEMBER_ID, SUBJECT, CONTENT, SORT, PASSWD)
+			VALUES(
+				#{memberId},
+				#{subject},
+				#{content},
+				#{sort},
+				#{passwd}
+				
+			
+			)
+		
+		</insert>
 	
 	
 	
