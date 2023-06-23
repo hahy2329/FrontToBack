@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.FrontToBack.boardAdvance.dao.BoardAdvanceDAO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
+import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 
 @Service
 public class BoardAdvanceServiceImpl implements BoardAdvanceService {
@@ -60,5 +61,32 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		boardAdvanceDAO.updateKnowledgeBoard(knowledgeDTO);
 		
 	}
+
+
+	@Override
+	public void removeKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception {
+		boardAdvanceDAO.removeKnowledgeBoard(knowledgeDTO);
+		
+	}
+
+	
+	
+	
+	@Override
+	public int getAllKnowledgeReplyCnt(long boardId) throws Exception {
+		return boardAdvanceDAO.selectOneAllKnowledgeReplyCnt(boardId);
+	}
+
+
+	@Override
+	public List<KnowledgeReplyDTO> getAllKnowledgeReplyList(long boardId) throws Exception {
+		
+		List<KnowledgeReplyDTO> knowledgeReplyList = boardAdvanceDAO.selectListKnowledgeReply(boardId);
+		return knowledgeReplyList;
+	}
+	
+	
+	
+
 
 }

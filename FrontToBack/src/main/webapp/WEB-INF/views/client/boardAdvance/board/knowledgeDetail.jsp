@@ -12,7 +12,7 @@
 	
 	<div align="center" style="padding-top: 100px ">
 	<fieldset>
-		<table border="1" style="width:700px; text-align: left">
+		<table border="1" style="width:700px; text-align: left" class="table table-hover">
 			<colgroup>
 				<col width="20%">
 				<col width="80%">
@@ -50,6 +50,30 @@
 					<input type="button" value="삭제" onclick="location.href='${contextPath}/boardAdvance/knowledgeRemoveBoard?boardId=${knowledgeDTO.boardId }'">
 					<input type="button" value="수정" onclick="location.href='${contextPath}/boardAdvance/knowledgeUpdateBoard?boardId=${knowledgeDTO.boardId }'">					
 					<input type="button" onclick="location.href='${contextPath}/boardAdvance/knowledgeList'" value="목록보기">
+				</td>
+			</tr>
+		</table>
+		
+		<br>
+		<hr>
+		<br>
+		
+		<h4>댓글 리스트(${allReplyCnt })</h4>
+		<table style="width: 700px;" border="1">
+			<c:forEach var="replyDTO" items="${knowledgeReplyDTO }">
+				<tr>
+					<td>
+						작성자 : ${replyDTO.writer } / 작성일 : <fmt:formatDate value="${replyDTO.enrollDt }" pattern="yyyy-MM-dd"/> <br>
+						조회수 : ${replyDTO.readCnt } <br>
+						${replyDTO.content }
+						<input type="button" value="수정" onclick="location.href='${contextPath}/boardAdvance/knowledgeUpdateReply?replyId=${replyDTO.replyId }'">
+						<input type="button" value="삭제" onclick="location.href='${contextPath}/boardAdvance/knowledgeRemoveReply?replyId=${replyDTO.replyId }'">
+					</td>
+				</tr>
+			</c:forEach>
+			<tr>
+				<td align="right">
+					<input type="button" value="댓글작성" onclick="location.href='${contextPath}/boardAdvance/KnowledgeAddReply?boardId=${knowledgeDTO.boardId }'">
 				</td>
 			</tr>
 		</table>

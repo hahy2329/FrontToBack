@@ -2,6 +2,7 @@ package com.application.FrontToBack.boardAdvance.controller;
 
 import org.springframework.http.HttpHeaders;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
+import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.service.BoardAdvanceService;
 
 @Controller
@@ -143,7 +145,13 @@ public class BoardAdvanceController {
 		
 		ModelAndView mv = new ModelAndView();
 		KnowledgeDTO knowledgeDTO = boardAdvanceService.getKnowledgeBoardDetail(boardId, true);
+		int allReplyCnt = boardAdvanceService.getAllKnowledgeReplyCnt(boardId);
+		List<KnowledgeReplyDTO> knowledgeReplyDTO = boardAdvanceService.getAllKnowledgeReplyList(boardId);
+		
 		mv.addObject("knowledgeDTO", knowledgeDTO);
+		mv.addObject("allReplyCnt", allReplyCnt);
+		mv.addObject("knowledgeReplyDTO", knowledgeReplyDTO);
+		
 		mv.setViewName("/boardAdvance/knowledgeDetail");
 		
 		return mv;
@@ -183,6 +191,34 @@ public class BoardAdvanceController {
 		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
 	}
 	
+	
+	@GetMapping("/knowledgeRemoveBoard")
+	public ModelAndView knowledgeRemoveBoard(@RequestParam("boardId") long boardId) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		KnowledgeDTO knowledgeDTO = boardAdvanceService.getKnowledgeBoardDetail(boardId, false);
+		mv.setViewName("/boardAdvance/knowledgeRemove");
+		mv.addObject("knowledgeDTO", knowledgeDTO);
+		
+		return mv;
+		
+	}
+	
+	@PostMapping("/knowledgeRemoveBoard")
+	public ResponseEntity<Object> knowledgeRemoveBoard(KnowledgeDTO knowledgeDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeKnowledgeBoard(knowledgeDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/boardAdvance/knowledgeList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+	}
 	
 	
 }

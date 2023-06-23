@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
+import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 
 public interface BoardAdvanceService {
 
@@ -12,4 +13,10 @@ public interface BoardAdvanceService {
 	public void insertKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception;
 	public KnowledgeDTO getKnowledgeBoardDetail(long boardId, boolean increaseRead) throws Exception;
 	public void updateKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception;
+	public void removeKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception;
+	
+	public int getAllKnowledgeReplyCnt(long boardId) throws Exception;
+	public List<KnowledgeReplyDTO> getAllKnowledgeReplyList(long boardId) throws Exception;
+	
+	
 }
