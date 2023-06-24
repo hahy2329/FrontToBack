@@ -17,6 +17,10 @@ public interface BoardAdvanceService {
 	
 	public int getAllKnowledgeReplyCnt(long boardId) throws Exception;
 	public List<KnowledgeReplyDTO> getAllKnowledgeReplyList(long boardId) throws Exception;
-	
+	public void knowledgeAddReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	public KnowledgeReplyDTO knowledgeReplyDetail(long replyId) throws Exception;
+	public String checkDuplicatedPasswd(String writer, String passwd) throws Exception;
+	public String checkDuplicatedWriter(String writer) throws Exception;
+	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	
 }

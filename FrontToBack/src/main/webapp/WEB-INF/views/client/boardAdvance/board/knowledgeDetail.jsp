@@ -63,9 +63,9 @@
 			<c:forEach var="replyDTO" items="${knowledgeReplyDTO }">
 				<tr>
 					<td>
-						작성자 : ${replyDTO.writer } / 작성일 : <fmt:formatDate value="${replyDTO.enrollDt }" pattern="yyyy-MM-dd"/> <br>
-						조회수 : ${replyDTO.readCnt } <br>
-						${replyDTO.content }
+						작성일 : <fmt:formatDate value="${replyDTO.enrollDt }" pattern="yyyy-MM-dd"/> <br>
+						작성자 : ${replyDTO.writer } <br> 
+						내용 : ${replyDTO.content }
 						<input type="button" value="수정" onclick="location.href='${contextPath}/boardAdvance/knowledgeUpdateReply?replyId=${replyDTO.replyId }'">
 						<input type="button" value="삭제" onclick="location.href='${contextPath}/boardAdvance/knowledgeRemoveReply?replyId=${replyDTO.replyId }'">
 					</td>

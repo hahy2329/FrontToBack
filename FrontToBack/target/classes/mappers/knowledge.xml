@@ -184,9 +184,66 @@
 		
 		
 		</select>
+		
+		<insert id="insertKnowledgeReply" parameterType="KnowledgeReplyDTO">
+			
+			INSERT INTO KNOWLEDGEREPLY(WRITER, PASSWD, CONTENT, BOARD_ID)
+			
+			VALUES(
+				#{writer},
+				#{passwd},
+				#{content},
+				#{boardId}
+			
+			
+			)	
+			
+		
+		</insert>
+		
+		<select id="knowledgeReplyDetail" parameterType="Long" resultType="KnowledgeReplyDTO">
+			SELECT
+				*
+			FROM
+				KNOWLEDGEREPLY
+			WHERE
+				REPLY_ID = #{replyId}
+		
+		
+		</select>
 	
-	
-	
+		<select id="getEncodePasswd" parameterType="String" resultType="String">
+		
+			SELECT
+				PASSWD
+			FROM
+				KNOWLEDGEREPLY
+			WHERE
+				WRITER = #{writer}
+		
+		</select>
+		<select id="selectOneDuplicateWriter" parameterType="String" resultType="String">
+			
+			SELECT
+				WRITER
+			FROM
+				KNOWLEDGEREPLY
+			WHERE
+				WRITER = #{writer}
+		
+		
+		</select>
+		
+		<update id="UpdateKnowledge" parameterType="KnowledgeReplyDTO">
+			
+			UPDATE
+				KNOWLEDGEREPLY
+			SET
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+			WHERE 
+				REPLY_ID = #{replyId}
+		</update>
 	
 	</mapper>
 			

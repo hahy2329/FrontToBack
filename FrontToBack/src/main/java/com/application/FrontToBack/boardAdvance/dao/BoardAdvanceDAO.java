@@ -19,4 +19,11 @@ public interface BoardAdvanceDAO {
 	
 	public int selectOneAllKnowledgeReplyCnt(long boardId) throws Exception;
 	public List<KnowledgeReplyDTO> selectListKnowledgeReply(long boardId) throws Exception;
+	public void knowledgeAddReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	public KnowledgeReplyDTO knowledgeReplyDetail(long replyId) throws Exception;
+	public String getEncodePasswd(String writer) throws Exception;
+	public String checkDuplicatedWriter(String writer) throws Exception;
+	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	
+	
 }

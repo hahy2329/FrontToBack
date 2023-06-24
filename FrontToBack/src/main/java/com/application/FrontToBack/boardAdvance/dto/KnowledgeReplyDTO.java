@@ -11,7 +11,6 @@ public class KnowledgeReplyDTO {
 	private String writer;
 	private String passwd;
 	private String content;
-	private long readCnt;
 	private Date enrollDt;
 	private long boardId;
 	public long getReplyId() {
@@ -38,12 +37,7 @@ public class KnowledgeReplyDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public long getReadCnt() {
-		return readCnt;
-	}
-	public void setReadCnt(long readCnt) {
-		this.readCnt = readCnt;
-	}
+	
 	public Date getEnrollDt() {
 		return enrollDt;
 	}
@@ -59,9 +53,11 @@ public class KnowledgeReplyDTO {
 	@Override
 	public String toString() {
 		return "KnowledgeReplyDTO [replyId=" + replyId + ", writer=" + writer + ", passwd=" + passwd + ", content="
-				+ content + ", readCnt=" + readCnt + ", enrollDt=" + enrollDt + ", boardId=" + boardId + ", toString()="
-				+ super.toString() + "]";
+				+ content + ", enrollDt=" + enrollDt + ", boardId=" + boardId + ", toString()=" + super.toString()
+				+ "]";
 	}
+	
+	
 	
 	
 	

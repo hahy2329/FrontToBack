@@ -220,5 +220,81 @@ public class BoardAdvanceController {
 		
 	}
 	
+	@GetMapping("/KnowledgeAddReply")
+	public ModelAndView KnowledgeAddReply(@RequestParam("boardId") long boardId) {
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("boardId", boardId);
+		mv.setViewName("/boardAdvance/knowledgeAddReply");
+		
+		return mv;
+		
+	}
+	
+	
+	@GetMapping("/checkDuplicatedWriter")
+	public ResponseEntity<String> checkDuplicatedWriter(@RequestParam("writer") String writer) throws Exception{
+		
+		return new ResponseEntity<String>(boardAdvanceService.checkDuplicatedWriter(writer), HttpStatus.OK);
+		
+		
+		
+	}
+	
+	@PostMapping("/KnowledgeAddReply")
+	public ResponseEntity<Object> KnowledgeAddReply(KnowledgeReplyDTO knowledgeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.knowledgeAddReply(knowledgeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록되었습니다.');";
+		message +="location.href='"+ request.getContextPath() + "/boardAdvance/knowledgeDetail?boardId=" +knowledgeReplyDTO.getBoardId() + "';";
+		message +="</script>";
+		
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders, HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/knowledgeUpdateReply")
+	public ModelAndView knowledgeUpdateReply(@RequestParam("replyId") long replyId) throws Exception {
+		
+		
+		ModelAndView mv = new ModelAndView();
+		KnowledgeReplyDTO knowledgeReplyDTO = boardAdvanceService.knowledgeReplyDetail(replyId);
+		mv.addObject("knowledgeReplyDTO", knowledgeReplyDTO);
+		mv.setViewName("/boardAdvance/knowledgeUpdateReply");
+		
+		return mv;
+		
+		
+	}
+	
+	@GetMapping("/checkDuplicatedPasswd")
+	public ResponseEntity<String> checkDuplicatedPasswd(@RequestParam("passwd") String passwd, @RequestParam("writer") String writer ) throws Exception{
+		return new ResponseEntity<String>(boardAdvanceService.checkDuplicatedPasswd(writer, passwd),HttpStatus.OK);
+	}
+	
+	@PostMapping("/knowledgeUpdateReply")
+	public ResponseEntity<Object> knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.knowledgeUpdateReply(knowledgeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() + "/boardAdvance/knowledgeDetail?boardId=" +knowledgeReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+	}
+	
 	
 }

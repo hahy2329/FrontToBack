@@ -84,6 +84,45 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		List<KnowledgeReplyDTO> knowledgeReplyList = boardAdvanceDAO.selectListKnowledgeReply(boardId);
 		return knowledgeReplyList;
 	}
+
+
+	@Override
+	public void knowledgeAddReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
+		knowledgeReplyDTO.setPasswd(bCryptPasswordEncoder.encode(knowledgeReplyDTO.getPasswd()));
+		boardAdvanceDAO.knowledgeAddReply(knowledgeReplyDTO);
+		
+	}
+
+
+	@Override
+	public KnowledgeReplyDTO knowledgeReplyDetail(long replyId) throws Exception {
+		KnowledgeReplyDTO knowledgeReplyDTO = boardAdvanceDAO.knowledgeReplyDetail(replyId);
+		return knowledgeReplyDTO;
+	}
+
+
+	@Override
+	public String checkDuplicatedPasswd(String writer, String passwd) throws Exception {
+		if(bCryptPasswordEncoder.matches(passwd, boardAdvanceDAO.getEncodePasswd(writer))) return "duplicate";
+		else 			return "notDuplicate";
+		
+	}
+
+
+	@Override
+	public String checkDuplicatedWriter(String writer) throws Exception {
+		if(boardAdvanceDAO.checkDuplicatedWriter(writer) == null)   return "duplicate"; 
+		else				return "notDuplicate";
+	}
+
+
+	@Override
+	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
+		boardAdvanceDAO.knowledgeUpdateReply(knowledgeReplyDTO);
+		
+	}
+	
+	
 	
 	
 	

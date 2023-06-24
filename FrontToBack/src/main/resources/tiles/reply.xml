@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="/boardAdvance/knowledgeAddReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/knowledgeAddReply.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/knowledgeUpdateReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/knowledgeUpdateReply.jsp"></put-attribute>
+	
+	</definition>
+</tiles-definitions>
