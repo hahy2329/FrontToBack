@@ -91,7 +91,13 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 
 	@Override
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
-		sqlSession.update("knowledge.UpdateKnowledge", knowledgeReplyDTO);
+		sqlSession.update("knowledge.updateKnowledgeReply", knowledgeReplyDTO);
+		
+	}
+
+	@Override
+	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
+		sqlSession.delete("knowledge.removeKnowledgeReply", knowledgeReplyDTO);
 		
 	}
 	

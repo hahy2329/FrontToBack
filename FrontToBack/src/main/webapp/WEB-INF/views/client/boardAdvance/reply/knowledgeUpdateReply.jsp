@@ -1,130 +1,144 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>add reply</title>
 <script>
 	
-	var isValid = false;
+var isValid = false;
+
+$().ready(function(){
 	
-	$().ready(function(){
+	$("#btnOverlapped").click(function(){
 		
-		$("#btnOverlapped").click(function(){
+		$(".answer").empty();
+		
+		var memberId = $("#memberId").val();
+		var passwd = $("#passwd").val();
+		
+		if(passwd == ''){
+			alert("패스워드를 입력해주세요.");
+			return false;
+		}
+		
+		$.ajax({
 			
-			$(".answer").empty();
-			
-			var writer = $("#writer").val();
-			var passwd = $("#passwd").val();
-			
-			if(passwd == ''){
-				alert("패스워드를 입력해주세요.");
-				return false;
-			}
-			
-			$.ajax({
-				
-				type : "get",
-				url : "${contextPath}/boardAdvance/checkDuplicatedPasswd?passwd="+passwd+"&writer="+writer,
-				success : function(data){
-					if(data == "duplicate"){
-						
-						alert("확인되었습니다.");
-						isValid=true;
-						$("#btnOverlapped").remove();
-						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
-						
-					}
+			type : "get",
+			url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
+			success : function(data){
+				if(data == "duplicate"){
 					
-					else{
-						alert("패스워드를 다시 확인해주세요.");
-						isValid=false;
-						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
-					}
-					
+					alert("확인되었습니다.");
+					isValid=true;
+					$("#btnOverlapped").remove();
+					$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
 					
 				}
 				
+				else{
+					alert("패스워드를 다시 확인해주세요.");
+					isValid=false;
+					$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
+				}
 				
-			});
-			
-		});
-		
-		$("form").submit(function(){
-			
-			if(isValid == false){
-				alert("패스워드를 확인해주세요.");
-				return false;
-			}
-			
-			if(isValid == true){
 				
-				return true;
 			}
 			
 			
 		});
 		
+	});
+	
+	$("form").submit(function(){
 		
+		if(isValid == false){
+			alert("패스워드를 확인해주세요.");
+			return false;
+		}
+		
+		if(isValid == true){
+			
+			return true;
+		}
 		
 		
 	});
-
+	
+	
+	
+	
+});
 
 </script>
 </head>
 <body>
+	<!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a>커뮤니티</a>
+                        <a>지식</a>
+                        <span>댓글 수정</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
 
-	<div align="center" style="padding-top: 100px">
-	<fieldset>
-		<form action="${contextPath }/boardAdvance/knowledgeUpdateReply" method="post">	
-		<table border="1" style="width: 700px; text-align: left">
-			<colgroup>
-				<col width="20%">
-				<col width="80%">
-			</colgroup>
-			<tr>
-				<td>작성일</td>
-				<td><fmt:formatDate value="${knowledgeReplyDTO.enrollDt }" pattern="yyyy-MM-dd"/></td>
-			</tr>
-			<tr>
-				<td>작성자</td>
-				<td>
-					<input type="text" name="writer" id="writer" value="${knowledgeReplyDTO.writer }" readonly="readonly">
-				</td>
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<td>
-					<input type="password" name="passwd" id="passwd" required="required">
-					<input type="button" id="btnOverlapped" value="인증">
-					<p class="answer"></p>
-				</td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td>
-					<textarea rows="10" cols="50" name="content" required="required">${knowledgeReplyDTO.content }</textarea>
-					<script>CKEDITOR.replace("content")</script>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="right">
-					<input type="submit" value="수정">
-					<input type="hidden" name="replyId" value="${knowledgeReplyDTO.replyId }">
-					<input type="hidden" name="boardId" value="${knowledgeReplyDTO.boardId }">
-					<input type="reset" value="재작성">
-					<input type="button" onclick="location.href='${contextPath}/boardAdvance/knowledgeDetail?boardId=${knowledgeReplyDTO.boardId }'" value="목록보기">
-				</td>
-			</tr>
-			
-		</table>
-		</form>
-	</fieldset>
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                       
+                        <div class="contact__form">
+                            <h5>댓글 수정</h5>
+                            <form action="${contextPath }/boardAdvance/knowledgeUpdateReply" method="post">
+                            	
+                                <input type="text" name="memberId" id="memberId" placeholder="아이디" value="${knowledgeReplyDTO.memberId }"  required="required" maxlength="15" readonly="readonly"/>
+                                <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
+                                <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
+								<p class="answer"></p>
+                                <textarea rows="10" cols="50" name="content" required="required">${knowledgeReplyDTO.content }</textarea>
+                                <input type="hidden" name="boardId" value="${knowledgeReplyDTO.boardId }">
+                                <input type="hidden" name="replyId" value="${knowledgeReplyDTO.replyId }">
+                                <button type="submit" class="site-btn">수정</button>
+                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/knowledgeDetail?boardId=${knowledgeReplyDTO.boardId }'">뒤로가기</button>
+                            </form>
+                        </div>
+                         <div>
+                         	<br><br>
+                         
+                         </div>
+                         
+                         <div class="contact__address">
+                             <h5>FRONTTOBACK INFO</h5>
+                            <ul>
+                                <li>
+                                    <h6><i class="fa fa-map-marker"></i> 개발자 : 한주석</h6>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-phone"></i> 포지션/전화번호 : 백엔드/123-4567-8922</h6>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-headphones"></i> 이메일 : abcdef@abcdef.com</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
 	
-	</div>
 </body>
 </html>

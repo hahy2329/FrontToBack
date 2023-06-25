@@ -121,6 +121,13 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		boardAdvanceDAO.knowledgeUpdateReply(knowledgeReplyDTO);
 		
 	}
+
+
+	@Override
+	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
+		boardAdvanceDAO.removeKnowledgeReply(knowledgeReplyDTO);
+		
+	}
 	
 	
 	

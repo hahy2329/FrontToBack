@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class KnowledgeReplyDTO {
 	
 	private long replyId;
-	private String writer;
+	private String memberId;
 	private String passwd;
 	private String content;
 	private Date enrollDt;
@@ -19,11 +19,11 @@ public class KnowledgeReplyDTO {
 	public void setReplyId(long replyId) {
 		this.replyId = replyId;
 	}
-	public String getWriter() {
-		return writer;
+	public String getMemberId() {
+		return memberId;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 	public String getPasswd() {
 		return passwd;
@@ -37,7 +37,6 @@ public class KnowledgeReplyDTO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
 	public Date getEnrollDt() {
 		return enrollDt;
 	}
@@ -52,7 +51,7 @@ public class KnowledgeReplyDTO {
 	}
 	@Override
 	public String toString() {
-		return "KnowledgeReplyDTO [replyId=" + replyId + ", writer=" + writer + ", passwd=" + passwd + ", content="
+		return "KnowledgeReplyDTO [replyId=" + replyId + ", memberId=" + memberId + ", passwd=" + passwd + ", content="
 				+ content + ", enrollDt=" + enrollDt + ", boardId=" + boardId + ", toString()=" + super.toString()
 				+ "]";
 	}

@@ -11,4 +11,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/knowledgeUpdateReply.jsp"></put-attribute>
 	
 	</definition>
+	
+	<definition name="/boardAdvance/knowledgeRemoveReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/knowledgeRemoveReply.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>

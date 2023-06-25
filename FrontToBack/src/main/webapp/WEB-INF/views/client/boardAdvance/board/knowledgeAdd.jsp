@@ -77,54 +77,70 @@
 </script>
 </head>
 <body>
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a>커뮤니티</a>
+                        <a>지식</a>
+                        <span>게시글 작성</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
 
-	<div align="center" style="padding-top: 100px">
-	<fieldset>
-		<form action="${contextPath }/boardAdvance/knowledgeAddBoard" method="post">	
-		<table border="1" style="width: 700px; text-align: left">
-			<tr>
-				<td>아이디</td>
-				<td>
-					<input type="text" name="memberId" id="memberId" value="${sessionScope.memberId }" readonly="readonly">
-				</td>
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<td>
-					<input type="password" name="passwd" id="passwd" required="required">
-					<input type="button" id="btnOverlapped" value="인증">
-					<p class="answer"></p>
-				</td>
-			</tr>
-			<tr>
-				<td>제목</td>
-				<td>
-					<input type="text" name="subject" required="required">
-				</td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td>
-					<textarea rows="10" cols="50" name="content" required="required"></textarea>
-					<script>CKEDITOR.replace("content")</script>
-				</td>
-			</tr>
-			<tr>
-				<td>포지션</td>
-				<td><input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly"></td>
-			</tr>
-			<tr>
-				<td colspan="2" align="right">
-					<input type="submit" value="글쓰기">
-					<input type="reset" value="재작성">
-					<input type="button" onclick="location.href='${contextPath}/boardAdvance/knowledgeList'" value="목록보기">
-				</td>
-			</tr>
-			
-		</table>
-		</form>
-	</fieldset>
-	
-	</div>
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                       
+                        <div class="contact__form">
+                            <h5>게시글 작성</h5>
+                            <form action="${contextPath }/boardAdvance/knowledgeAddBoard" method="post">
+                                <input type="text" name="memberId" id="memberId" value="${sessionScope.memberId }" readonly="readonly" placeholder="아이디">
+                                <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
+                                <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
+								<p class="answer"></p>
+                                <input type="text" name="subject" required="required" placeholder="제목">
+                                <textarea rows="10" cols="50" placeholder="내용" name="content" required="required"></textarea>
+                                <input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly">
+                                <button type="submit" class="site-btn">글쓰기</button>
+                                <button class="site-btn"><a href="${contextPath}/boardAdvance/knowledgeList" style="color: white;">목록보기</a></button>
+                            </form>
+                        </div>
+                         <div>
+                         	<br><br>
+                         
+                         </div>
+                         
+                         <div class="contact__address">
+                             <h5>FRONTTOBACK INFO</h5>
+                            <ul>
+                                <li>
+                                    <h6><i class="fa fa-map-marker"></i> 개발자 : 한주석</h6>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-phone"></i> 포지션/전화번호 : 백엔드/123-4567-8922</h6>
+                                </li>
+                                <li>
+                                    <h6><i class="fa fa-headphones"></i> 이메일 : abcdef@abcdef.com</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+
 </body>
 </html>

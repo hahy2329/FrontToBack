@@ -8,80 +8,80 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
-	
-	<div align="center" style="padding-top: 100px ">
-	<fieldset>
-		<table border="1" style="width:700px; text-align: left" class="table table-hover">
-			<colgroup>
-				<col width="20%">
-				<col width="80%">
-			</colgroup>
-			<tr>
-				<td>작성일</td>
-				<td><fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/></td>
-			</tr>
-			<tr>
-				<td>아이디</td>
-				<td>${knowledgeDTO.memberId }</td>
-			</tr>
-			<tr>
-				<td>포지션</td>
-				<td>${knowledgeDTO.sort }</td>
-			</tr>
-			<tr>
-				<td>조회수</td>
-				<td>${knowledgeDTO.readCnt }</td>
-			</tr>
-			<tr>
-				<td>제목</td>
-				<td>${knowledgeDTO.subject }</td>
-			</tr>
-			<tr>
-				<td>내용</td>
-				<td>
-					<textarea rows="10" cols="50" name="content" required="required" readonly="readonly">${knowledgeDTO.content }</textarea>
-					<script>CKEDITOR.replace("content")</script>
-				</td>
-			</tr>
-			
-			<tr>
-				<td colspan="2" align="right">
-					<input type="button" value="삭제" onclick="location.href='${contextPath}/boardAdvance/knowledgeRemoveBoard?boardId=${knowledgeDTO.boardId }'">
-					<input type="button" value="수정" onclick="location.href='${contextPath}/boardAdvance/knowledgeUpdateBoard?boardId=${knowledgeDTO.boardId }'">					
-					<input type="button" onclick="location.href='${contextPath}/boardAdvance/knowledgeList'" value="목록보기">
-				</td>
-			</tr>
-		</table>
-		
-		<br>
-		<hr>
-		<br>
-		
-		<h4>댓글 리스트(${allReplyCnt })</h4>
-		<table style="width: 700px;" border="1">
-			<c:forEach var="replyDTO" items="${knowledgeReplyDTO }">
-				<tr>
-					<td>
-						작성일 : <fmt:formatDate value="${replyDTO.enrollDt }" pattern="yyyy-MM-dd"/> <br>
-						작성자 : ${replyDTO.writer } <br> 
-						내용 : ${replyDTO.content }
-						<input type="button" value="수정" onclick="location.href='${contextPath}/boardAdvance/knowledgeUpdateReply?replyId=${replyDTO.replyId }'">
-						<input type="button" value="삭제" onclick="location.href='${contextPath}/boardAdvance/knowledgeRemoveReply?replyId=${replyDTO.replyId }'">
-					</td>
-				</tr>
-			</c:forEach>
-			<tr>
-				<td align="right">
-					<input type="button" value="댓글작성" onclick="location.href='${contextPath}/boardAdvance/KnowledgeAddReply?boardId=${knowledgeDTO.boardId }'">
-				</td>
-			</tr>
-		</table>
-	</fieldset>
-	
-	</div>
-	
-	
-	
+   
+	<!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <div class="blog__details__content">
+                        <div class="blog__details__item">
+                            <img src="img/blog/details/blog-details.jpg" alt="">
+                            <div class="blog__details__item__title">
+                                <span class="tip">지식</span>
+                                <h4>${knowledgeDTO.subject }</h4>
+                                <ul>
+                                    <li>by <span>${knowledgeDTO.memberId }</span></li>
+                                    <li><fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/></li>
+                                    <li>조회수: ${knowledgeDTO.readCnt }</li>
+                                    <li>${knowledgeDTO.sort }</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="blog__details__desc">
+                           ${knowledgeDTO.content }
+                        </div>
+                        <div class="blog__details__tags">
+                            <a href="${contextPath}/boardAdvance/knowledgeUpdateBoard?boardId=${knowledgeDTO.boardId }">수정</a>
+                            <a href="${contextPath}/boardAdvance/knowledgeRemoveBoard?boardId=${knowledgeDTO.boardId }">삭제</a>
+                            <a href="${contextPath}/boardAdvance/knowledgeList">목록보기</a>
+                        </div>
+                        <div class="blog__details__btns">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__details__btn__item">
+                                        <h5><h6 style="font-weight: bold">댓글 리스트<h7 style="color: red;">&nbsp;(${allReplyCnt }개)</h7></h6></h5>
+                                    </div>
+                                </div>
+                                
+                               <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__details__btn__item blog__details__btn__item--next">
+                                        <h6><a href="${contextPath}/boardAdvance/KnowledgeAddReply?boardId=${knowledgeDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__details__comment">
+                            
+                            <c:forEach var="replyDTO" items="${knowledgeReplyDTO }">
+                            <div class="blog__comment__item">
+                               
+                                <div class="blog__comment__item__text">
+                                    <h6>${replyDTO.memberId }</h6>
+                                    <p>${replyDTO.content }</p>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
+                                        <li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/knowledgeUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
+                                        <li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/knowledgeRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            </c:forEach>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+   
+
+   
+
+   
 </body>
+
 </html>

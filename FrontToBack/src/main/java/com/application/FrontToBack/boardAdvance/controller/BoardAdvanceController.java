@@ -232,14 +232,6 @@ public class BoardAdvanceController {
 	}
 	
 	
-	@GetMapping("/checkDuplicatedWriter")
-	public ResponseEntity<String> checkDuplicatedWriter(@RequestParam("writer") String writer) throws Exception{
-		
-		return new ResponseEntity<String>(boardAdvanceService.checkDuplicatedWriter(writer), HttpStatus.OK);
-		
-		
-		
-	}
 	
 	@PostMapping("/KnowledgeAddReply")
 	public ResponseEntity<Object> KnowledgeAddReply(KnowledgeReplyDTO knowledgeReplyDTO, HttpServletRequest request) throws Exception{
@@ -293,6 +285,40 @@ public class BoardAdvanceController {
 		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 		
 		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+	}
+	
+	
+	
+	@GetMapping("/knowledgeRemoveReply")
+	public ModelAndView knowledgeRemoveReply(@RequestParam("replyId") long replyId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		KnowledgeReplyDTO knowledgeReplyDTO = boardAdvanceService.knowledgeReplyDetail(replyId);
+		
+		mv.addObject("knowledgeReplyDTO", knowledgeReplyDTO);
+		mv.setViewName("/boardAdvance/knowledgeRemoveReply");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/knowledgeRemoveReply")
+	public ResponseEntity<Object> knowledgeRemoveReply(KnowledgeReplyDTO knowledgeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeKnowledgeReply(knowledgeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제 되었습니다.');";
+		message +="location.href='" +request.getContextPath()+ "/boardAdvance/knowledgeDetail?boardId=" +knowledgeReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
 		
 	}
 	

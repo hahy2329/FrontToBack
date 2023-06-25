@@ -22,5 +22,6 @@ public interface BoardAdvanceService {
 	public String checkDuplicatedPasswd(String writer, String passwd) throws Exception;
 	public String checkDuplicatedWriter(String writer) throws Exception;
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	
 }

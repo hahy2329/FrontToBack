@@ -24,6 +24,7 @@ public interface BoardAdvanceDAO {
 	public String getEncodePasswd(String writer) throws Exception;
 	public String checkDuplicatedWriter(String writer) throws Exception;
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	
 	
 }

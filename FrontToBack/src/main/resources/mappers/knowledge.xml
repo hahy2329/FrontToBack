@@ -187,10 +187,10 @@
 		
 		<insert id="insertKnowledgeReply" parameterType="KnowledgeReplyDTO">
 			
-			INSERT INTO KNOWLEDGEREPLY(WRITER, PASSWD, CONTENT, BOARD_ID)
+			INSERT INTO KNOWLEDGEREPLY(MEMBER_ID, PASSWD, CONTENT, BOARD_ID)
 			
 			VALUES(
-				#{writer},
+				#{memberId},
 				#{passwd},
 				#{content},
 				#{boardId}
@@ -234,7 +234,7 @@
 		
 		</select>
 		
-		<update id="UpdateKnowledge" parameterType="KnowledgeReplyDTO">
+		<update id="updateKnowledgeReply" parameterType="KnowledgeReplyDTO">
 			
 			UPDATE
 				KNOWLEDGEREPLY
@@ -244,6 +244,16 @@
 			WHERE 
 				REPLY_ID = #{replyId}
 		</update>
+		
+		<delete id="removeKnowledgeReply" parameterType="KnowledgeReplyDTO">
+			
+			DELETE FROM KNOWLEDGEREPLY
+			
+			WHERE 
+				REPLY_ID = #{replyId}
+			
+		
+		</delete>
 	
 	</mapper>
 			
