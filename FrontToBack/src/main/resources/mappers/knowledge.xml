@@ -85,7 +85,7 @@
 						KNOWLEDGE
 					WHERE
 						<if test='searchKeyword.equals("memberId")'>
-							MEMEBER_ID LIKE CONCAT('%',#{searchWord},'%')
+							MEMBER_ID LIKE CONCAT('%',#{searchWord},'%')
 						</if>
 						<if test='searchKeyword.equals("subject")'>
 							SUBJECT LIKE CONCAT('%', #{searchWord}, '%')
