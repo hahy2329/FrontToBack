@@ -113,6 +113,7 @@
                                 <input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">글쓰기</button>
                                 <button class="site-btn"><a href="${contextPath}/boardAdvance/knowledgeList" style="color: white;">목록보기</a></button>
+                                <button type="submit" class="site-btn">재작성</button>
                             </form>
                         </div>
                          <div>
