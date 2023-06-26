@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
 
 @Repository
 public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
@@ -118,6 +119,69 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 	@Override
 	public List<QnaDTO> selectQnaListBoard(Map<String, Object> searchMap) throws Exception {
 		return sqlSession.selectList("qna.selectListQnaBoard", searchMap);
+	}
+
+	@Override
+	public void insertQnaBoard(QnaDTO qnaDTO) throws Exception {
+		sqlSession.insert("qna.insertKnowledgeBoard", qnaDTO);
+		
+	}
+
+	@Override
+	public void updateQnaReadCnt(long boardId) throws Exception {
+		sqlSession.update("qna.updateQnaReadCnt", boardId);
+		
+	}
+
+	@Override
+	public QnaDTO getQnaBoardDetail(long boardId) throws Exception {
+		QnaDTO qnaDTO = sqlSession.selectOne("qna.getQnaBoardDetail", boardId);
+		return qnaDTO;
+	}
+
+	@Override
+	public int selectOneAllQnaReplyCnt(long boardId) throws Exception {
+		return sqlSession.selectOne("qna.selectOneAllQnaReplyCnt", boardId);
+	}
+
+	@Override
+	public List<QnaReplyDTO> selectListQnaReply(long boardId) throws Exception {
+		return sqlSession.selectList("qna.selectListQnaReply", boardId);
+	}
+
+	@Override
+	public void updateQnaBoard(QnaDTO qnaDTO) throws Exception {
+		sqlSession.update("qna.updateQnaBoard", qnaDTO);
+		
+	}
+
+	@Override
+	public void removeQnaBoard(QnaDTO qnaDTO) throws Exception {
+		sqlSession.delete("qna.removeQnaBoard", qnaDTO);
+		
+	}
+
+	@Override
+	public void qnaAddReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		sqlSession.insert("qna.insertQnaReply",qnaReplyDTO);
+		
+	}
+
+	@Override
+	public QnaReplyDTO qnaReplyDetail(long replyId) throws Exception {
+		return sqlSession.selectOne("qna.qnaReplyDetail", replyId);
+	}
+
+	@Override
+	public void qnaUpdateReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		sqlSession.update("qna.updateQnaReply", qnaReplyDTO);
+		
+	}
+
+	@Override
+	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		sqlSession.delete("qna.removeQnaReply", qnaReplyDTO);
+		
 	}
 	
 	

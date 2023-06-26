@@ -19,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
 import com.application.FrontToBack.boardAdvance.service.BoardAdvanceService;
 
 @Controller
@@ -408,6 +410,204 @@ public class BoardAdvanceController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/qnaAddBoard")
+	public ModelAndView qnaAddBoard() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("boardAdvance/qnaAddBoard");
+		return mv;
+	}
+	
+	@PostMapping("/qnaAddBoard")
+	public ResponseEntity<Object> qnaAddBoard(QnaDTO qnaDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.insertQnaBoard(qnaDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/boardAdvance/qnaList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/qnaDetail")
+	public ModelAndView qnaDetail(@RequestParam("boardId") long boardId) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		QnaDTO qnaDTO = boardAdvanceService.getQnaBoardDetail(boardId, true);
+		int allReplyCnt = boardAdvanceService.getAllQnaReplyCnt(boardId);
+		List<QnaReplyDTO> qnaReplyDTO = boardAdvanceService.getAllQnaReplyList(boardId);
+		
+		mv.addObject("qnaDTO", qnaDTO);
+		mv.addObject("allReplyCnt", allReplyCnt);
+		mv.addObject("qnaReplyDTO", qnaReplyDTO);
+		
+		mv.setViewName("/boardAdvance/qnaDetail");
+		
+		return mv;
+		
+		
+	}
+	
+	@GetMapping("/qnaUpdateBoard")
+	public ModelAndView qnaUpdateBoard(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		QnaDTO qnaDTO = boardAdvanceService.getQnaBoardDetail(boardId, false);
+		mv.addObject("qnaDTO", qnaDTO);
+		mv.setViewName("/boardAdvance/qnaUpdate");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/qnaUpdateBoard")
+	public ResponseEntity<Object> qnaUpdateBoard(QnaDTO qnaDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.updateQnaBoard(qnaDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/boardAdvance/qnaList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+		
+		
+	}
+	
+	@GetMapping("/qnaRemoveBoard")
+	public ModelAndView qnaRemoveBoard(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		QnaDTO qnaDTO = boardAdvanceService.getQnaBoardDetail(boardId, false);
+		mv.setViewName("/boardAdvance/qnaRemove");
+		mv.addObject("qnaDTO", qnaDTO);
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/qnaRemoveBoard")
+	public ResponseEntity<Object> qnaRemoveBoard(QnaDTO qnaDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeQnaBoard(qnaDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/boardAdvance/qnaList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/qnaAddReply")
+	public ModelAndView qnaAddReply(@RequestParam("boardId") long boardId) throws Exception{
+	
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("boardId", boardId);
+		mv.setViewName("/boardAdvance/qnaAddReply");
+		
+		return mv;
+	}
+	
+	@PostMapping("/qnaAddReply")
+	public ResponseEntity<Object> qnaAddReply(QnaReplyDTO qnaReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.qnaAddReply(qnaReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록되었습니다.');";
+		message +="location.href='"+ request.getContextPath() + "/boardAdvance/qnaDetail?boardId=" +qnaReplyDTO.getBoardId() + "';";
+		message +="</script>";
+		
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/qnaUpdateReply")
+	public ModelAndView qnaUpdateReply(@RequestParam("replyId") long replyId)throws Exception {
+		ModelAndView mv = new ModelAndView();
+		QnaReplyDTO qnaReplyDTO = boardAdvanceService.qnaReplyDetail(replyId);
+		mv.addObject("qnaReplyDTO", qnaReplyDTO);
+		mv.setViewName("/boardAdvance/qnaUpdateReply");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/qnaUpdateReply")
+	public ResponseEntity<Object> qnaUpdateReply(QnaReplyDTO qnaReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.qnaUpdateReply(qnaReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() + "/boardAdvance/qnaDetail?boardId=" +qnaReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	@GetMapping("/qnaRemoveReply")
+	public ModelAndView qnaRemoveReply(@RequestParam("replyId") long replyId) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		QnaReplyDTO qnaReplyDTO = boardAdvanceService.qnaReplyDetail(replyId);
+		mv.addObject("qnaReplyDTO", qnaReplyDTO);
+		mv.setViewName("/boardAdvance/qnaRemoveReply");
+		
+		return mv;
+				
+	}
+	
+	@PostMapping("/qnaRemoveReply")
+	public ResponseEntity<Object> qnaRemoveReply(QnaReplyDTO qnaReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeQnaReply(qnaReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제 되었습니다.');";
+		message +="location.href='" +request.getContextPath()+ "/boardAdvance/qnaDetail?boardId=" +qnaReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+		
+	}
+	
+	
+	
 	
 	
 	

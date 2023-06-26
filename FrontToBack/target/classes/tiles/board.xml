@@ -34,10 +34,31 @@
 	<!-- qna게시판 -->
 	
 	<definition name="/boardAdvance/qnaList" extends="baseLayout">
-		<put-attribute name="title" value="qna게시판"></put-attribute>
+		<put-attribute name="title" value="QNA게시판"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaList.jsp"></put-attribute>
 	</definition>
 	
+	
+	<definition name="boardAdvance/qnaAddBoard" extends="baseLayout">
+		<put-attribute name="title" value="게시글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaAdd.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/qnaDetail" extends="baseLayout">
+		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaDetail.jsp"></put-attribute>
+	
+	</definition>
+	
+	<definition name="/boardAdvance/qnaUpdate" extends="baseLayout">
+		<put-attribute name="title" value="게시글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/qnaRemove" extends="baseLayout">
+		<put-attribute name="title" value="게시글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaRemove.jsp"></put-attribute>
+	</definition>
 
 
 </tiles-definitions>

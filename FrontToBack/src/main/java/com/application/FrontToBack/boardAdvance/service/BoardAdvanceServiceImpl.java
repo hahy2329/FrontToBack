@@ -11,6 +11,7 @@ import com.application.FrontToBack.boardAdvance.dao.BoardAdvanceDAO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
 
 @Service
 public class BoardAdvanceServiceImpl implements BoardAdvanceService {
@@ -142,6 +143,84 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	@Override
 	public List<QnaDTO> getQnaBoardList(Map<String, Object> searchMap) throws Exception {
 		return boardAdvanceDAO.selectQnaListBoard(searchMap);
+	}
+
+
+	@Override
+	public void insertQnaBoard(QnaDTO qnaDTO) throws Exception {
+		qnaDTO.setPasswd(bCryptPasswordEncoder.encode(qnaDTO.getPasswd()));
+		
+		boardAdvanceDAO.insertQnaBoard(qnaDTO);
+		
+	}
+
+
+	@Override
+	public QnaDTO getQnaBoardDetail(long boardId, boolean increaseRead) throws Exception {
+		if(increaseRead) {
+			boardAdvanceDAO.updateQnaReadCnt(boardId);
+		}
+			
+		QnaDTO qnaDTO = boardAdvanceDAO.getQnaBoardDetail(boardId);
+		
+		
+		return qnaDTO;
+	}
+
+
+	@Override
+	public int getAllQnaReplyCnt(long boardId) throws Exception {
+		return boardAdvanceDAO.selectOneAllQnaReplyCnt(boardId);
+	}
+
+
+	@Override
+	public List<QnaReplyDTO> getAllQnaReplyList(long boardId) throws Exception {
+		List<QnaReplyDTO> qnaReplyList = boardAdvanceDAO.selectListQnaReply(boardId);
+		return qnaReplyList;
+	}
+
+
+	@Override
+	public void updateQnaBoard(QnaDTO qnaDTO) throws Exception {
+		boardAdvanceDAO.updateQnaBoard(qnaDTO);
+		
+	}
+
+
+	@Override
+	public void removeQnaBoard(QnaDTO qnaDTO) throws Exception {
+		boardAdvanceDAO.removeQnaBoard(qnaDTO);
+		
+	}
+
+
+	@Override
+	public void qnaAddReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		qnaReplyDTO.setPasswd(bCryptPasswordEncoder.encode(qnaReplyDTO.getPasswd()));
+		boardAdvanceDAO.qnaAddReply(qnaReplyDTO);
+		
+	}
+
+
+	@Override
+	public QnaReplyDTO qnaReplyDetail(long replyId) throws Exception {
+		QnaReplyDTO qnaReplyDTO = boardAdvanceDAO.qnaReplyDetail(replyId);
+		return qnaReplyDTO;
+	}
+
+
+	@Override
+	public void qnaUpdateReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		boardAdvanceDAO.qnaUpdateReply(qnaReplyDTO);
+		
+	}
+
+
+	@Override
+	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception {
+		boardAdvanceDAO.removeQnaReply(qnaReplyDTO);
+		
 	}
 	
 	

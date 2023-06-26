@@ -17,4 +17,18 @@
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/knowledgeRemoveReply.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/boardAdvance/qnaAddReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/qnaAddReply.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/qnaUpdateReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/qnaUpdateReply.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/qnaRemoveReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/qnaRemoveReply.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>

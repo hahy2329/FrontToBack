@@ -15,6 +15,7 @@
 		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO" alias="KnowledgeReplyDTO"/>
 		
 		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO" alias="QnaReplyDTO"/>
 	</typeAliases>		
 		
 </configuration>
