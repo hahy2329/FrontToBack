@@ -14,4 +14,11 @@ public class BookSearchController {
 		mv.setViewName("/bookSearch");
 		return mv;
 	}
+	
+	@GetMapping("/video")
+	public ModelAndView video() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/video");
+		return mv;
+	}
 }

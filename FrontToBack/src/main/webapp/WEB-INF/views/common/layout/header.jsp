@@ -34,6 +34,7 @@
                                 </ul>
                             </li>
                             <li><a href="${contextPath }/bookSearch">도서검색</a></li>
+                            <li><a href="${contextPath }/video">영상검색</a></li>
                             <li><a href="">my활동내역</a></li>
                             <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">

@@ -185,5 +185,7 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 	}
 	
 	
+	
+	
 
 }

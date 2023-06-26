@@ -8,6 +8,10 @@
 	
 	
 	</definition>
-
+	
+	<definition name="/video" extends="baseLayout">
+		<put-attribute name="title" value="API검색"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/api/video.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>
