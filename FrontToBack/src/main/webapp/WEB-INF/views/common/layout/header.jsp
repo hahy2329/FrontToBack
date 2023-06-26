@@ -28,7 +28,7 @@
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">
                                     <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
-                                    <li><a href="">Q&A</a></li>
+                                    <li><a href="${contextPath }/boardAdvance/qnaList">Q&A</a></li>
                                     <li><a href="">스터디 그룹</a></li>
                                     <li><a href="">도서 추천!</a></li>
                                 </ul>

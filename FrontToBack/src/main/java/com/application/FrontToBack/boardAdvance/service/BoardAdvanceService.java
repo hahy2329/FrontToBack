@@ -5,9 +5,10 @@ import java.util.Map;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 
 public interface BoardAdvanceService {
-
+	// --------------------1.지식 관련 게시판 기능 -------------------------------------
 	public int getAllBoardCnt(Map<String,String> searchCntMap) throws Exception;
 	public List<KnowledgeDTO> getBoardList(Map<String,Object> searchMap) throws Exception;
 	public void insertKnowledgeBoard(KnowledgeDTO knowledgeDTO) throws Exception;
@@ -23,5 +24,16 @@ public interface BoardAdvanceService {
 	public String checkDuplicatedWriter(String writer) throws Exception;
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
+	
+	
+	// ----------------------2.qna 관련 게시판 기능 --------------------------------------
+	
+	public int getAllQnaBoardCnt(Map<String, String> searchCntMap) throws Exception;
+	public List<QnaDTO> getQnaBoardList(Map<String,Object> searchMap) throws Exception;
+	
+	
+	
+	
+	
 	
 }

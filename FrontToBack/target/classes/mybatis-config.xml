@@ -10,8 +10,11 @@
 	<typeAliases>
 	
 		<typeAlias type="com.application.FrontToBack.member.dto.MemberDTO"   alias="MemberDTO"/>
+		
 		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO" alias="KnowledgeDTO"/>
 		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO" alias="KnowledgeReplyDTO"/>
+		
+		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.QnaDTO" alias="QnaDTO"/>
 	</typeAliases>		
 		
 </configuration>

@@ -196,7 +196,7 @@
 				#{boardId}
 			
 			
-			)	
+			)		
 			
 		
 		</insert>

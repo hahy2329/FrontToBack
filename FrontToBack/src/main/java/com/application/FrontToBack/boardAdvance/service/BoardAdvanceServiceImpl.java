@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.application.FrontToBack.boardAdvance.dao.BoardAdvanceDAO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 
 @Service
 public class BoardAdvanceServiceImpl implements BoardAdvanceService {
@@ -20,7 +21,7 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	
+	//----------------------1. 지식 관련 게시판 기능 -----------------------------------
 	@Override
 	public int getAllBoardCnt(Map<String, String> searchCntMap) throws Exception {
 		return boardAdvanceDAO.selectOneAllBoardCnt(searchCntMap);
@@ -127,6 +128,20 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
 		boardAdvanceDAO.removeKnowledgeReply(knowledgeReplyDTO);
 		
+	}
+
+
+	// ------------------------2.qna관련 게시판 기능 --------------------------------
+	
+	@Override
+	public int getAllQnaBoardCnt(Map<String, String> searchCntMap) throws Exception {
+		return boardAdvanceDAO.selectOneAllQnaBoardCnt(searchCntMap);
+	}
+
+
+	@Override
+	public List<QnaDTO> getQnaBoardList(Map<String, Object> searchMap) throws Exception {
+		return boardAdvanceDAO.selectQnaListBoard(searchMap);
 	}
 	
 	

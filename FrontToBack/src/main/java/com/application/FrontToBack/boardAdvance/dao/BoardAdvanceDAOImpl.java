@@ -9,12 +9,17 @@ import org.springframework.stereotype.Repository;
 
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 
 @Repository
 public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 
 	@Autowired
 	private SqlSession sqlSession;
+	
+	
+	
+	// -----------------------------1.지식 관련 게시판 기능 -------------------------------
 	
 	@Override
 	public int selectOneAllBoardCnt(Map<String, String> searchCntMap) throws Exception {
@@ -99,6 +104,20 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {
 		sqlSession.delete("knowledge.removeKnowledgeReply", knowledgeReplyDTO);
 		
+	}
+	
+	
+	
+	// --------------------------2.qna 관련 게시판 기능 -----------------------------------
+	
+	@Override
+	public int selectOneAllQnaBoardCnt(Map<String, String> searchCntMap) throws Exception {
+		return sqlSession.selectOne("qna.selectOneAllQnaBoardCnt", searchCntMap);
+	}
+
+	@Override
+	public List<QnaDTO> selectQnaListBoard(Map<String, Object> searchMap) throws Exception {
+		return sqlSession.selectList("qna.selectListQnaBoard", searchMap);
 	}
 	
 	
