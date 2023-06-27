@@ -16,11 +16,10 @@
             <div class="row">
                 <div class="col-lg-6 p-0">
                     <div class="categories__item categories__large__item set-bg"
-                    data-setbg="img/categories/category-1.jpg">
+                    data-setbg="${contextPath }/resources/ashion-master/img/categories/developer.jpg">
                     <div class="categories__text">
                         <h1>FRONTTOBack</h1>
-                        <p>안녕하세요. 개발자 한주석입니다. 여러분들과 함께 IT지식을 공유하고, 개발에 한 걸음 더 흥미를 느낄수 있도록 나아가고 싶습니다. 감사합니다.</p>
-                        <a href="#">지금 시작하기</a>
+                        <a href="${contextPath }/member/registerMember">지금 시작하기</a>
                     </div>
                 </div>
             </div>
@@ -105,6 +104,69 @@
     </div>
 </section>
 <!-- Banner Section End -->
+
+<!-- Trend Section Begin -->
+<section class="trend spad">
+    <div class="container">
+        <div class="row">
+        	<div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>지식</h4>
+                    </div>
+                    <c:forEach var="knowledgeDTO" items="${knowledgeList }">
+                    <div class="trend__item">
+                        <div class="trend__item__text">
+                            <a href="${contextPath }/boardAdvance/knowledgeDetail?boardId=${knowledgeDTO.boardId}"><strong>${knowledgeDTO.subject }</strong></a>
+                            <div class="rating">
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${knowledgeDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${knowledgeDTO.memberId }</p>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>Q&A</h4>
+                    </div>
+                    <c:forEach var="qnaDTO" items="${qnaList }">
+                    <div class="trend__item">
+                        <div class="trend__item__text">
+                            <a href="${contextPath }/boardAdvance/qnaDetail?boardId=${qnaDTO.boardId}"><strong>${qnaDTO.subject }</strong></a>
+                            <div class="rating">
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${qnaDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${qnaDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${qnaDTO.memberId }</p>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>Study Group</h4>
+                    </div>
+                    <c:forEach var="studyDTO" items="${studyList }">
+                    <div class="trend__item">
+                        <div class="trend__item__text">
+                            <a href="${contextPath }/boardAdvance/studyDetail?boardId=${studyDTO.boardId}"><strong>${studyDTO.subject }</strong></a>
+                            <div class="rating">
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${studyDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${studyDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${studyDTO.memberId }</p>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Trend Section End -->
+
+
+
 	
 
 </body>

@@ -238,6 +238,19 @@
 			
 		
 		</delete>
+		
+		<select id="getMainQnaBoard" resultType="QnaDTO">
+		
+			SELECT 
+				*
+			FROM
+				QNA
+			LIMIT 3
+		
+		
+		</select>
+		
+		
 
 
 </mapper>

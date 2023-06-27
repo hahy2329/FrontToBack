@@ -254,6 +254,16 @@
 			
 		
 		</delete>
+		
+		<select id="getMainKnowledgeBoard" resultType="KnowledgeDTO">
+			
+			SELECT
+				*
+			FROM	
+				KNOWLEDGE
+			LIMIT 3
+		
+		</select>
 	
 	</mapper>
 			

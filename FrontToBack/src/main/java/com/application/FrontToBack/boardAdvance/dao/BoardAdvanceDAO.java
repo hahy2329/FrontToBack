@@ -32,6 +32,8 @@ public interface BoardAdvanceDAO {
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	public void removeKnowledgeReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception;
 	
+	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception;
+	
 	
 	// --------------------------2.qna 관련 게시판 기능 -------------------------------------
 	
@@ -53,16 +55,28 @@ public interface BoardAdvanceDAO {
 	public void qnaUpdateReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	
+	public List<QnaDTO> getMainQnaBoard() throws Exception;
+	
 	// --------------------------3.study 관련 게시판 기능 -------------------------------------
 	public int selectOneAllStudyBoardCnt(Map<String, String> searchCntMap) throws Exception;
 	public List<StudyDTO> selectStudyListBoard(Map<String, Object> searchMap) throws Exception;
 	public void insertStudyBoard(StudyDTO studyDTO) throws Exception;
 	public void updateStudyReadCnt(long boardId) throws Exception;
 	public StudyDTO getStudyBoardDetail(long boardId) throws Exception;
+	public void updateStudyBoard(StudyDTO studyDTO) throws Exception;
+	public void removeStudyBoard(StudyDTO studyDTO) throws Exception;
 	
 	
 	
 	
 	public int selectOneAllStudyReplyCnt(long boardId) throws Exception;
 	public List<StudyReplyDTO> selectListStudyReply(long boardId) throws Exception;
+	public void studyAddReply(StudyReplyDTO studyReplyDTO) throws Exception;
+	public StudyReplyDTO studyReplyDetail(long replyId) throws Exception;
+	public void studyUpdateReply(StudyReplyDTO studyReplyDTO) throws Exception;
+	public void removeStudyReply(StudyReplyDTO studyReplyDTO) throws Exception;
+	
+	
+	public List<StudyDTO> getMainStudyBoard() throws Exception;
+	
 }

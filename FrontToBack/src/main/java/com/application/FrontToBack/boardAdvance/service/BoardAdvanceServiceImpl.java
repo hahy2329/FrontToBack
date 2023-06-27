@@ -132,6 +132,14 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		boardAdvanceDAO.removeKnowledgeReply(knowledgeReplyDTO);
 		
 	}
+	
+	
+	@Override
+	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception {
+		List<KnowledgeDTO> knowledgeDTO = boardAdvanceDAO.getMainKnowledgeBoard();
+		return knowledgeDTO;
+	}
+	
 
 
 	// ------------------------2.qna관련 게시판 기능 --------------------------------
@@ -224,6 +232,13 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		boardAdvanceDAO.removeQnaReply(qnaReplyDTO);
 		
 	}
+	
+	
+	@Override
+	public List<QnaDTO> getMainQnaBoard() throws Exception {
+		List<QnaDTO> qnaDTO = boardAdvanceDAO.getMainQnaBoard();
+		return qnaDTO;
+	}
 
 	
 	// ---------------------------3.study관련 게시판 기능 -------------------------------
@@ -280,9 +295,58 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 		List<StudyReplyDTO> studyReplyList = boardAdvanceDAO.selectListStudyReply(boardId);
 		return studyReplyList;
 	}
-	
-	
-	
+
+
+	@Override
+	public void updateStudyBoard(StudyDTO studyDTO) throws Exception {
+		boardAdvanceDAO.updateStudyBoard(studyDTO);
+		
+	}
+
+
+	@Override
+	public void removeStudyBoard(StudyDTO studyDTO) throws Exception {
+		boardAdvanceDAO.removeStudyBoard(studyDTO);
+		
+	}
+
+
+	@Override
+	public void studyAddReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		studyReplyDTO.setPasswd(bCryptPasswordEncoder.encode(studyReplyDTO.getPasswd()));
+		boardAdvanceDAO.studyAddReply(studyReplyDTO);
+		
+	}
+
+
+	@Override
+	public StudyReplyDTO studyReplyDetail(long replyId) throws Exception {
+		StudyReplyDTO studyReplyDTO = boardAdvanceDAO.studyReplyDetail(replyId);
+		return studyReplyDTO;
+	}
+
+
+	@Override
+	public void studyUpdateReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		
+		boardAdvanceDAO.studyUpdateReply(studyReplyDTO);
+	}
+
+
+	@Override
+	public void removeStudyReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		boardAdvanceDAO.removeStudyReply(studyReplyDTO);
+		
+	}
+
+
+	@Override
+	public List<StudyDTO> getMainStudyBoard() throws Exception {
+		List<StudyDTO> studyDTO = boardAdvanceDAO.getMainStudyBoard();
+		return studyDTO;
+	}
+
+
 	
 	
 

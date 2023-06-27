@@ -170,5 +170,89 @@
 		
 		</select>
 		
+		<update id="updateStudyBoard" parameterType="StudyDTO">
+			
+			UPDATE
+				STUDY
+			SET
+				SUBJECT = #{subject},
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+				
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		
+		</update>
+		
+		<delete id="removeStudyBoard" parameterType="StudyDTO">
+			
+			DELETE FROM STUDY
+			
+			WHERE 
+				BOARD_ID = #{boardId}
+		
+		
+		</delete>
+		
+		<insert id="insertStudyReply" parameterType="StudyReplyDTO">
+			
+			INSERT INTO STUDYREPLY(MEMBER_ID, PASSWD, CONTENT, BOARD_ID)
+			
+			VALUES(
+				#{memberId},
+				#{passwd},
+				#{content},
+				#{boardId}
+			)
+			
+		
+		
+		</insert>
+		
+		<select id="studyReplyDetail" parameterType="Long" resultType="StudyReplyDTO">
+			
+			SELECT
+				*
+			FROM	
+				STUDYREPLY
+			WHERE
+				REPLY_ID = #{replyId}
+		
+		
+		</select>
+		
+		<update id="updateStudyReply" parameterType="StudyReplyDTO">
+			
+			UPDATE
+				STUDYREPLY
+			SET
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+			WHERE 
+				REPLY_ID = #{replyId}
+		
+		</update>
+		
+		<delete id="removeStudyReply" parameterType="StudyReplyDTO">
+			
+			DELETE FROM STUDYREPLY
+			WHERE
+				REPLY_ID = #{replyId}
+			
+		
+		</delete>
+		
+		<select id="getMainStudyBoard" resultType="StudyDTO">
+			SELECT 
+				*
+			FROM
+				STUDY
+				
+			LIMIT 3
+		
+		
+		</select>
+		
 
 </mapper>

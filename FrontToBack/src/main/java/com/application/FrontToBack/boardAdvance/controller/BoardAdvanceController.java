@@ -729,7 +729,7 @@ public class BoardAdvanceController {
 		
 		mv.addObject("studyDTO", studyDTO);
 		mv.addObject("allReplyCnt", allReplyCnt);
-		mv.addObject("qnaReplyDTO", studyReplyDTO);
+		mv.addObject("studyReplyDTO", studyReplyDTO);
 		
 		mv.setViewName("/boardAdvance/studyDetail");
 		
@@ -738,8 +738,157 @@ public class BoardAdvanceController {
 		
 	}
 	
+	@GetMapping("/studyUpdateBoard")
+	public  ModelAndView studyUpdateBoard(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		StudyDTO studyDTO = boardAdvanceService.getStudyBoardDetail(boardId, false);
+		mv.addObject("studyDTO", studyDTO);
+		mv.setViewName("/boardAdvance/studyUpdate");
+		
+		return mv;
+	
+	}
+	
+	@PostMapping("/studyUpdateBoard")
+	public ResponseEntity<Object> studyUpdateBoard(StudyDTO studyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.updateStudyBoard(studyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정되었습니다.');";
+		message +="location.href='"+request.getContextPath() +"/boardAdvance/studyList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+		
+		
+	}	
 	
 	
+	@GetMapping("/studyRemoveBoard")
+	public ModelAndView studyRemoveBoard(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		StudyDTO studyDTO = boardAdvanceService.getStudyBoardDetail(boardId, false);
+		mv.setViewName("/boardAdvance/studyRemove");
+		mv.addObject("studyDTO", studyDTO);
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/studyRemoveBoard")
+	public ResponseEntity<Object> studyRemoveBoard(StudyDTO studyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeStudyBoard(studyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/boardAdvance/studyList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/studyAddReply")
+	public ModelAndView studyAddReply(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("boardId", boardId);
+		mv.setViewName("/boardAdvance/studyAddReply");
+		
+		return mv;
+	}
+	
+	@PostMapping("/studyAddReply")
+	public ResponseEntity<Object> studyAddReply(StudyReplyDTO studyReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.studyAddReply(studyReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록되었습니다.');";
+		message +="location.href='"+ request.getContextPath() + "/boardAdvance/studyDetail?boardId=" +studyReplyDTO.getBoardId() + "';";
+		message +="</script>";
+		
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/studyUpdateReply")
+	public ModelAndView studyUpdateReply(@RequestParam("replyId") long replyId)throws Exception {
+		ModelAndView mv = new ModelAndView();
+		StudyReplyDTO studyReplyDTO = boardAdvanceService.studyReplyDetail(replyId);
+		mv.addObject("studyReplyDTO", studyReplyDTO);
+		mv.setViewName("/boardAdvance/studyUpdateReply");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/studyUpdateReply")
+	public ResponseEntity<Object> studyUpdateReply(StudyReplyDTO studyReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.studyUpdateReply(studyReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정이 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath() + "/boardAdvance/studyDetail?boardId=" +studyReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+	}
+	
+	
+	@GetMapping("/studyRemoveReply")
+	public ModelAndView studyRemoveReply(@RequestParam("replyId") long replyId) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		StudyReplyDTO studyReplyDTO = boardAdvanceService.studyReplyDetail(replyId);
+		mv.addObject("studyReplyDTO", studyReplyDTO);
+		mv.setViewName("/boardAdvance/studyRemoveReply");
+		
+		return mv;
+				
+	}
+	
+	@PostMapping("/studyRemoveReply")
+	public ResponseEntity<Object> studyRemoveReply(StudyReplyDTO studyReplyDTO, HttpServletRequest request) throws Exception{
+		
+		boardAdvanceService.removeStudyReply(studyReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제 되었습니다.');";
+		message +="location.href='" +request.getContextPath()+ "/boardAdvance/studyDetail?boardId=" +studyReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+		
+		
+		
+	}
 	
 	
 	

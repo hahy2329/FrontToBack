@@ -74,6 +74,16 @@
 		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyDetail.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/boardAdvance/studyUpdate" extends="baseLayout">
+		<put-attribute name="title" value="게시글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/studyRemove" extends="baseLayout">
+		<put-attribute name="title" value="게시글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyRemove.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>
 
 

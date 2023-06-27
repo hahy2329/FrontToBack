@@ -111,6 +111,12 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 	
 	
 	
+	@Override
+	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception {
+		return sqlSession.selectList("knowledge.getMainKnowledgeBoard");
+	}
+	
+	
 	// --------------------------2.qna 관련 게시판 기능 -----------------------------------
 	
 	@Override
@@ -185,6 +191,12 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 		sqlSession.delete("qna.removeQnaReply", qnaReplyDTO);
 		
 	}
+	
+	
+	@Override
+	public List<QnaDTO> getMainQnaBoard() throws Exception {
+		return sqlSession.selectList("qna.getMainQnaBoard");
+	}
 
 	
 	// ---------------------------------3.study관련 게시판 기능 ----------------------------------
@@ -225,7 +237,46 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 	public List<StudyReplyDTO> selectListStudyReply(long boardId) throws Exception {
 		return sqlSession.selectList("study.selectListStudyReply", boardId);
 	}
-	
+
+	@Override
+	public void updateStudyBoard(StudyDTO studyDTO) throws Exception {
+		sqlSession.update("study.updateStudyBoard", studyDTO);
+		
+	}
+
+	@Override
+	public void removeStudyBoard(StudyDTO studyDTO) throws Exception {
+		sqlSession.delete("study.removeStudyBoard", studyDTO);
+		
+	}
+
+	@Override
+	public void studyAddReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		sqlSession.insert("study.insertStudyReply",studyReplyDTO);
+	}
+
+	@Override
+	public StudyReplyDTO studyReplyDetail(long replyId) throws Exception {
+		return sqlSession.selectOne("study.studyReplyDetail", replyId);
+	}
+
+	@Override
+	public void studyUpdateReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		sqlSession.update("study.updateStudyReply", studyReplyDTO);
+		
+	}
+
+	@Override
+	public void removeStudyReply(StudyReplyDTO studyReplyDTO) throws Exception {
+		sqlSession.delete("study.removeStudyReply", studyReplyDTO);
+		
+	}
+
+	@Override
+	public List<StudyDTO> getMainStudyBoard() throws Exception {
+		return sqlSession.selectList("study.getMainStudyBoard");
+	}
+
 	
 
 }
