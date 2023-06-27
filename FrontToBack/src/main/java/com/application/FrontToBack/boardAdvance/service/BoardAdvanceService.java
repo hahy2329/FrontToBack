@@ -7,6 +7,8 @@ import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyReplyDTO;
 
 public interface BoardAdvanceService {
 	// --------------------1.지식 관련 게시판 기능 -------------------------------------
@@ -46,8 +48,16 @@ public interface BoardAdvanceService {
 	public void qnaUpdateReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	
+	// ----------------------3. study관련 게시판 기능 -----------------------------------------------
+	
+	public int getAllStudyBoardCnt(Map<String,String> searchCntMap) throws Exception;
+	public List<StudyDTO> getStudyBoardList(Map<String,Object> searchMap) throws Exception;
+	public void insertStudyBoard(StudyDTO studyDTO) throws Exception;
+	public StudyDTO getStudyBoardDetail(long boardId, boolean increaseRead) throws Exception;
 	
 	
 	
 	
+	public int getAllStudyReplyCnt(long boardId) throws Exception;
+	public List<StudyReplyDTO> getAllStudyReplyList(long boardId) throws Exception;
 }

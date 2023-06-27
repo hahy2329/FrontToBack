@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="qna">
+<mapper namespace="study">
 	
-	
-	<select id="selectOneAllQnaBoardCnt" parameterType="hashmap" resultType="int">
+	<select id="selectOneAllStudyBoardCnt" parameterType="hashmap" resultType="int">
 		<choose>
 				<when test='searchKeyword.equals("total")'>
 					<choose>
@@ -11,13 +10,13 @@
 							SELECT 
 								COUNT(*)
 							FROM 
-								QNA
+								STUDY
 						</when>
 						<otherwise>
 							SELECT 
 								COUNT(*)
 							FROM
-								QNA
+								STUDY
 							WHERE 
 								MEMBER_ID LIKE CONCAT('%', #{searchWord}, '%') OR
 								SUBJECT LIKE CONCAT('%', #{searchWord}, '%') OR
@@ -29,7 +28,7 @@
 					SELECT 
 						COUNT(*)
 					FROM 
-						QNA
+						STUDY
 					WHERE
 						<if test='searchKeyword.equals("memberId")'>
 							MEMBER_ID LIKE CONCAT('%',#{searchWord},'%')
@@ -49,8 +48,7 @@
 	
 	</select>
 	
-	
-	<select id="selectListQnaBoard" parameterType="hashmap" resultType="QnaDTO">
+	<select id="selectListStudyBoard" parameterType="hashmap" resultType="StudyDTO">
 			<choose>
 				<when test='searchKeyword.equals("total")'>
 					<choose>
@@ -58,7 +56,7 @@
 					SELECT 
 						*
 					FROM 
-						QNA
+						STUDY
 					ORDER BY 
 						ENROLL_DT DESC
 					LIMIT
@@ -68,7 +66,7 @@
 						SELECT 
 							*
 						FROM
-						 	QNA
+						 	STUDY
 						WHERE
 							MEMBER_ID LIKE CONCAT('%',#{searchWord}, '%') OR
 							SUBJECT LIKE CONCAT('%', #{searchWord}, '%') OR
@@ -84,7 +82,7 @@
 					SELECT 
 						*
 					FROM 
-						QNA
+						STUDY
 					WHERE
 						<if test='searchKeyword.equals("memberId")'>
 							MEMBER_ID LIKE CONCAT('%',#{searchWord},'%')
@@ -106,9 +104,9 @@
 		
 		</select>
 		
-		<insert id="insertQnaBoard" parameterType="QnaDTO">
+		<insert id="insertStudyBoard" parameterType="StudyDTO">
 		
-			INSERT INTO QNA(MEMBER_ID, SUBJECT, CONTENT, SORT, PASSWD)
+			INSERT INTO STUDY(MEMBER_ID, SUBJECT, CONTENT, SORT, PASSWD)
 			VALUES(
 				#{memberId},
 				#{subject},
@@ -121,10 +119,11 @@
 		
 		
 		</insert>
-		<update id="updateQnaReadCnt" parameterType="Long">
+		
+		<update id="updateStudyReadCnt" parameterType="Long">
 			
 			UPDATE
-				QNA
+				STUDY
 			SET
 				READ_CNT = READ_CNT + 1
 			WHERE
@@ -132,12 +131,14 @@
 		
 		
 		</update>
-		<select id="getQnaBoardDetail" parameterType="Long" resultType="QnaDTO">
+		
+		
+		<select id="getStudyBoardDetail" parameterType="Long" resultType="StudyDTO">
 		
 			SELECT 
 				*
 			FROM
-				QNA
+				STUDY
 			WHERE
 				BOARD_ID = #{boardId}
 				
@@ -145,99 +146,29 @@
 		
 		</select>
 		
-		<select id="selectOneAllQnaReplyCnt" parameterType="Long" resultType="int">
+		<select id="selectOneAllStudyReplyCnt" parameterType="Long" resultType="int">
 			
 			SELECT
 				COUNT(*)
 			FROM
-				QNAREPLY
+				STUDYREPLY
 			WHERE
 				BOARD_ID = #{boardId}
 		
 		
 		</select>
 		
-		<select id="selectListQnaReply" parameterType="Long" resultType="QnaReplyDTO">
+		<select id="selectListStudyReply" parameterType="Long" resultType="StudyReplyDTO">
 			
 			SELECT 
 				*
 			FROM
-				QNAREPLY
+				STUDYREPLY
 			WHERE
 			
 				BOARD_ID = #{boardId}
 		
 		</select>
 		
-		<update id="updateQnaBoard" parameterType="QnaDTO">
-			
-			UPDATE
-				QNA
-			SET
-				SUBJECT = #{subject},
-				CONTENT = #{content},
-				ENROLL_DT = NOW()
-				
-			WHERE
-				BOARD_ID = #{boardId}
-				
-		
-		</update>
-		
-		<delete id="removeQnaBoard" parameterType="QnaDTO">
-			
-			DELETE FROM QNA
-			
-			WHERE 
-				BOARD_ID = #{boardId}
-		
-		</delete>
-	
-		<insert id="insertQnaReply" parameterType="QnaReplyDTO">
-			
-			INSERT INTO QNAREPLY(MEMBER_ID, PASSWD, CONTENT, BOARD_ID)
-			
-			VALUES(
-				#{memberId},
-				#{passwd},
-				#{content},
-				#{boardId}
-			)
-			
-		
-		
-		</insert>
-		
-		<select id="qnaReplyDetail" parameterType="Long" resultType="QnaReplyDTO">
-		
-			SELECT
-				*
-			FROM	
-				QNAREPLY
-			WHERE
-				REPLY_ID = #{replyId}
-		</select>
-		
-		<update id="updateQnaReply" parameterType="QnaReplyDTO">
-			
-			UPDATE
-				QNAREPLY
-			SET
-				CONTENT = #{content},
-				ENROLL_DT = NOW()
-			WHERE 
-				REPLY_ID = #{replyId}
-		
-		</update>
-		
-		<delete id="removeQnaReply" parameterType="QnaReplyDTO">
-			
-			DELETE FROM QNAREPLY
-			WHERE
-				REPLY_ID = #{replyId}
-			
-		
-		</delete>
-
 
 </mapper>

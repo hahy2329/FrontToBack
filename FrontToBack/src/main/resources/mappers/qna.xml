@@ -106,7 +106,7 @@
 		
 		</select>
 		
-		<insert id="insertKnowledgeBoard" parameterType="QnaDTO">
+		<insert id="insertQnaBoard" parameterType="QnaDTO">
 		
 			INSERT INTO QNA(MEMBER_ID, SUBJECT, CONTENT, SORT, PASSWD)
 			VALUES(

@@ -7,6 +7,8 @@ import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyReplyDTO;
 
 public interface BoardAdvanceDAO {
 
@@ -50,4 +52,17 @@ public interface BoardAdvanceDAO {
 	public QnaReplyDTO qnaReplyDetail(long replyId) throws Exception;
 	public void qnaUpdateReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception;
+	
+	// --------------------------3.study 관련 게시판 기능 -------------------------------------
+	public int selectOneAllStudyBoardCnt(Map<String, String> searchCntMap) throws Exception;
+	public List<StudyDTO> selectStudyListBoard(Map<String, Object> searchMap) throws Exception;
+	public void insertStudyBoard(StudyDTO studyDTO) throws Exception;
+	public void updateStudyReadCnt(long boardId) throws Exception;
+	public StudyDTO getStudyBoardDetail(long boardId) throws Exception;
+	
+	
+	
+	
+	public int selectOneAllStudyReplyCnt(long boardId) throws Exception;
+	public List<StudyReplyDTO> selectListStudyReply(long boardId) throws Exception;
 }

@@ -12,6 +12,8 @@ import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyReplyDTO;
 
 @Service
 public class BoardAdvanceServiceImpl implements BoardAdvanceService {
@@ -221,6 +223,62 @@ public class BoardAdvanceServiceImpl implements BoardAdvanceService {
 	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception {
 		boardAdvanceDAO.removeQnaReply(qnaReplyDTO);
 		
+	}
+
+	
+	// ---------------------------3.study관련 게시판 기능 -------------------------------
+	
+	
+	@Override
+	public int getAllStudyBoardCnt(Map<String, String> searchCntMap) throws Exception {
+		return boardAdvanceDAO.selectOneAllStudyBoardCnt(searchCntMap);
+	}
+
+
+	@Override
+	public List<StudyDTO> getStudyBoardList(Map<String, Object> searchMap) throws Exception {
+		return boardAdvanceDAO.selectStudyListBoard(searchMap);
+	}
+
+
+	@Override
+	public void insertStudyBoard(StudyDTO studyDTO) throws Exception {
+		studyDTO.setPasswd(bCryptPasswordEncoder.encode(studyDTO.getPasswd()));
+		
+		boardAdvanceDAO.insertStudyBoard(studyDTO);
+		
+	}
+
+
+	@Override
+	public StudyDTO getStudyBoardDetail(long boardId, boolean increaseRead) throws Exception {
+		
+		if(increaseRead) {
+			boardAdvanceDAO.updateStudyReadCnt(boardId);
+		}
+			
+		StudyDTO studyDTO = boardAdvanceDAO.getStudyBoardDetail(boardId);
+		
+		
+		return studyDTO;
+	}
+
+
+	
+	
+	
+	
+	
+	@Override
+	public int getAllStudyReplyCnt(long boardId) throws Exception {
+		return boardAdvanceDAO.selectOneAllStudyReplyCnt(boardId);
+	}
+
+
+	@Override
+	public List<StudyReplyDTO> getAllStudyReplyList(long boardId) throws Exception {
+		List<StudyReplyDTO> studyReplyList = boardAdvanceDAO.selectListStudyReply(boardId);
+		return studyReplyList;
 	}
 	
 	

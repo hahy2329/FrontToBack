@@ -39,7 +39,7 @@
 	</definition>
 	
 	
-	<definition name="boardAdvance/qnaAddBoard" extends="baseLayout">
+	<definition name="/boardAdvance/qnaAddBoard" extends="baseLayout">
 		<put-attribute name="title" value="게시글 작성"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaAdd.jsp"></put-attribute>
 	</definition>
@@ -59,8 +59,21 @@
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/qnaRemove.jsp"></put-attribute>
 	</definition>
-
-
+	
+	<definition name="/boardAdvance/studyList" extends="baseLayout">
+		<put-attribute name="title" value="Study Group게시판"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/studyAddBoard" extends="baseLayout">
+		<put-attribute name="title" value="게시글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyAdd.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/studyDetail" extends="baseLayout">
+		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyDetail.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>
 
 

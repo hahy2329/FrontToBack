@@ -13,6 +13,14 @@
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 	var isValidEmail = false;
 	
+	var pattern1 = /[0-9]/;
+
+    var pattern2 = /[a-zA-Z]/;
+
+    var pattern3 = /[~!@\#$%<>^&*]/;     // 원하는 특수문자 추가 제거
+
+    var pw_msg = "";
+	
 	$().ready(function(){
 		
 		$("#btnOverlapped").click(function(){
@@ -100,10 +108,31 @@
 				alert("이메일을 확인해주세요.");
 				return false;
 			}
+			
+			if($("#passwd").val() == ''){
+				alert("패스워드를 입력해주세요.");
+				return false;
+			}
 			if(isValidId==true && isValidEmail==true){
 				if($("#passwd").val() == $("#confirmPasswd").val()){
-					alert("가입을 축하드립니다.");
-					return true;
+					  if(!pattern1.test($("#passwd").val())||!pattern2.test($("#passwd").val())||!pattern3.test($("#passwd").val())||$("#passwd").val().length<8||$("#passwd").val().length>50){
+
+				            alert("영문+숫자+특수기호 8자리 이상으로 구성하여야 합니다.");
+
+				            return false;
+
+
+
+				           
+
+				        }
+					  
+					  else{
+						  
+						  
+						  return true;
+						  
+					  }
 					
 				}
 			
@@ -158,7 +187,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>아이디 <span>*</span></p>
-                                    <input type="text" id="memberId" name="memberId" required="required" placeholder="아이디를 입력해주세요." maxlength="15">
+                                    <input type="text" id="memberId" name="memberId" required="required" placeholder="아이디를 입력해주세요." minlength="5" maxlength="15">
                                     <input type="button" id="btnOverlapped" value="중복확인">
                                     
                                     <p>이름 <span>*</span></p>

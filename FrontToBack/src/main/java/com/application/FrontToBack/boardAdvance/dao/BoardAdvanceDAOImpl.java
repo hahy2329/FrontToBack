@@ -11,6 +11,8 @@ import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
 import com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
 import com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyDTO;
+import com.application.FrontToBack.boardAdvance.dto.StudyReplyDTO;
 
 @Repository
 public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
@@ -123,7 +125,7 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 
 	@Override
 	public void insertQnaBoard(QnaDTO qnaDTO) throws Exception {
-		sqlSession.insert("qna.insertKnowledgeBoard", qnaDTO);
+		sqlSession.insert("qna.insertQnaBoard", qnaDTO);
 		
 	}
 
@@ -183,8 +185,46 @@ public class BoardAdvanceDAOImpl implements BoardAdvanceDAO {
 		sqlSession.delete("qna.removeQnaReply", qnaReplyDTO);
 		
 	}
+
 	
-	
+	// ---------------------------------3.study관련 게시판 기능 ----------------------------------
+	@Override
+	public int selectOneAllStudyBoardCnt(Map<String, String> searchCntMap) throws Exception {
+		return sqlSession.selectOne("study.selectOneAllStudyBoardCnt", searchCntMap);
+	}
+
+	@Override
+	public List<StudyDTO> selectStudyListBoard(Map<String, Object> searchMap) throws Exception {
+		return sqlSession.selectList("study.selectListStudyBoard", searchMap);
+	}
+
+	@Override
+	public void insertStudyBoard(StudyDTO studyDTO) throws Exception {
+		sqlSession.insert("study.insertStudyBoard", studyDTO);
+		
+	}
+
+	@Override
+	public void updateStudyReadCnt(long boardId) throws Exception {
+		sqlSession.update("study.updateStudyReadCnt", boardId);
+		
+	}
+
+	@Override
+	public StudyDTO getStudyBoardDetail(long boardId) throws Exception {
+		StudyDTO studyDTO = sqlSession.selectOne("study.getStudyBoardDetail", boardId);
+		return studyDTO;
+	}
+
+	@Override
+	public int selectOneAllStudyReplyCnt(long boardId) throws Exception {
+		return sqlSession.selectOne("study.selectOneAllStudyReplyCnt", boardId);
+	}
+
+	@Override
+	public List<StudyReplyDTO> selectListStudyReply(long boardId) throws Exception {
+		return sqlSession.selectList("study.selectListStudyReply", boardId);
+	}
 	
 	
 

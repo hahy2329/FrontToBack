@@ -29,7 +29,7 @@
                                 <ul class="dropdown">
                                     <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
                                     <li><a href="${contextPath }/boardAdvance/qnaList">Q&A</a></li>
-                                    <li><a href="">스터디 그룹</a></li>
+                                    <li><a href="${contextPath }/boardAdvance/studyList">스터디 그룹</a></li>
                                     <li><a href="">도서 추천!</a></li>
                                 </ul>
                             </li>
