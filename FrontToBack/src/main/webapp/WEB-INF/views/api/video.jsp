@@ -16,7 +16,6 @@ $().ready(function(){
 		for(var i=1; i<21; i++){	
 			$(".cart__product__item"+i).empty(); //empty는 요소 안의 내용을 지워준다. 반대로 remove는 요소 자체를 지운다.
 			$(".cart_title" +i).empty();
-			$(".cart_status" +i).empty();
 			$(".cart__price" +i).empty();
 			$(".cart_publisher"+i).empty();
 			$(".cart_url"+i).empty();
@@ -36,8 +35,7 @@ $().ready(function(){
 				console.log(data.documents[0].thumbnail);
 				for(var i=0; i<20; i++){
 					$(".cart__product__item"+(i+1)).append("<img src='"+data.documents[i].thumbnail+"'/>");
-					$(".cart_title"+(i+1)).append("<strong>"+data.documents[i].title.substring(0,40)+"</strong>");
-					$(".cart_status"+(i+1)).append("<h6>" + data.documents[i].datetime.substring(0,10) +"</h6>");			
+					$(".cart_title"+(i+1)).append("<h7>"+data.documents[i].title.substring(0,40)+"</h7>");
 					$(".cart__price"+(i+1)).append("<h6>" + data.documents[i].play_time + "분</h6>");
 					$(".cart_publisher"+(i+1)).append("<strong>" + data.documents[i].author + "</strong>");
 					$(".cart_url"+(i+1)).append("<a href='"+data.documents[i].url + "'>"+"click" +"</a>");
@@ -96,10 +94,9 @@ $().ready(function(){
                     <div class="shop__cart__table">
                         <table>
                         	<colgroup>
-                        		<col width="10%">
+                        		<col width="20%">
                         		<col width="30%">
-                        		<col width="30%">
-                        		<col width="10%">
+                        		<col width="20%">
                         		<col width="10%">
                         		<col width="10%">                        	
                         	</colgroup>
@@ -109,7 +106,6 @@ $().ready(function(){
                                     <th align="center">제목</th>
                                     <th style="color: brown; ">닉네임</th>
                                     <th style="color: green;">시간</th>
-                                    <th style="color: blue;">날짜</th>
                                     <th>url</th>
                                 </tr>
                             </thead>
@@ -119,7 +115,6 @@ $().ready(function(){
                                     <td class="cart_title1"></td>
                                     <td class="cart_publisher1"></td>
                                     <td class="cart__price1"></td>
-                                    <td class="cart_status1"></td>
                                     <td class="cart_url1"></td>
                                 </tr>
                                 <tr>
@@ -127,7 +122,6 @@ $().ready(function(){
                                     <td class="cart_title2"></td>
                                     <td class="cart_publisher2"></td>
                                     <td class="cart__price2"></td>
-                                    <td class="cart_status2"></td>
                                     <td class="cart_url2"></td>
                                 </tr>
                                 <tr>
@@ -135,7 +129,6 @@ $().ready(function(){
                                     <td class="cart_title3"></td>
                                     <td class="cart_publisher3"></td>
                                     <td class="cart__price3"></td>
-                                    <td class="cart_status3"></td>
                                     <td class="cart_url3"></td>
                                 </tr>
                                  <tr>
@@ -143,7 +136,6 @@ $().ready(function(){
                                     <td class="cart_title4"></td>
                                     <td class="cart_publisher4"></td>
                                     <td class="cart__price4"></td>
-                                    <td class="cart_status4"></td>
                                     <td class="cart_url4"></td>
                                 </tr>
                                 
@@ -152,7 +144,6 @@ $().ready(function(){
                                     <td class="cart_title5"></td>
                                     <td class="cart_publisher5"></td>
                                     <td class="cart__price5"></td>
-                                    <td class="cart_status5"></td>
                                     <td class="cart_url5"></td>
                                 </tr>
                                 <tr>
@@ -160,7 +151,6 @@ $().ready(function(){
                                     <td class="cart_title6"></td>
                                     <td class="cart_publisher6"></td>
                                     <td class="cart__price6"></td>
-                                    <td class="cart_status6"></td>
                                     <td class="cart_url6"></td>
                                 </tr>
                                 <tr>
@@ -168,7 +158,6 @@ $().ready(function(){
                                     <td class="cart_title7"></td>
                                     <td class="cart_publisher7"></td>
                                     <td class="cart__price7"></td>
-                                    <td class="cart_status7"></td>
                                     <td class="cart_url7"></td>
                                 </tr>
                                 <tr>
@@ -176,7 +165,6 @@ $().ready(function(){
                                     <td class="cart_title8"></td>
                                     <td class="cart_publisher8"></td>
                                     <td class="cart__price8"></td>
-                                    <td class="cart_status8"></td>
                                     <td class="cart_url8"></td>
                                 </tr>
                                 <tr>
@@ -184,7 +172,6 @@ $().ready(function(){
                                     <td class="cart_title9"></td>
                                     <td class="cart_publisher9"></td>
                                     <td class="cart__price9"></td>
-                                    <td class="cart_status9"></td>
                                     <td class="cart_url9"></td>
                                 </tr>
                                 <tr>
@@ -192,7 +179,6 @@ $().ready(function(){
                                     <td class="cart_title10"></td>
                                     <td class="cart_publisher10"></td>
                                     <td class="cart__price10"></td>
-                                    <td class="cart_status10"></td>
                                     <td class="cart_url10"></td>
                                 </tr>
                                 <tr>
@@ -200,7 +186,6 @@ $().ready(function(){
                                     <td class="cart_title11"></td>
                                     <td class="cart_publisher11"></td>
                                     <td class="cart__price11"></td>
-                                    <td class="cart_status11"></td>
                                     <td class="cart_url11"></td>
                                 </tr>
                                 <tr>
