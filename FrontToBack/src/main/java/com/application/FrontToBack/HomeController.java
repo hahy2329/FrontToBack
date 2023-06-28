@@ -10,15 +10,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO;
-import com.application.FrontToBack.boardAdvance.dto.QnaDTO;
-import com.application.FrontToBack.boardAdvance.dto.StudyDTO;
-import com.application.FrontToBack.boardAdvance.service.BoardAdvanceService;
+
+import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
+import com.application.FrontToBack.knowledgeBoard.service.KnowledgeBoardService;
+import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
+import com.application.FrontToBack.qnaBoard.service.QnaBoardService;
+import com.application.FrontToBack.studyBoard.dto.StudyDTO;
+import com.application.FrontToBack.studyBoard.service.StudyBoardService;
 
 /**
  * Handles requests for the application home page.
@@ -27,7 +30,13 @@ import com.application.FrontToBack.boardAdvance.service.BoardAdvanceService;
 public class HomeController {
 	
 	@Autowired
-	private BoardAdvanceService boardAdvanceService;
+	private StudyBoardService studyBoardService;
+	
+	@Autowired 
+	private KnowledgeBoardService knowledgeBoardService;
+	
+	@Autowired
+	private QnaBoardService qnaBoardService;
 	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -40,9 +49,9 @@ public class HomeController {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		
 		ModelAndView mv = new ModelAndView();
-		List<StudyDTO> studyList = boardAdvanceService.getMainStudyBoard();
-		List<KnowledgeDTO> knowledgeList = boardAdvanceService.getMainKnowledgeBoard();
-		List<QnaDTO> qnaList = boardAdvanceService.getMainQnaBoard();
+		List<StudyDTO> studyList = studyBoardService.getMainStudyBoard();
+		List<KnowledgeDTO> knowledgeList = knowledgeBoardService.getMainKnowledgeBoard();
+		List<QnaDTO> qnaList = qnaBoardService.getMainQnaBoard();
 		
 		mv.addObject("qnaList", qnaList);
 		mv.addObject("studyList", studyList);

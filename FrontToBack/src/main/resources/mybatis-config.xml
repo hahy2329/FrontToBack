@@ -11,14 +11,14 @@
 	
 		<typeAlias type="com.application.FrontToBack.member.dto.MemberDTO"   alias="MemberDTO"/>
 		
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.KnowledgeDTO" alias="KnowledgeDTO"/>
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.KnowledgeReplyDTO" alias="KnowledgeReplyDTO"/>
+		<typeAlias type="com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO" alias="KnowledgeDTO"/>
+		<typeAlias type="com.application.FrontToBack.knowledgeBoard.dto.KnowledgeReplyDTO" alias="KnowledgeReplyDTO"/>
 		
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.QnaDTO" alias="QnaDTO"/>
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.QnaReplyDTO" alias="QnaReplyDTO"/>
+		<typeAlias type="com.application.FrontToBack.qnaBoard.dto.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type="com.application.FrontToBack.qnaBoard.dto.QnaReplyDTO" alias="QnaReplyDTO"/>
 		
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.StudyDTO" alias="StudyDTO"/>
-		<typeAlias type="com.application.FrontToBack.boardAdvance.dto.StudyReplyDTO" alias="StudyReplyDTO"/>
+		<typeAlias type="com.application.FrontToBack.studyBoard.dto.StudyDTO" alias="StudyDTO"/>
+		<typeAlias type="com.application.FrontToBack.studyBoard.dto.StudyReplyDTO" alias="StudyReplyDTO"/>
 	</typeAliases>		
 		
 </configuration>

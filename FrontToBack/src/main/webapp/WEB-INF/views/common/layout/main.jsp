@@ -29,7 +29,7 @@
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/bestseller.jpg">
                             <div class="categories__text">
                                 <h4>지식</h4>
-                                <a href="#" style="color: blue;">이동하기</a>
+                                <a href="${contextPath }/boardAdvance/knowledgeList" style="color: blue;">이동하기</a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/generalbook.jpg">
                             <div class="categories__text">
                                 <h4>Q&A</h4>
-                                <a href="#" style="color: blue;">이동하기</a>
+                                <a href="${contextPath }/boardAdvance/qnaList" style="color: blue;">이동하기</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/newbook.jpg">
                             <div class="categories__text">
                                 <h4>스터디 그룹</h4>
-                                <a href="#" style="color: blue;">이동하기</a>
+                                <a href="${contextPath }/boardAdvance/studyList" style="color: blue;">이동하기</a>
                             </div>
                         </div>
                     </div>
@@ -74,21 +74,21 @@
                         <div class="banner__text">
                             <span>FRONTTOBACK</span>
                             <h1>Knowledge</h1>
-                            <a href="#">이동하기</a>
+                            <a href="${contextPath }/boardAdvance/knowledgeList">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
                             <span>FRONTTOBACK</span>
                             <h1>Q&A</h1>
-                            <a href="#">이동하기</a>
+                            <a href="${contextPath }/boardAdvance/qnaList">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
                             <span>FRONTTOBACK</span>
                             <h1>Study Group</h1>
-                            <a href="#">이동하기</a>
+                            <a href="${contextPath }/boardAdvance/studyList">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
