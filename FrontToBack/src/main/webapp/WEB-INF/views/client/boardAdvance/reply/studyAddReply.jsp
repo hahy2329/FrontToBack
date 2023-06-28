@@ -107,6 +107,7 @@ $().ready(function(){
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
 								<p class="answer"></p>
                                 <textarea rows="10" cols="50" placeholder="200자 이내로 작성하세요." name="content" required="required"></textarea>
+                                <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${boardId }">
                                 <button type="submit" class="site-btn">댓글쓰기</button>
                             </form>

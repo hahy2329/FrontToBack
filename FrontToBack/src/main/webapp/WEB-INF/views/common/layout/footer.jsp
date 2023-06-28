@@ -53,10 +53,10 @@
             </div>
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
-                    <h6>NEWSLETTER</h6>
-                    <form action="#">
-                        <input type="text" placeholder="Email">
-                        <button type="submit" class="site-btn">Subscribe</button>
+                    <h6>검색</h6>
+                    <form>
+                        <input type="text" id="keywords" placeholder="키워드를 입력해주세요.">
+                        <button type="submit" id="clicks" class="site-btn">검색</button>
                     </form>
                     <div class="footer__social">
                         <a href="#"><i class="fa fa-facebook"></i></a>

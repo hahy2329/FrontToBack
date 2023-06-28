@@ -110,6 +110,7 @@
 								<p class="answer"></p>
                                 <input type="text" name="subject" required="required" placeholder="제목">
                                 <textarea rows="10" cols="50" placeholder="내용" name="content" required="required"></textarea>
+                                <script>CKEDITOR.replace("content")</script>
                                 <input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">글쓰기</button>
                                 <button class="site-btn"><a href="${contextPath}/boardAdvance/knowledgeList" style="color: white;">목록보기</a></button>

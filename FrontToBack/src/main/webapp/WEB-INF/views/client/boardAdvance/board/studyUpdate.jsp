@@ -110,6 +110,7 @@
 								<p class="answer"></p>
                                 <input type="text" name="subject" required="required" placeholder="제목" value="${studyDTO.subject }">
                                 <textarea rows="10" cols="50"  name="content" required="required">${studyDTO.content }</textarea>
+                                <script>CKEDITOR.replace("content")</script>
                                 <input type="text" name="sort" value="${studyDTO.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">수정</button>
                                 <input type="hidden" name="boardId" value="${studyDTO.boardId }">

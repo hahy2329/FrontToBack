@@ -108,6 +108,7 @@ $().ready(function(){
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
 								<p class="answer"></p>
                                 <textarea rows="10" cols="50" name="content" required="required">${knowledgeReplyDTO.content }</textarea>
+                                <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${knowledgeReplyDTO.boardId }">
                                 <input type="hidden" name="replyId" value="${knowledgeReplyDTO.replyId }">
                                 <button type="submit" class="site-btn">수정</button>
