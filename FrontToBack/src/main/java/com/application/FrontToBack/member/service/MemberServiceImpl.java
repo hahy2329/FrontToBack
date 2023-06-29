@@ -1,17 +1,25 @@
 package com.application.FrontToBack.member.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.application.FrontToBack.bookBoard.dto.BookDTO;
+import com.application.FrontToBack.knowledgeBoard.dao.KnowledgeBoardDAO;
+import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.member.dao.MemberDAO;
 import com.application.FrontToBack.member.dto.MemberDTO;
+import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
+import com.application.FrontToBack.studyBoard.dto.StudyDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
 	private MemberDAO memberDAO;
+	
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -94,6 +102,26 @@ public class MemberServiceImpl implements MemberService {
 		}
 		
 		return isRemove;
+	}
+
+	@Override
+	public List<KnowledgeDTO> getMyActivityKnowledge(String memberId) throws Exception {
+		return memberDAO.getMyActivityKnowledge(memberId);
+	}
+
+	@Override
+	public List<QnaDTO> getMyActivityQna(String memberId) throws Exception {
+		return memberDAO.getMyActivityQna(memberId);
+	}
+
+	@Override
+	public List<StudyDTO> getMyActivityStudy(String memberId) throws Exception {
+		return memberDAO.getMyActivityStudy(memberId);
+	}
+
+	@Override
+	public List<BookDTO> getMyActivityBook(String memberId) throws Exception {
+		return memberDAO.getMyActivityBook(memberId);
 	}
 
 	

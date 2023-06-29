@@ -84,6 +84,33 @@
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/studyRemove.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/boardAdvance/bookList" extends="baseLayout">
+		<put-attribute name="title" value="Book Recommand게시판"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/bookList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/bookAddBoard" extends="baseLayout">
+		<put-attribute name="title" value="게시글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/bookAdd.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/bookDetail" extends="baseLayout">
+		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/bookDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/bookUpdate" extends="baseLayout">
+		<put-attribute name="title" value="게시글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/bookUpdate.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/bookRemove" extends="baseLayout">
+		<put-attribute name="title" value="게시글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/board/bookRemove.jsp"></put-attribute>
+	</definition>
+	
+	
 </tiles-definitions>
 
 

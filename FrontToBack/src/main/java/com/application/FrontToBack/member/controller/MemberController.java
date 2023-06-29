@@ -2,6 +2,8 @@ package com.application.FrontToBack.member.controller;
 
 import org.springframework.http.HttpHeaders;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -15,8 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.FrontToBack.bookBoard.dto.BookDTO;
+import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.member.dto.MemberDTO;
 import com.application.FrontToBack.member.service.MemberService;
+import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
+import com.application.FrontToBack.studyBoard.dto.StudyDTO;
+
+
 
 @Controller
 @RequestMapping("/member")
@@ -24,6 +32,8 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+	
+	
 	
 	
 	@GetMapping("/registerMember")
@@ -231,6 +241,26 @@ public class MemberController {
 	}
 	
 	
-	
+	@GetMapping("/myActivity")
+	public ModelAndView myActivity(@RequestParam("memberId") String memberId) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		List<KnowledgeDTO> knowledgeList = memberService.getMyActivityKnowledge(memberId);
+		List<QnaDTO> qnaList = memberService.getMyActivityQna(memberId);
+		List<StudyDTO> studyList = memberService.getMyActivityStudy(memberId);
+		List<BookDTO> bookList = memberService.getMyActivityBook(memberId);
+		
+		mv.addObject("knowledgeList", knowledgeList);
+		mv.addObject("qnaList", qnaList);
+		mv.addObject("studyList", studyList);
+		mv.addObject("bookList", bookList);
+		
+		mv.setViewName("/member/myActivity");
+		
+		return mv;
+		
+		
+		
+	}
 	
 }

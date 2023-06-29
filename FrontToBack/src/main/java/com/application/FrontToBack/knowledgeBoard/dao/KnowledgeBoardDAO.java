@@ -29,4 +29,5 @@ public interface KnowledgeBoardDAO {
 	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception;
 	
 	
+	
 }

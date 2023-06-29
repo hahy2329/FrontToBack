@@ -116,6 +116,50 @@
 				MEMBER_ID = #{memberId}
 		
 		</delete>
-	
+		
+		<select id="getMyActivityKnowledge" parameterType="String" resultType="KnowledgeDTO">
+			
+			SELECT
+				*
+			FROM
+				KNOWLEDGE
+			WHERE
+				MEMBER_ID = #{memberId}
+		
+		
+		</select>
+		
+		<select id="getMyActivityQna" parameterType="String" resultType="QnaDTO">
+			
+			SELECT
+				*
+			FROM
+				QNA
+			WHERE
+				MEMBER_ID = #{memberId}
+		
+		</select>
+		
+		<select id="getMyActivityStudy" parameterType="String" resultType="StudyDTO">
+			
+			SELECT
+				*
+			FROM
+				STUDY
+			WHERE
+				MEMBER_ID = #{memberId}
+		
+		</select>
+		
+		<select id="getMyActivityBook" parameterType="String" resultType="BookDTO">
+			
+			SELECT
+				*
+			FROM
+				BOOK
+			WHERE
+				MEMBER_ID = #{memberId}
+		
+		</select>
 	
 	</mapper>

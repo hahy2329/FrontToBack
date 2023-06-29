@@ -19,6 +19,9 @@
 		
 		<typeAlias type="com.application.FrontToBack.studyBoard.dto.StudyDTO" alias="StudyDTO"/>
 		<typeAlias type="com.application.FrontToBack.studyBoard.dto.StudyReplyDTO" alias="StudyReplyDTO"/>
+		
+		<typeAlias type="com.application.FrontToBack.bookBoard.dto.BookDTO" alias="BookDTO"/>
+		<typeAlias type="com.application.FrontToBack.bookBoard.dto.BookReplyDTO" alias="BookReplyDTO"/>
 	</typeAliases>		
 		
 </configuration>

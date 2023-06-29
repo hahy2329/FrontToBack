@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="book">
+
+	<select id="selectOneAllBookBoardCnt" parameterType="hashmap" resultType="int">
+	 <choose>
+				<when test='searchKeyword.equals("total")'>
+					<choose>
+						<when test='searchWord.equals("")'>
+							SELECT 
+								COUNT(*)
+							FROM 
+								BOOK
+						</when>
+						<otherwise>
+							SELECT 
+								COUNT(*)
+							FROM
+								BOOK
+							WHERE 
+								MEMBER_ID LIKE CONCAT('%', #{searchWord}, '%') OR
+								SUBJECT LIKE CONCAT('%', #{searchWord}, '%') OR
+								CONTENT LIKE CONCAT('%', #{searchWord}, '%')
+						</otherwise>
+					</choose>
+				</when>
+				<otherwise>
+					SELECT 
+						COUNT(*)
+					FROM 
+						BOOK
+					WHERE
+						<if test='searchKeyword.equals("memberId")'>
+							MEMBER_ID LIKE CONCAT('%',#{searchWord},'%')
+						</if>
+						<if test='searchKeyword.equals("subject")'>
+							SUBJECT LIKE CONCAT('%', #{searchWord}, '%')
+						</if>
+						<if test='searchKeyword.equals("content")'>
+							CONTENT LIKE CONCAT('%', #{searchWord}, '%')
+						
+						</if>
+						
+				</otherwise>
+				
+			</choose>
+	 
+	
+	
+	
+	</select>
+	<select id="selectListBookBoard" parameterType="hashmap" resultType="BookDTO">
+		<choose>
+				<when test='searchKeyword.equals("total")'>
+					<choose>
+					<when test='searchWord.equals("")'>
+					SELECT 
+						*
+					FROM 
+						BOOK
+					ORDER BY 
+						ENROLL_DT DESC
+					LIMIT
+						#{startBoardIdx}, #{onePageViewCnt}
+					</when>
+					<otherwise>
+						SELECT 
+							*
+						FROM
+						 	QNA
+						WHERE
+							MEMBER_ID LIKE CONCAT('%',#{searchWord}, '%') OR
+							SUBJECT LIKE CONCAT('%', #{searchWord}, '%') OR
+							CONTENT LIKE CONCAT('%', #{searchWord}, '%')
+						ORDER BY 
+							ENROLL_DT DESC
+						LIMIT
+							#{startBoardIdx}, #{onePageViewCnt}
+					</otherwise>
+					</choose>
+				</when>
+				<otherwise>
+					SELECT 
+						*
+					FROM 
+						QNA
+					WHERE
+						<if test='searchKeyword.equals("memberId")'>
+							MEMBER_ID LIKE CONCAT('%',#{searchWord},'%')
+						</if>
+						<if test='searchKeyword.equals("subject")'>
+							SUBJECT LIKE CONCAT('%', #{searchWord}, '%')
+						</if>
+						<if test='searchKeyword.equals("content")'>
+							CONTENT LIKE CONCAT('%', #{searchWord}, '%')
+						</if>
+					ORDER BY 
+						ENROLL_DT DESC
+					LIMIT
+						#{startBoardIdx}, #{onePageViewCnt}
+				</otherwise>
+			</choose>
+	
+	
+	</select>
+	
+	<insert id="insertBookBoard" parameterType="BookDTO">
+		
+			INSERT INTO BOOK(MEMBER_ID, SUBJECT, CONTENT, SORT, PASSWD)
+			VALUES(
+				#{memberId},
+				#{subject},
+				#{content},
+				#{sort},
+				#{passwd}
+				
+			
+			)
+		
+		
+	</insert>
+	
+	<update id="updateBookReadCnt" parameterType="Long">
+			
+			UPDATE
+				BOOK
+			SET
+				READ_CNT = READ_CNT + 1
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		
+	</update>
+	
+	<select id="getBookBoardDetail" parameterType="Long" resultType="BookDTO">
+		
+			SELECT 
+				*
+			FROM
+				BOOK
+			WHERE
+				BOARD_ID = #{boardId}
+				
+		
+		
+	</select>
+	
+	
+	<select id="selectOneAllBookReplyCnt" parameterType="Long" resultType="int">
+			
+			SELECT
+				COUNT(*)
+			FROM
+				BOOKREPLY
+			WHERE
+				BOARD_ID = #{boardId}
+		
+		
+	</select>
+	
+	
+	<select id="selectListBookReply" parameterType="Long" resultType="BookReplyDTO">
+			
+			SELECT 
+				*
+			FROM
+				BOOKREPLY
+			WHERE
+			
+				BOARD_ID = #{boardId}
+		
+	</select>
+	
+		<update id="updateBookBoard" parameterType="BookDTO">
+			
+			UPDATE
+				BOOK
+			SET
+				SUBJECT = #{subject},
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+				
+			WHERE
+				BOARD_ID = #{boardId}
+				
+		
+		</update>
+	
+	
+	<delete id="removeBookBoard" parameterType="BookDTO">
+			
+			DELETE FROM BOOK
+			
+			WHERE 
+				BOARD_ID = #{boardId}
+		
+	</delete>
+	
+	<insert id="insertBookReply" parameterType="BookReplyDTO">
+			
+			INSERT INTO BOOKREPLY(MEMBER_ID, PASSWD, CONTENT, BOARD_ID)
+			
+			VALUES(
+				#{memberId},
+				#{passwd},
+				#{content},
+				#{boardId}
+			)
+			
+		
+		
+		</insert>
+		
+		<select id="bookReplyDetail" parameterType="Long" resultType="BookReplyDTO">
+		
+			SELECT
+				*
+			FROM	
+				BOOKREPLY
+			WHERE
+				REPLY_ID = #{replyId}
+		</select>
+		
+		<update id="updateBookReply" parameterType="BookReplyDTO">
+			
+			UPDATE
+				BOOKREPLY
+			SET
+				CONTENT = #{content},
+				ENROLL_DT = NOW()
+			WHERE 
+				REPLY_ID = #{replyId}
+		
+		</update>
+		
+		
+		<delete id="removeBookReply" parameterType="BookReplyDTO">
+			
+			DELETE FROM BOOKREPLY
+			WHERE
+				REPLY_ID = #{replyId}
+			
+		
+		</delete>
+		
+		<select id="getMainBookBoard" resultType="BookDTO">
+			
+			SELECT
+				*			
+			FROM
+				BOOK
+			LIMIT 3
+				
+		</select>
+	
+</mapper>

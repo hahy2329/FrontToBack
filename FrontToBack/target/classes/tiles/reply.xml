@@ -46,4 +46,22 @@
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/studyRemoveReply.jsp"></put-attribute>
 	</definition>
+	
+	
+	<definition name="/boardAdvance/bookAddReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/bookAddReply.jsp"></put-attribute>
+	</definition>	
+	
+	<definition name="/boardAdvance/bookUpdateReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 수정"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/bookUpdateReply.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/boardAdvance/bookRemoveReply" extends="baseLayout">
+		<put-attribute name="title" value="댓글 삭제"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/boardAdvance/reply/bookRemoveReply.jsp"></put-attribute>
+	</definition>
+	
+	
 </tiles-definitions>

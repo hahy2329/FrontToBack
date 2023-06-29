@@ -1,10 +1,16 @@
 package com.application.FrontToBack.member.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.application.FrontToBack.bookBoard.dto.BookDTO;
+import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.member.dto.MemberDTO;
+import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
+import com.application.FrontToBack.studyBoard.dto.StudyDTO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -60,6 +66,26 @@ public class MemberDAOImpl implements MemberDAO {
 	public void removeMember(MemberDTO memberDTO) throws Exception {
 		sqlSession.delete("member.removeOneMember", memberDTO);
 		
+	}
+
+	@Override
+	public List<KnowledgeDTO> getMyActivityKnowledge(String memberId) throws Exception {
+		return sqlSession.selectList("member.getMyActivityKnowledge", memberId);
+	}
+
+	@Override
+	public List<QnaDTO> getMyActivityQna(String memberId) throws Exception {
+		return sqlSession.selectList("member.getMyActivityQna", memberId);
+	}
+
+	@Override
+	public List<StudyDTO> getMyActivityStudy(String memberId) throws Exception {
+		return sqlSession.selectList("member.getMyActivityStudy", memberId);
+	}
+
+	@Override
+	public List<BookDTO> getMyActivityBook(String memberId) throws Exception {
+		return sqlSession.selectList("member.getMyActivityBook", memberId);
 	}
 
 	

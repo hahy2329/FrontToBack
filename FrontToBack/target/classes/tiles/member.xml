@@ -24,6 +24,11 @@
 		<put-attribute name="body" value="/WEB-INF/views/client/member/remove.jsp"></put-attribute>
 	
 	</definition>
+	
+	<definition name="/member/myActivity" extends="baseLayout">
+		<put-attribute name="title" value="MY활동내역"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/member/myActivity.jsp"></put-attribute>
+	</definition>
 
 
 </tiles-definitions>

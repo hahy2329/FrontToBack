@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.application.FrontToBack.bookBoard.dto.BookDTO;
+import com.application.FrontToBack.bookBoard.service.BookBoardSerive;
 import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.knowledgeBoard.service.KnowledgeBoardService;
 import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
@@ -38,6 +39,9 @@ public class HomeController {
 	@Autowired
 	private QnaBoardService qnaBoardService;
 	
+	@Autowired
+	private BookBoardSerive bookBoardSerive;
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -52,10 +56,14 @@ public class HomeController {
 		List<StudyDTO> studyList = studyBoardService.getMainStudyBoard();
 		List<KnowledgeDTO> knowledgeList = knowledgeBoardService.getMainKnowledgeBoard();
 		List<QnaDTO> qnaList = qnaBoardService.getMainQnaBoard();
+		List<BookDTO> bookList = bookBoardSerive.getMainBookBoard();
+		
+		
 		
 		mv.addObject("qnaList", qnaList);
 		mv.addObject("studyList", studyList);
 		mv.addObject("knowledgeList", knowledgeList);
+		mv.addObject("bookList", bookList);
 		mv.setViewName("/main");
 		
 		return mv;

@@ -30,12 +30,12 @@
                                     <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
                                     <li><a href="${contextPath }/boardAdvance/qnaList">Q&A</a></li>
                                     <li><a href="${contextPath }/boardAdvance/studyList">스터디 그룹</a></li>
-                                    <li><a href="">도서 추천!</a></li>
+                                    <li><a href="${contextPath }/boardAdvance/bookList">도서 추천</a></li>
                                 </ul>
                             </li>
                             <li><a href="${contextPath }/bookSearch">도서검색</a></li>
                             <li><a href="${contextPath }/video">영상검색</a></li>
-                            <li><a href="">my활동내역</a></li>
+                            <li><a href="${contextPath }/member/myActivity?memberId=${sessionScope.memberId}">my활동내역</a></li>
                             <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">
                             		<li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보 변경</a></li>

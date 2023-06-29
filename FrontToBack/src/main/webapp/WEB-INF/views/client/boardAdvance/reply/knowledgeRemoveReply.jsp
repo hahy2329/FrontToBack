@@ -81,7 +81,7 @@ $().ready(function(){
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>커뮤니티</a>
                         <a>지식</a>
                         <span>댓글 삭제</span>

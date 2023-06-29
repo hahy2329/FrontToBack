@@ -52,8 +52,8 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 p-0">
                         <div class="categories__item set-bg" data-setbg="${contextPath }/resources/ashion-master/img/categories/steadyseller.jpg">
                             <div class="categories__text">
-                                <h4>도서 추천!</h4>
-                                <a href="#" style="color: blue;">이동하기</a>
+                                <h4>도서 추천</h4>
+                                <a href="${contextPath }/boardAdvance/bookList" style="color: blue;">이동하기</a>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
 <!-- Categories Section End -->
 
 <!-- Banner Section Begin -->
-<section class="banner set-bg" data-setbg="${contextPath }/resources/ashion-master/img/banner/banner-1.jpg">
+<section class="banner set-bg" data-setbg="${contextPath }/resources/ashion-master/img/banner/api.jpg">
     <div class="container">
         <div class="row">
             <div class="col-xl-7 col-lg-8 m-auto">
@@ -73,29 +73,15 @@
                     <div class="banner__item">
                         <div class="banner__text">
                             <span>FRONTTOBACK</span>
-                            <h1>Knowledge</h1>
-                            <a href="${contextPath }/boardAdvance/knowledgeList">이동하기</a>
+                            <h1>Book Search</h1>
+                            <a href="${contextPath }/bookSearch">이동하기</a>
                         </div>
                     </div>
                     <div class="banner__item">
                         <div class="banner__text">
                             <span>FRONTTOBACK</span>
-                            <h1>Q&A</h1>
-                            <a href="${contextPath }/boardAdvance/qnaList">이동하기</a>
-                        </div>
-                    </div>
-                    <div class="banner__item">
-                        <div class="banner__text">
-                            <span>FRONTTOBACK</span>
-                            <h1>Study Group</h1>
-                            <a href="${contextPath }/boardAdvance/studyList">이동하기</a>
-                        </div>
-                    </div>
-                    <div class="banner__item">
-                        <div class="banner__text">
-                            <span>FRONTTOBACK</span>
-                            <h1>Book Recommend!</h1>
-                            <a href="#">이동하기</a>
+                            <h1>Video Search</h1>
+                            <a href="${contextPath }/video">이동하기</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +132,7 @@
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="trend__content">
                     <div class="section-title">
-                        <h4>Study Group</h4>
+                        <h4>스터디 그룹</h4>
                     </div>
                     <c:forEach var="studyDTO" items="${studyList }">
                     <div class="trend__item">
@@ -160,6 +146,25 @@
                     </c:forEach>
                 </div>
             </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>도서 추천</h4>
+                    </div>
+                    <c:forEach var="bookDTO" items="${bookList }">
+                    <div class="trend__item">
+                        <div class="trend__item__text">
+                            <a href="${contextPath }/boardAdvance/bookDetail?boardId=${bookDTO.boardId}"><strong>${bookDTO.subject }</strong></a>
+                            <div class="rating">
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${bookDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${bookDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${bookDTO.memberId }</p>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>
