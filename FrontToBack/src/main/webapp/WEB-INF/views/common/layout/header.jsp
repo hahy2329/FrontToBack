@@ -24,7 +24,7 @@
                         <ul>
                             <li class="active"><a href="${contextPath }/">Home</a></li>
                             <li><a href="">공지사항</a></li>
-                          <c:if test="${sessionScope.memberId ne null}">
+                          <c:if test="${sessionScope.memberId ne null or sessionScope.adminId ne null}">
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">
                                     <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
@@ -50,17 +50,27 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                     <c:choose>
-                    	<c:when test="${sessionScope.memberId eq null }">
+                    	<c:when test="${sessionScope.memberId eq null or sessionScope.adminId eq null }">
 	                        <div class="header__right__auth">
 	                            <a href="${contextPath }/member/loginMember">Login</a>
+	                            <a href="${contextPath }/admin/loginAdmin">Admin Login</a>
 	                            <a href="${contextPath }/member/registerMember">Register</a>
 	                        </div>
                         </c:when>
                         <c:otherwise>
-                        	 <div class="header__right__auth">
-	                            <a>${sessionScope.memberId }님 로그인 </a>
-	                            <a href="${contextPath }/member/logoutMember"> logout</a>
-	                        </div>
+	                        <c:if test="${sessionScope.memberId ne null  }">
+	                        	 <div class="header__right__auth">
+		                            <a>${sessionScope.memberId }님 로그인 </a>
+		                            <a href="${contextPath }/member/logoutMember"> logout</a>
+		                        </div>
+		                     </c:if>
+		                     
+		                     <c:if test="${sessionScope.adminId ne null }">
+		                     	<div class="header__right__auth">
+		                            <a>${sessionScope.adminId }님 로그인 </a>
+		                            <a href="${contextPath }/admin/logoutAdmin"> logout</a>
+		                        </div>
+		                     </c:if>   
                         </c:otherwise>
                         
                     </c:choose>
