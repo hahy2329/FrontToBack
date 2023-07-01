@@ -50,7 +50,7 @@
                 <div class="col-lg-3">
                     <div class="header__right">
                     <c:choose>
-                    	<c:when test="${sessionScope.memberId eq null or sessionScope.adminId eq null }">
+                    	<c:when test="${sessionScope.memberId eq null and sessionScope.adminId eq null }">
 	                        <div class="header__right__auth">
 	                            <a href="${contextPath }/member/loginMember">Login</a>
 	                            <a href="${contextPath }/admin/loginAdmin">Admin Login</a>
@@ -58,7 +58,7 @@
 	                        </div>
                         </c:when>
                         <c:otherwise>
-	                        <c:if test="${sessionScope.memberId ne null  }">
+	                        <c:if test="${sessionScope.memberId ne null }">
 	                        	 <div class="header__right__auth">
 		                            <a>${sessionScope.memberId }님 로그인 </a>
 		                            <a href="${contextPath }/member/logoutMember"> logout</a>
