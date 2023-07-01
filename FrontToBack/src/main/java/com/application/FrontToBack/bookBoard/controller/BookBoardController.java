@@ -121,7 +121,7 @@ public class BookBoardController {
 	}
 	
 	@PostMapping("/bookAddBoard")
-	public ResponseEntity<Object> qnaAddBoard(BookDTO bookDTO, HttpServletRequest request) throws Exception{
+	public ResponseEntity<Object> bookAddBoard(BookDTO bookDTO, HttpServletRequest request) throws Exception{
 		
 		bookBoardService.insertBookBoard(bookDTO);
 		
@@ -279,7 +279,7 @@ public class BookBoardController {
 	
 	
 	@GetMapping("/bookRemoveReply")
-	public ModelAndView qnaRemoveReply(@RequestParam("replyId") long replyId) throws Exception {
+	public ModelAndView bookRemoveReply(@RequestParam("replyId") long replyId) throws Exception {
 		
 		ModelAndView mv = new ModelAndView();
 		BookReplyDTO bookReplyDTO = bookBoardService.bookReplyDetail(replyId);

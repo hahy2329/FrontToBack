@@ -31,7 +31,7 @@ public class KnowledgeBoardController {
 	private KnowledgeBoardService knowledgeBoardService;
 	
 	@GetMapping("/knowledgeList") 
-	public ModelAndView knowledge(HttpServletRequest request) throws Exception {
+	public ModelAndView knowledgeList(HttpServletRequest request) throws Exception {
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/boardAdvance/knowledgeList");

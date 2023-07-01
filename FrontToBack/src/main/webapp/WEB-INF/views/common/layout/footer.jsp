@@ -6,6 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	$().ready(function(){
+		
+		$("#clicks").click(function(){
+			
+			var data = $("#keywords").val();
+			
+			$.ajax({
+				
+				type : "GET",
+				url : "https://dapi.kakao.com/v2/search/web",
+				data : {"query" : data},
+				headers : {"Authorization" : "KakaoAK 9291681c4b5f1c251ec456e619d7f1ed"},
+				success : function(data){
+					
+					
+					location.href=data.documents[0].url;
+					
+				}
+				
+				
+				
+				
+			});
+			
+			
+		});
+		
+		
+		
+	});
+
+
+</script>
 </head>
 <body>
 
@@ -31,12 +65,12 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-5">
                 <div class="footer__widget">
-                    <h6>Quick links</h6>
+                    <h6>Administrator</h6>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="${contextPath }/administrator/introduce">관리자 소개</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">문의사항</a></li>
+                        <li><a href="#">버그제보</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,26 +78,26 @@
                 <div class="footer__widget">
                     <h6>Account</h6>
                     <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Orders Tracking</a></li>
-                        <li><a href="#">Checkout</a></li>
-                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보변경</a></li>
+                        <li><a href="${contextPath }/member/removeMember?memberId=${sessionScope.memberId}">회원탈퇴</a></li>
+                        <li><a href="${contextPath }/member/myActivity?memberId=${sessionScope.memberId}">MY활동내역</a></li>
+                        <li><a href="#">미지정</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
-                    <h6>검색</h6>
+                    <h6>사전 검색</h6>
                     <form>
                         <input type="text" id="keywords" placeholder="키워드를 입력해주세요.">
                         <button type="submit" id="clicks" class="site-btn">검색</button>
                     </form>
                     <div class="footer__social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                        <a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/i/flow/login"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.pinterest.co.kr/"><i class="fa fa-pinterest"></i></a>
                     </div>
                 </div>
             </div>

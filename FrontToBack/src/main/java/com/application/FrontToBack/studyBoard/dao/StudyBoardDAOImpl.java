@@ -11,7 +11,7 @@ import com.application.FrontToBack.studyBoard.dto.StudyDTO;
 import com.application.FrontToBack.studyBoard.dto.StudyReplyDTO;
 
 @Repository
-public class StudyBoardImpl implements StudyBoardDAO {
+public class StudyBoardDAOImpl implements StudyBoardDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
