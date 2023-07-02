@@ -24,7 +24,7 @@
                         <ul>
                             <li class="active"><a href="${contextPath }/">Home</a></li>
                             <li><a href="">공지사항</a></li>
-                          <c:if test="${sessionScope.memberId ne null or sessionScope.adminId ne null}">
+                          <c:if test="${sessionScope.memberId ne null }">
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">
                                     <li><a href="${contextPath }/boardAdvance/knowledgeList">지식</a></li>
@@ -44,6 +44,9 @@
                             
                             </li>
                           </c:if>
+                         <c:if test="${sessionScope.adminId ne null }">
+                         	<li><a href="${contextPath }/admin/adminPage">관리</a></li>
+                         </c:if>
                         </ul>
                     </nav>
                 </div>

@@ -6,7 +6,16 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/login.jsp"></put-attribute>
 	</definition>
 
-
+	
+	<definition name="/admin/adminPage" extends="baseLayout">
+		<put-attribute name="title" value="관리자 페이지"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/management.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/knowledgeList" extends="baseLayout">
+		<put-attribute name="title" value="지식"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/knowledge.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>
 

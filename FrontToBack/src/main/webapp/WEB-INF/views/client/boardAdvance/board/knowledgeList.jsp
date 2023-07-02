@@ -123,20 +123,20 @@
                         <div style="display: table; margin-left: auto; margin-right: auto">
                         	<ul>
                         		<c:if test="${startPage > 10 }">
-                        			<li>
-                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전</a>
-                        			</li>
+                        			
+                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
+                        			
                         		</c:if>
                         		<c:forEach var="i" begin="${startPage }" end="${endPage }">
-                        			<li>
-                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }</a>
-                        			</li>
+                        			
+                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
+                        			
                         		</c:forEach>
                         		<c:if test="${endPage != allPageCnt && endPage >=10}">
-                        			<li>
+                        			
                         				<a href="${contextPath }/baordAdvance/knowledgeList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
                         			
-                        			</li>
+                        			
                         		</c:if>
                         	</ul>
                         </div>

@@ -1,5 +1,9 @@
 package com.application.FrontToBack.admin.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -15,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.application.FrontToBack.admin.dto.AdminDTO;
 import com.application.FrontToBack.admin.service.AdminService;
+import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
+import com.application.FrontToBack.knowledgeBoard.service.KnowledgeBoardService;
 
 @Controller
 @RequestMapping("/admin")
@@ -22,6 +28,7 @@ public class AdminController {
 	
 	@Autowired
 	private AdminService adminService;
+
 	
 	@GetMapping("/loginAdmin")
 	public ModelAndView login() throws Exception{
@@ -89,5 +96,26 @@ public class AdminController {
 		
 		
 	}
+	
+	@GetMapping("/adminPage")
+	public ModelAndView adminPage() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/admin/adminPage");
+		return mv;
+		
+	}
+	
+	@GetMapping("/knowledgeList")
+	public ModelAndView knowledgeList() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<KnowledgeDTO> knowledgeList = adminService.getAdminKnowledgeList();
+		mv.setViewName("/admin/knowledgeList");
+		mv.addObject("knowledgeList", knowledgeList);
+		return mv;
+	}
+	
+	
 	
 }
