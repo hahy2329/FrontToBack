@@ -18,7 +18,7 @@
                     <div class="categories__item categories__large__item set-bg"
                     data-setbg="${contextPath }/resources/ashion-master/img/categories/developer.jpg">
                     <div class="categories__text">
-                        <h1>FRONTTOBack</h1>
+                        <h1>FRONTTOBACK</h1>
                         <a href="${contextPath }/member/registerMember">지금 시작하기</a>
                     </div>
                 </div>
