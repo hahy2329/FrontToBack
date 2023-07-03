@@ -13,9 +13,45 @@
 	</definition>
 	
 	<definition name="/admin/knowledgeList" extends="baseLayout">
-		<put-attribute name="title" value="지식"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/knowledge.jsp"></put-attribute>
+		<put-attribute name="title" value="지식(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/knowledgeList.jsp"></put-attribute>
 	</definition>
-
+	
+	<definition name="/admin/knowledgeDetail" extends="baseLayout">
+		<put-attribute name="title" value="지식(관리자용) 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/knowledgeDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/qnaList" extends="baseLayout">
+		<put-attribute name="title" value="QNA(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/qnaList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/qnaDetail" extends="baseLayout">
+		<put-attribute name="title" value="QNA(관리자용) 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/qnaDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/studyList" extends="baseLayout">
+		<put-attribute name="title" value="스터디그룹(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/studyList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/studyDetail" extends="baseLayout">
+		<put-attribute name="title" value="스터디그룹(관리자용) 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/studyDetail.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/bookList" extends="baseLayout">
+		<put-attribute name="title" value="도서추천(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/bookList.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/admin/bookDetail" extends="baseLayOut">
+		<put-attribute name="title" value="도서추천(관리자용) 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/bookDetail.jsp"></put-attribute>
+	</definition>
+	
+	
 </tiles-definitions>
 

@@ -45,9 +45,9 @@
                                                 <ul>
                                                     <li><a href="#">공지사항</a></li>
                                                     <li><a href="${contextPath }/admin/knowledgeList">지식</a></li>
-                                                    <li><a href="#">Q&A</a></li>
-                                                    <li><a href="#">스터디그룹</a></li>
-                                                    <li><a href="#">도서추천</a></li>
+                                                    <li><a href="${contextPath }/admin/qnaList">Q&A</a></li>
+                                                    <li><a href="${contextPath }/admin/studyList">스터디그룹</a></li>
+                                                    <li><a href="${contextPath }/admin/bookList">도서추천</a></li>
                                                 </ul>
                                             </div>
                                         </div>

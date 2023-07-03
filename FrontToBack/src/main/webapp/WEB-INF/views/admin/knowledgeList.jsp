@@ -7,6 +7,27 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	$.ready(function(){
+		
+		$("#onePageViewCnt").val("${onePageViewCnt}");
+		$("#searchKeyword").val("${searchKeyword}");
+		
+		
+	});
+	
+	function getBoardList(){
+		
+		var url = "${contextPath}/admin/knowledgeList";
+			url +="?searchKeyword=" + $("#searchKeyword").val();
+			url +="&searchWord="+$("#searchWord").val();
+			url +="&onePageViewCnt="+$("#onePageViewCnt").val();
+		
+		location.href= url;
+	}
+
+
+</script>
 </head>
 <body>
 
@@ -82,16 +103,16 @@
                     <div align="right">
                      	조회 : <span style="color:red;">${allBoardCnt }</span>개
                 	<select id="onePageViewCnt" onchange="getBoardList()">
-                		<option>5</option>
-                		<option>7</option>
-                		<option>10</option>
+                		<option value="5">5</option>
+                		<option value="7">7</option>
+                		<option value="10">10</option>
                 	</select>
                 	<p></p>
                 	</div>
-                    <c:forEach var="knowledgeDTO" items="${knowledgeList }">
+                    <c:forEach var="knowledgeDTO" items="${boardList }">
                     <div class="trend__item">
                         <div class="trend__item__text">
-                            <a href="${contextPath }/boardAdvance/knowledgeDetail?boardId=${knowledgeDTO.boardId}"><strong>${knowledgeDTO.subject }</strong></a>
+                            <a href="${contextPath }/admin/knowledgeDetail?boardId=${knowledgeDTO.boardId}"><strong>${knowledgeDTO.subject }</strong></a>
                             <div class="rating">
                                 <p><i class="fa fa-heart-o"></i>&nbsp; ${knowledgeDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${knowledgeDTO.memberId }</p>
                             </div>
@@ -116,17 +137,17 @@
                         	<ul>
                         		<c:if test="${startPage > 10 }">
                         			
-                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
+                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
                         			
                         		</c:if>
                         		<c:forEach var="i" begin="${startPage }" end="${endPage }">
                         			
-                        				<a href="${contextPath }/boardAdvance/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
+                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
                         			
                         		</c:forEach>
                         		<c:if test="${endPage != allPageCnt && endPage >=10}">
                         			
-                        				<a href="${contextPath }/baordAdvance/knowledgeList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
+                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
                         			
                         			
                         		</c:if>

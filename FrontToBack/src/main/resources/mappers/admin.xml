@@ -15,13 +15,61 @@
 	
 	</select>
 	
-	<select id="selectAdminKnowledgeList" resultType="KnowledgeDTO">
+	<delete id="forceRemoveKnowledgeBoard" parameterType="Long">
+		
+		DELETE FROM KNOWLEDGE
+		WHERE BOARD_ID = #{boardId}
 	
-		SELECT *
+	
+	</delete>
+	
+	<delete id="forceRemoveKnowledgeReplyBoard" parameterType="Long">
 		
-		FROM KNOWLEDGE 
+		DELETE FROM KNOWLEDGEREPLY
+		WHERE REPLY_ID = #{replyId}
+	
+	</delete>
+	
+	
+	<delete id="forceRemoveQnaBoard" parameterType="Long">
 		
-	</select>
-
-
+		DELETE FROM QNA
+		WHERE BOARD_ID = #{boardId}
+	
+	</delete>
+	
+	<delete id="forceRemoveQnaReplyBoard" parameterType="Long">
+		
+		DELETE FROM QNAREPLY
+		WHERE REPLY_ID = #{replyId}
+	
+	</delete>
+	
+	<delete id="forceRemoveStudyBoard" parameterType="Long">
+		DELETE FROM STUDY
+		WHERE BOARD_ID = #{boardId}
+	
+	</delete>
+	
+	<delete id="forceRemoveStudyReplyBoard" parameterType="Long">
+		DELETE FROM STUDYREPLY
+		WHERE REPLY_ID = #{replyId}
+	
+	
+	</delete>
+	
+	<delete id="forceRemoveBookBoard" parameterType="Long">
+		
+		DELETE FROM BOOK
+		WHERE BOARD_ID = #{boardId}
+	
+	</delete>
+	
+	<delete id="forceRemoveBookReplyBoard" parameterType="Long">
+		
+		DELETE FROM BOOKREPLY
+		WHERE REPLY_ID = #{replyId}
+	
+	</delete>
+	
 </mapper>
