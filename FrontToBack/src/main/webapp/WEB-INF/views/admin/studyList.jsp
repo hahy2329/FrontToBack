@@ -37,9 +37,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href=""><i class="fa fa-home"></i> Home</a>
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>관리</a>
-                        <span>스터디그룹</span>
+                        <span>스터디 그룹</span>
                     </div>
                 </div>
             </div>

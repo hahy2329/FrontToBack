@@ -47,7 +47,7 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/bookList.jsp"></put-attribute>
 	</definition>
 	
-	<definition name="/admin/bookDetail" extends="baseLayOut">
+	<definition name="/admin/bookDetail" extends="baseLayout">
 		<put-attribute name="title" value="도서추천(관리자용) 세부정보"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/admin/bookDetail.jsp"></put-attribute>
 	</definition>

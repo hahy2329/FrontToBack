@@ -163,7 +163,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
-                        <span>Register</span>
+                        <span>회원가입</span>
                     </div>
                 </div>
             </div>

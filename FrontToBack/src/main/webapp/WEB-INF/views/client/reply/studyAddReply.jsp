@@ -83,8 +83,8 @@ $().ready(function(){
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>커뮤니티</a>
-                        <a>Study Group</a>
-                        <span>댓글 수정</span>
+                        <a>스터디 그룹</a>
+                        <span>댓글 작성</span>
                     </div>
                 </div>
             </div>
@@ -100,19 +100,16 @@ $().ready(function(){
                     <div class="contact__content">
                        
                         <div class="contact__form">
-                            <h5>댓글 수정</h5>
-                            <form action="${contextPath }/boardAdvance/studyUpdateReply" method="post">
-                            	
-                                <input type="text" name="memberId" id="memberId" placeholder="아이디" value="${studyReplyDTO.memberId }"  required="required" maxlength="15" readonly="readonly"/>
+                            <h5>댓글 작성</h5>
+                            <form action="${contextPath }/boardAdvance/studyAddReply" method="post">
+                                <input type="text" name="memberId" id="memberId" placeholder="아이디" value="${sessionScope.memberId }"  required="required" maxlength="15" readonly="readonly"/>
                                 <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
 								<p class="answer"></p>
-                                <textarea rows="10" cols="50" name="content" required="required">${studyReplyDTO.content }</textarea>
+                                <textarea rows="10" cols="50" placeholder="200자 이내로 작성하세요." name="content" required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>
-                                <input type="hidden" name="boardId" value="${studyReplyDTO.boardId }">
-                                <input type="hidden" name="replyId" value="${studyReplyDTO.replyId }">
-                                <button type="submit" class="site-btn">수정</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/studyDetail?boardId=${studyReplyDTO.boardId }'">뒤로가기</button>
+                                <input type="hidden" name="boardId" value="${boardId }">
+                                <button type="submit" class="site-btn">댓글쓰기</button>
                             </form>
                         </div>
                          <div>

@@ -10,7 +10,21 @@
 </head>
 
 <body>
-   
+	
+	<div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
+                        <a>커뮤니티</a>
+                        <a>Q&A</a>
+                        <span>세부정보</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
@@ -20,23 +34,23 @@
                         <div class="blog__details__item">
                             <img src="img/blog/details/blog-details.jpg" alt="">
                             <div class="blog__details__item__title">
-                                <span class="tip">Book Recommend</span>
-                                <h4>${bookDTO.subject }</h4>
+                                <span class="tip">Q&A</span>
+                                <h4>${qnaDTO.subject }</h4>
                                 <ul>
-                                    <li>by <span>${bookDTO.memberId }</span></li>
-                                    <li><fmt:formatDate value="${bookDTO.enrollDt }" pattern="yyyy-MM-dd"/></li>
-                                    <li>조회수: ${bookDTO.readCnt }</li>
-                                    <li>${bookDTO.sort }</li>
+                                    <li>by <span>${qnaDTO.memberId }</span></li>
+                                    <li><fmt:formatDate value="${qnaDTO.enrollDt }" pattern="yyyy-MM-dd"/></li>
+                                    <li>조회수: ${qnaDTO.readCnt }</li>
+                                    <li>${qnaDTO.sort }</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="blog__details__desc">
-                           ${bookDTO.content }
+                           ${qnaDTO.content }
                         </div>
                         <div class="blog__details__tags">
-                            <a href="${contextPath}/boardAdvance/bookUpdateBoard?boardId=${bookDTO.boardId }">수정</a>
-                            <a href="${contextPath}/boardAdvance/bookRemoveBoard?boardId=${bookDTO.boardId }">삭제</a>
-                            <a href="${contextPath}/boardAdvance/bookList">목록보기</a>
+                            <a href="${contextPath}/boardAdvance/qnaUpdateBoard?boardId=${qnaDTO.boardId }">수정</a>
+                            <a href="${contextPath}/boardAdvance/qnaRemoveBoard?boardId=${qnaDTO.boardId }">삭제</a>
+                            <a href="${contextPath}/boardAdvance/qnaList">목록보기</a>
                         </div>
                         <div class="blog__details__btns">
                             <div class="row">
@@ -48,14 +62,14 @@
                                 
                                <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="blog__details__btn__item blog__details__btn__item--next">
-                                        <h6><a href="${contextPath}/boardAdvance/bookAddReply?boardId=${bookDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
+                                        <h6><a href="${contextPath}/boardAdvance/qnaAddReply?boardId=${qnaDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="blog__details__comment">
                             
-                            <c:forEach var="replyDTO" items="${bookReplyDTO }">
+                            <c:forEach var="replyDTO" items="${qnaReplyDTO }">
                             <div class="blog__comment__item">
                                
                                 <div class="blog__comment__item__text">
@@ -63,8 +77,8 @@
                                     <p>${replyDTO.content }</p>
                                     <ul>
                                         <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
-                                        <li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/bookUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
-                                        <li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/bookRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                        <li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/qnaUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
+                                        <li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/qnaRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
                                     </ul>
                                 </div>
                             </div>

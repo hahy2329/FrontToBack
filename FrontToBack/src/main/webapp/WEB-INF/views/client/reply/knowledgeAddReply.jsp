@@ -83,8 +83,8 @@ $().ready(function(){
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>커뮤니티</a>
-                        <a>Q&A</a>
-                        <span>댓글 추가</span>
+                        <a>지식</a>
+                        <span>댓글 작성</span>
                     </div>
                 </div>
             </div>
@@ -101,7 +101,7 @@ $().ready(function(){
                        
                         <div class="contact__form">
                             <h5>댓글 작성</h5>
-                            <form action="${contextPath }/boardAdvance/qnaAddReply" method="post">
+                            <form action="${contextPath }/boardAdvance/KnowledgeAddReply" method="post">
                                 <input type="text" name="memberId" id="memberId" placeholder="아이디" value="${sessionScope.memberId }"  required="required" maxlength="15" readonly="readonly"/>
                                 <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">

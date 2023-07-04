@@ -38,7 +38,7 @@
                     <div class="breadcrumb__links">
                          <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                          <a>커뮤니티</a>
-                         <span>Study Group</span>
+                         <span>스터디 그룹</span>
                     </div>
                 </div>
             </div>
@@ -51,7 +51,7 @@
 	<div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
-                    <h2>Study Group</h2>
+                    <h2>스터디 그룹</h2>
                         <table>
                         	<colgroup>
                         		<col width="10%">

@@ -85,8 +85,8 @@
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>커뮤니티</a>
-                        <a>Book Recommend</a>
-                        <span>게시글 수정</span>
+                        <a>도서 추천</a>
+                        <span>게시글 작성</span>
                     </div>
                 </div>
             </div>
@@ -102,18 +102,17 @@
                     <div class="contact__content">
                        
                         <div class="contact__form">
-                            <h5>게시글 수정</h5>
-                            <form action="${contextPath }/boardAdvance/bookUpdateBoard" method="post">
-                                <input type="text" name="memberId" id="memberId" value="${bookDTO.memberId }" readonly="readonly" placeholder="아이디">
+                            <h5>게시글 작성</h5>
+                            <form action="${contextPath }/boardAdvance/bookAddBoard" method="post">
+                                <input type="text" name="memberId" id="memberId" value="${sessionScope.memberId }" readonly="readonly" placeholder="아이디">
                                 <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
 								<p class="answer"></p>
-                                <input type="text" name="subject" required="required" placeholder="제목" value="${bookDTO.subject }">
-                                <textarea rows="10" cols="50"  name="content" required="required">${bookDTO.content }</textarea>
+                                <input type="text" name="subject" required="required" placeholder="제목">
+                                <textarea rows="10" cols="50" placeholder="내용" name="content" required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>
-                                <input type="text" name="sort" value="${bookDTO.sort }" readonly="readonly">
-                                <button type="submit" class="site-btn">수정</button>
-                                <input type="hidden" name="boardId" value="${bookDTO.boardId }">
+                                <input type="text" name="sort" value="${sessionScope.sort }" readonly="readonly">
+                                <button type="submit" class="site-btn">글쓰기</button>
                                 <button class="site-btn"><a href="${contextPath}/boardAdvance/bookList" style="color: white;">목록보기</a></button>
                             </form>
                         </div>

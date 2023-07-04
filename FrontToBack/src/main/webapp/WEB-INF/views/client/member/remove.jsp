@@ -69,7 +69,8 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
-                        <span>Update</span>
+                        <a>개인정보</a>
+                        <span>회원탈퇴</span>
                     </div>
                 </div>
             </div>

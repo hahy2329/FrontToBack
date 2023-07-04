@@ -10,7 +10,20 @@
 </head>
 
 <body>
-   
+
+	<div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
+                         <a>관리</a>
+                         <span>세부정보</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
@@ -20,7 +33,7 @@
                         <div class="blog__details__item">
                             <img src="img/blog/details/blog-details.jpg" alt="">
                             <div class="blog__details__item__title">
-                                <span class="tip">스터디그룹</span>
+                                <span class="tip">스터디 그룹</span>
                                 <h4>${studyDTO.subject }</h4>
                                 <ul>
                                     <li>by <span>${studyDTO.memberId }</span></li>

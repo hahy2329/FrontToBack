@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href=""><i class="fa fa-home"></i> Home</a>
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>관리</a>
                         <span>도서추천</span>
                     </div>

@@ -66,6 +66,19 @@
 </head>
 <body>
 	
+	<div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
+                        <a>개인정보</a>
+                        <span>개인정보 변경</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">

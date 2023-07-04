@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
-                        <a href=""><i class="fa fa-home"></i> Home</a>
+                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                         <a>관리</a>
                         <span>Q&A</span>
                     </div>
@@ -69,8 +69,8 @@
                                                     <li><a href="#">공지사항</a></li>
                                                     <li><a href="${contextPath }/admin/knowledgeList">지식</a></li>
                                                     <li><a href="${contextPath }/admin/qnaList">Q&A</a></li>
-                                                    <li><a href="#">스터디그룹</a></li>
-                                                    <li><a href="#">도서추천</a></li>
+                                                    <li><a href="${contextPath }/admin/studyList">스터디그룹</a></li>
+                                                    <li><a href="${contextPath }/admin/bookList">도서추천</a></li>
                                                 </ul>
                                             </div>
                                         </div>

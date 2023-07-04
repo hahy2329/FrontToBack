@@ -8,6 +8,19 @@
 </head>
 <body>
 
+	<div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
+                         <a>Administrator</a>
+                         <span>관리자 소개</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
  <!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
