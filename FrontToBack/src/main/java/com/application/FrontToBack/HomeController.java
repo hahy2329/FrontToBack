@@ -19,6 +19,8 @@ import com.application.FrontToBack.bookBoard.dto.BookDTO;
 import com.application.FrontToBack.bookBoard.service.BookBoardSerive;
 import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.knowledgeBoard.service.KnowledgeBoardService;
+import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
+import com.application.FrontToBack.noticeBoard.service.NoticeBoardService;
 import com.application.FrontToBack.qnaBoard.dto.QnaDTO;
 import com.application.FrontToBack.qnaBoard.service.QnaBoardService;
 import com.application.FrontToBack.studyBoard.dto.StudyDTO;
@@ -42,6 +44,9 @@ public class HomeController {
 	@Autowired
 	private BookBoardSerive bookBoardSerive;
 	
+	@Autowired 
+	private NoticeBoardService noticeBoardService;
+	
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -57,6 +62,7 @@ public class HomeController {
 		List<KnowledgeDTO> knowledgeList = knowledgeBoardService.getMainKnowledgeBoard();
 		List<QnaDTO> qnaList = qnaBoardService.getMainQnaBoard();
 		List<BookDTO> bookList = bookBoardSerive.getMainBookBoard();
+		List<NoticeDTO> noticeList = noticeBoardService.getMainNoticeBoard();
 		
 		
 		
@@ -64,6 +70,8 @@ public class HomeController {
 		mv.addObject("studyList", studyList);
 		mv.addObject("knowledgeList", knowledgeList);
 		mv.addObject("bookList", bookList);
+		mv.addObject("noticeList", noticeList);
+		
 		mv.setViewName("/main");
 		
 		return mv;

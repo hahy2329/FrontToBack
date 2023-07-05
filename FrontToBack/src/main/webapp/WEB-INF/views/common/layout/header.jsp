@@ -23,7 +23,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="${contextPath }/">Home</a></li>
-                            <li><a href="">공지사항</a></li>
+                            <li><a href="${contextPath }/boardAdvance/noticeList">공지사항</a></li>
                           <c:if test="${sessionScope.memberId ne null }">
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">

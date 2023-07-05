@@ -261,7 +261,7 @@
 				*
 			FROM	
 				KNOWLEDGE
-			LIMIT 3
+			LIMIT 5
 		
 		</select>
 	

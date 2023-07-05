@@ -249,7 +249,7 @@
 			FROM
 				STUDY
 				
-			LIMIT 3
+			LIMIT 5
 		
 		
 		</select>

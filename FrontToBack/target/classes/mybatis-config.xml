@@ -24,6 +24,9 @@
 		<typeAlias type="com.application.FrontToBack.bookBoard.dto.BookReplyDTO" alias="BookReplyDTO"/>
 		
 		<typeAlias type="com.application.FrontToBack.admin.dto.AdminDTO" alias="AdminDTO"/>
+		
+		<typeAlias type="com.application.FrontToBack.noticeBoard.dto.NoticeDTO" alias="NoticeDTO"/>
+		<typeAlias type="com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO" alias="NoticeReplyDTO"/>
 	</typeAliases>		
 		
 </configuration>

@@ -146,7 +146,6 @@
                     </c:forEach>
                 </div>
             </div>
-            
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="trend__content">
                     <div class="section-title">
@@ -164,7 +163,23 @@
                     </c:forEach>
                 </div>
             </div>
-            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="trend__content">
+                    <div class="section-title">
+                        <h4>공지사항</h4>
+                    </div>
+                    <c:forEach var="noticeDTO" items="${noticeList }">
+                    <div class="trend__item">
+                        <div class="trend__item__text">
+                            <a href="${contextPath }/boardAdvance/bookDetail?boardId=${noticeDTO.boardId}"><strong>${noticeDTO.subject }</strong></a>
+                            <div class="rating">
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${noticeDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${noticeDTO.enrollDt }" pattern="yyyy-MM-dd"/> /${noticeDTO.adminId }</p>
+                            </div>
+                        </div>
+                    </div>
+                    </c:forEach>
+                </div>
+            </div>
         </div>
     </div>
 </section>
