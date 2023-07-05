@@ -72,4 +72,32 @@
 	
 	</delete>
 	
+	<select id="getAdminPasswd" parameterType="String" resultType="String">
+	
+		SELECT
+			PASSWD
+		FROM
+			ADMIN
+		WHERE
+			ADMIN_ID = #{adminId}
+	
+	</select>
+	
+	<insert id="insertNoticeBoard" parameterType="NoticeDTO">
+		
+		INSERT INTO NOTICE(ADMIN_ID, SUBJECT, CONTENT, SORT, PASSWD) 
+		
+		VALUES(
+		
+			#{adminId},
+			#{subject},
+			#{content},
+			#{sort},
+			#{passwd}
+		
+		)
+	
+	
+	</insert>
+	
 </mapper>

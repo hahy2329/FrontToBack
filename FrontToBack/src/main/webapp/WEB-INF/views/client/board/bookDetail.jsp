@@ -49,9 +49,15 @@
                            ${bookDTO.content }
                         </div>
                         <div class="blog__details__tags">
-                            <a href="${contextPath}/boardAdvance/bookUpdateBoard?boardId=${bookDTO.boardId }">수정</a>
-                            <a href="${contextPath}/boardAdvance/bookRemoveBoard?boardId=${bookDTO.boardId }">삭제</a>
-                            <a href="${contextPath}/boardAdvance/bookList">목록보기</a>
+                        <c:choose>
+                        	<c:when test="${sessionScope.memberId eq bookDTO.memberId }">
+                            	<a href="${contextPath}/boardAdvance/bookUpdateBoard?boardId=${bookDTO.boardId }">수정</a>
+                            	<a href="${contextPath}/boardAdvance/bookRemoveBoard?boardId=${bookDTO.boardId }">삭제</a>
+                            </c:when>
+                            <c:otherwise>
+                            	<a href="${contextPath}/boardAdvance/bookList">목록보기</a>
+                        	</c:otherwise>
+                        </c:choose>
                         </div>
                         <div class="blog__details__btns">
                             <div class="row">
@@ -63,7 +69,9 @@
                                 
                                <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="blog__details__btn__item blog__details__btn__item--next">
+                                    <c:if test="${sessionScope.memberId ne null }">
                                         <h6><a href="${contextPath}/boardAdvance/bookAddReply?boardId=${bookDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
+                                    </c:if>
                                     </div>
                                 </div>
                             </div>
@@ -78,8 +86,10 @@
                                     <p>${replyDTO.content }</p>
                                     <ul>
                                         <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
-                                        <li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/bookUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
-                                        <li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/bookRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                        <c:if test="${sessionScope.memberId eq replyDTO.memberId}">
+                                        	<li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/bookUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
+                                        	<li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/bookRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                    	</c:if>
                                     </ul>
                                 </div>
                             </div>

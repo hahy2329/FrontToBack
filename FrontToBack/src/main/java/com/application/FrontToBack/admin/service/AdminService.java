@@ -3,6 +3,7 @@ package com.application.FrontToBack.admin.service;
 
 
 import com.application.FrontToBack.admin.dto.AdminDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 
 public interface AdminService {
 	public AdminDTO getAdminDetail(AdminDTO adminDTO) throws Exception;
@@ -14,5 +15,7 @@ public interface AdminService {
 	public void forceRemoveStudyReplyBoard(long replyId) throws Exception;
 	public void forceRemoveBookBoard(long boardId) throws Exception;
 	public void forceRemoveBookReplyBoard(long replyId) throws Exception;
+	public String checkDuplicatedPasswd(String passwd, String adminId) throws Exception;
+	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception;
 	
 }

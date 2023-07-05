@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.FrontToBack.admin.dao.AdminDAO;
 import com.application.FrontToBack.admin.dto.AdminDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -64,6 +65,23 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void forceRemoveBookReplyBoard(long replyId) throws Exception {
 		adminDAO.forceRemoveBookReplyBoard(replyId);
+		
+	}
+
+	@Override
+	public String checkDuplicatedPasswd(String passwd, String adminId) throws Exception {
+		if(passwd.equals(adminDAO.getAdminPasswd(adminId))) {
+			return "duplicate";
+		}
+		else {
+			return "notDuplicated";
+		}
+	}
+
+	@Override
+	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception {
+		
+		adminDAO.insertNoticeBoard(noticeDTO);
 		
 	}
 

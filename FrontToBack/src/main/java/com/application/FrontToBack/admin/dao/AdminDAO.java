@@ -3,6 +3,7 @@ package com.application.FrontToBack.admin.dao;
 
 
 import com.application.FrontToBack.admin.dto.AdminDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 
 
 public interface AdminDAO {
@@ -16,5 +17,7 @@ public interface AdminDAO {
 	public void forceRemoveStudyReplyBoard(long replyId) throws Exception;
 	public void forceRemoveBookBoard(long boardId) throws Exception;
 	public void forceRemoveBookReplyBoard(long replyId) throws Exception;
+	public String getAdminPasswd(String adminId) throws Exception;
+	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception;
 }
  

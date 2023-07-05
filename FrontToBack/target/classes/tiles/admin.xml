@@ -52,6 +52,22 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/bookDetail.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/admin/noticeList" extends="baseLayout">
+		<put-attribute name="title" value="공지사항(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/noticeList.jsp"></put-attribute>	
+	</definition>
+	
+	<definition name="/admin/noticeAddBoard" extends="baseLayout">
+		<put-attribute name="title" value="공지사항(관리자용) 게시글 작성"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/noticeAdd.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="/admin/noticeDetail" extends="baseLayout">
+		<put-attribute name="title" value="공지사항(관리자용) 세부정보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/noticeDetail.jsp"></put-attribute>
+	</definition>
+	
 	
 </tiles-definitions>
 

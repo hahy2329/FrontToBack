@@ -171,7 +171,7 @@
                     <c:forEach var="noticeDTO" items="${noticeList }">
                     <div class="trend__item">
                         <div class="trend__item__text">
-                            <a href="${contextPath }/boardAdvance/bookDetail?boardId=${noticeDTO.boardId}"><strong>${noticeDTO.subject }</strong></a>
+                            <a href="${contextPath }/boardAdvance/noticeDetail?boardId=${noticeDTO.boardId}"><strong>${noticeDTO.subject }</strong></a>
                             <div class="rating">
                                 <p><i class="fa fa-heart-o"></i>&nbsp; ${noticeDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${noticeDTO.enrollDt }" pattern="yyyy-MM-dd"/> /${noticeDTO.adminId }</p>
                             </div>

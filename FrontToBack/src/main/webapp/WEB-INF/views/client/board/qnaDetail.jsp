@@ -48,9 +48,15 @@
                            ${qnaDTO.content }
                         </div>
                         <div class="blog__details__tags">
-                            <a href="${contextPath}/boardAdvance/qnaUpdateBoard?boardId=${qnaDTO.boardId }">수정</a>
-                            <a href="${contextPath}/boardAdvance/qnaRemoveBoard?boardId=${qnaDTO.boardId }">삭제</a>
-                            <a href="${contextPath}/boardAdvance/qnaList">목록보기</a>
+                        <c:choose>
+                        	<c:when test="${sessionScope.memberId eq qnaDTO.memberId}">
+                            	<a href="${contextPath}/boardAdvance/qnaUpdateBoard?boardId=${qnaDTO.boardId }">수정</a>
+                            	<a href="${contextPath}/boardAdvance/qnaRemoveBoard?boardId=${qnaDTO.boardId }">삭제</a>
+                            </c:when>
+                            <c:otherwise>
+                            	<a href="${contextPath}/boardAdvance/qnaList">목록보기</a>
+                        	</c:otherwise>
+                       	</c:choose> 
                         </div>
                         <div class="blog__details__btns">
                             <div class="row">
@@ -62,7 +68,9 @@
                                 
                                <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="blog__details__btn__item blog__details__btn__item--next">
+                                     <c:if test="${sessionScope.memberId ne null }">	
                                         <h6><a href="${contextPath}/boardAdvance/qnaAddReply?boardId=${qnaDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
+                                     </c:if>	
                                     </div>
                                 </div>
                             </div>
@@ -77,8 +85,10 @@
                                     <p>${replyDTO.content }</p>
                                     <ul>
                                         <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
-                                        <li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/qnaUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
-                                        <li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/qnaRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                        <c:if test="${sessionScope.memberId eq replyDTO.memberId}">
+                                        	<li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/qnaUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
+                                        	<li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/qnaRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+                                    	</c:if>
                                     </ul>
                                 </div>
                             </div>

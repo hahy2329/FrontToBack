@@ -43,7 +43,7 @@
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="#">공지사항</a></li>
+                                                    <li><a href="${contextPath }/admin/noticeList">공지사항</a></li>
                                                     <li><a href="${contextPath }/admin/knowledgeList">지식</a></li>
                                                     <li><a href="${contextPath }/admin/qnaList">Q&A</a></li>
                                                     <li><a href="${contextPath }/admin/studyList">스터디그룹</a></li>

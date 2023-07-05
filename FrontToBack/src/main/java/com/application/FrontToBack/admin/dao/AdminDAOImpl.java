@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.application.FrontToBack.admin.dto.AdminDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 
 
 @Repository
@@ -65,6 +66,17 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public void forceRemoveBookReplyBoard(long replyId) throws Exception {
 		sqlSession.delete("admin.forceRemoveBookReplyBoard",replyId);
+		
+	}
+
+	@Override
+	public String getAdminPasswd(String adminId) throws Exception {
+		return sqlSession.selectOne("admin.getAdminPasswd",adminId);
+	}
+
+	@Override
+	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception {
+		sqlSession.insert("admin.insertNoticeBoard", noticeDTO);
 		
 	}
 
