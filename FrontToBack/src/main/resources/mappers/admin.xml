@@ -100,4 +100,77 @@
 	
 	</insert>
 	
+	<update id="noticeUpdate" parameterType="NoticeDTO">
+		
+		UPDATE
+			NOTICE
+		SET
+			SUBJECT = #{subject},
+			CONTENT = #{content},
+			SORT = #{sort},
+			ENROLL_DT = #{enrollDt}
+			
+			
+		WHERE
+			BOARD_ID = #{boardId}
+	
+	</update>
+	
+	<delete id="noticeRemove" parameterType="NoticeDTO">
+		DELETE FROM NOTICE
+			
+		WHERE
+			BOARD_ID = #{boardId}
+	
+	
+	</delete>
+	
+	<delete id="noticeReplyForceRemove" parameterType="Long">
+		
+		DELETE FROM NOTICEREPLY
+		
+		WHERE
+			REPLY_ID = #{replyId}
+	
+	</delete>
+	
+	<insert id="noticeAddReply" parameterType="NoticeReplyDTO">
+		INSERT INTO NOTICEREPLY(ADMIN_ID, PASSWD, CONTENT, BOARD_ID)
+		VALUES(
+		
+			#{adminId},
+			#{passwd},
+			#{content},
+			#{boardId}
+		
+		
+		)
+	
+	</insert>
+	
+	
+	
+	<update id="noticeUpdateReply" parameterType="NoticeReplyDTO">
+	
+		UPDATE
+			NOTICEREPLY
+		SET
+			CONTENT = #{content}
+			ENROLL_DT = NOW()
+		WHERE
+			REPLY_ID = #{replyId}
+	
+	
+	</update>
+	
+	<delete id="noticeRemoveReply" parameterType="NoticeReplyDTO">
+		
+		DELETE FROM NOTICEREPLY
+		
+		WHERE
+			REPLY_ID = #{replyId}
+	
+	
+	
+	</delete>
 </mapper>

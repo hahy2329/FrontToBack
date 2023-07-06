@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.application.FrontToBack.admin.dao.AdminDAO;
 import com.application.FrontToBack.admin.dto.AdminDTO;
 import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -82,6 +83,42 @@ public class AdminServiceImpl implements AdminService {
 	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception {
 		
 		adminDAO.insertNoticeBoard(noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeUpdate(NoticeDTO noticeDTO) throws Exception {
+		adminDAO.noticeUpdate(noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeRemove(NoticeDTO noticeDTO) throws Exception {
+		adminDAO.noticeRemove(noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeReplyForceRemove(long replyId) throws Exception {
+		adminDAO.noticeReplyForceRemove(replyId);
+		
+	}
+
+	@Override
+	public void noticeUpdateReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		adminDAO.noticeUpdateReply(noticeReplyDTO);
+		
+	}
+
+	@Override
+	public void noticeAddReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		adminDAO.noticeAddReply(noticeReplyDTO);
+		
+	}
+
+	@Override
+	public void noticeRemoveReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		adminDAO.noticeRemoveReply(noticeReplyDTO);
 		
 	}
 

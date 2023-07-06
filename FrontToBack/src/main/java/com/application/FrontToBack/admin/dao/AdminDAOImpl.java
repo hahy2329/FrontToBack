@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.application.FrontToBack.admin.dto.AdminDTO;
 import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
+import com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO;
 
 
 @Repository
@@ -77,6 +78,42 @@ public class AdminDAOImpl implements AdminDAO {
 	@Override
 	public void insertNoticeBoard(NoticeDTO noticeDTO) throws Exception {
 		sqlSession.insert("admin.insertNoticeBoard", noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeUpdate(NoticeDTO noticeDTO) throws Exception {
+		sqlSession.update("admin.noticeUpdate", noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeRemove(NoticeDTO noticeDTO) throws Exception {
+		sqlSession.delete("admin.noticeRemove",noticeDTO);
+		
+	}
+
+	@Override
+	public void noticeReplyForceRemove(long replyId) throws Exception {
+		sqlSession.delete("admin.noticeReplyForceRemove", replyId);
+		
+	}
+
+	@Override
+	public void noticeUpdateReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		sqlSession.update("admin.noticeUpdateReply", noticeReplyDTO);
+		
+	}
+
+	@Override
+	public void noticeAddReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		sqlSession.insert("admin.noticeAddReply", noticeReplyDTO);
+		
+	}
+
+	@Override
+	public void noticeRemoveReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
+		sqlSession.delete("admin.noticeRemoveReply",noticeReplyDTO);
 		
 	}
 

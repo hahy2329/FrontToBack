@@ -134,6 +134,11 @@ public class AdminController {
 		mv.setViewName("/admin/adminPage");
 		return mv;
 		
+		
+		
+		
+		
+		
 	}
 	
 	@GetMapping("/knowledgeList")
@@ -816,5 +821,183 @@ public class AdminController {
 		
 		
 	}
+	
+	
+	@GetMapping("/noticeUpdate")
+	public ModelAndView noticeForceUpdate(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		NoticeDTO noticeDTO = noticeBoardService.getNoticeBoardDetail(boardId, false);
+		mv.addObject("noticeDTO", noticeDTO);
+		mv.setViewName("/admin/noticeUpdate");
+		
+		return mv;
+		
+	}
+	
+	
+	@PostMapping("/noticeUpdate")
+	public ResponseEntity<Object> noticeUpdate(NoticeDTO noticeDTO, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeUpdate(noticeDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath()+"/admin/noticeDetail" + noticeDTO.getBoardId() + "';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/noticeRemove")
+	public ModelAndView noticeRemove(@RequestParam("boardId")long boardId, HttpServletRequest request) throws Exception{
+		
+		
+		ModelAndView mv = new ModelAndView();
+		NoticeDTO noticeDTO = noticeBoardService.getNoticeBoardDetail(boardId, false);
+		mv.addObject("noticeDTO", noticeDTO);
+		mv.setViewName("/admin/noticeRemove");
+		
+		return mv;
+	}
+	
+	@PostMapping("/noticeRemove")
+	public ResponseEntity<Object> noticeRemove(NoticeDTO noticeDTO, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeRemove(noticeDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath()+"/admin/noticeDetail?boardId=" + noticeDTO.getBoardId() + "';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping("/noticeReplyForceRemove")
+	public ResponseEntity<Object> noticeReplyForceRemove(long replyId, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeReplyForceRemove(replyId);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제되었습니다.');";
+		message +="location.href='" + request.getContextPath() +"/admin/noticeList';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message,responseHeaders,HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/noticeAddReply")
+	public ModelAndView noticeAddReply(@RequestParam("boardId") long boardId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("boardId", boardId);
+		mv.setViewName("/admin/noticeAddReply");
+		
+		return mv;
+		
+		
+	}
+	
+	
+	@PostMapping("/noticeAddReply")
+	public ResponseEntity<Object> noticeAddReply(NoticeReplyDTO noticeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeAddReply(noticeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 등록되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/admin/noticeDetail?boardId="+ noticeReplyDTO.getBoardId() +"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+		
+		
+	}
+	
+	
+	@GetMapping("/noticeUpdateReply")
+	public ModelAndView noticeUpdateReply(@RequestParam("replyId") long replyId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		NoticeReplyDTO noticeReplyDTO = noticeBoardService.noticeReplyDetail(replyId);
+		mv.addObject("noticeReplyDTO", noticeReplyDTO);
+		mv.setViewName("/admin/noticeUpdateReply");
+		
+		return mv;
+		
+	}
+	
+	@RequestMapping("/noticeUpdateReply")
+	public ResponseEntity<Object> noticeUpdateReply(NoticeReplyDTO noticeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeUpdateReply(noticeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 수정되었습니다.');";
+		message +="location.href='"+ request.getContextPath() +"/admin/noticeDetail?boardId"+noticeReplyDTO.getBoardId()+"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+		
+		
+		
+	}
+	
+	
+	@GetMapping("/noticeReplyRemove")
+	public ModelAndView noticeReplyRemove(@RequestParam("replyId") long replyId) throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		NoticeReplyDTO noticeReplyDTO = noticeBoardService.noticeReplyDetail(replyId);
+		mv.addObject("noticeReplyDTO", noticeReplyDTO);
+		mv.setViewName("/admin/noticeRemoveReply");
+		
+		return mv;
+		
+		
+	}
+	
+	@PostMapping("/noticeReplyRemove")
+	public ResponseEntity<Object> noticeReplyRemove(NoticeReplyDTO noticeReplyDTO, HttpServletRequest request) throws Exception{
+		
+		adminService.noticeRemoveReply(noticeReplyDTO);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제되었습니다.');";
+		message +="location.href='"+ request.getContextPath() +"/admin/noticeDetail?boardId="+noticeReplyDTO.getBoardId()+"';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders,HttpStatus.OK);
+		
+		
+		
+		
+	}
+	
+	
 	
 }

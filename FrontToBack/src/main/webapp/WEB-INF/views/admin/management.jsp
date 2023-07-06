@@ -70,19 +70,8 @@
                         </div>
                     </div>
                 </div>
-                
-                
-                
-                 
-                <div class="col-lg-9 col-md-9">
-                    <div class="row">
-                        
-                        
-                       
-                    </div>
-                </div>
             </div>
-        </div>
+            </div>
     </section>
     <!-- Shop Section End -->
 </body>

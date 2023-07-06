@@ -48,8 +48,8 @@
                            ${noticeDTO.content }
                         </div>
                         <div class="blog__details__tags">
-                        	<a href="${contextPath }/admin/noticeForceUpdate?boardId=${noticeDTO.boardId}">수정</a>
-                            <a href="${contextPath}/admin/noticeForceRemove?boardId=${noticeDTO.boardId }">삭제</a>
+                        	<a href="${contextPath }/admin/noticeUpdate?boardId=${noticeDTO.boardId}">수정</a>
+                            <a href="${contextPath}/admin/noticeRemove?boardId=${noticeDTO.boardId }">삭제</a>
                             <a href="${contextPath}/admin/noticeList">목록보기</a>
                         </div>
                         <div class="blog__details__btns">
@@ -59,6 +59,13 @@
                                         <h5><h6 style="font-weight: bold">댓글 리스트<h7 style="color: red;">&nbsp;(${allReplyCnt }개)</h7></h6></h5>
                                     </div>
                                 </div>
+                                
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="blog__details__btn__item blog__details__btn__item--next">
+                                        <h6><a href="${contextPath}/admin/noticeAddReply?boardId=${noticeDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="blog__details__comment">
@@ -80,7 +87,7 @@
                                         	<li><i class="fa fa-share"></i><a href="${contextPath}/admin/noticeReplyForceRemove?replyId=${replyDTO.replyId }">강제삭제</a></li>
                                        </c:if>
                                        <c:if test="${replyDTO.adminId ne null }">
-                                       		<li><i class="fa fa-share"></i><a href="${contextPath}/admin/noticeReplyUpdate?replyId=${replyDTO.replyId }">수정</a></li>
+                                       		<li><i class="fa fa-share"></i><a href="${contextPath}/admin/noticeUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
                                        		<li><i class="fa fa-share"></i><a href="${contextPath}/admin/noticeReplyRemove?replyId=${replyDTO.replyId }">삭제</a></li>
                                        </c:if>
                                     </ul>
