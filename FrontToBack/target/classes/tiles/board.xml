@@ -6,27 +6,27 @@
 	<!-- 지식 게시판  -->
 	<definition name="/boardAdvance/knowledgeList" extends="baseLayout">
 		<put-attribute name="title" value="지식게시판"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledgeList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledge/knowledgeList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeAdd" extends="baseLayout">
 		<put-attribute name="title" value="게시글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledgeAdd.jsp"></put-attribute>	
+		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledge/knowledgeAdd.jsp"></put-attribute>	
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeDetail" extends="baseLayout">
 		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledgeDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledge/knowledgeDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeUpdate" extends="baseLayout">
 		<put-attribute name="title" value="게시글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledgeUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledge/knowledgeUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeRemove" extends="baseLayout">
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledgeRemove.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/knowledge/knowledgeRemove.jsp"></put-attribute>
 	</definition>
 	
 	
@@ -35,82 +35,82 @@
 	
 	<definition name="/boardAdvance/qnaList" extends="baseLayout">
 		<put-attribute name="title" value="QNA게시판"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/qnaList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/qna/qnaList.jsp"></put-attribute>
 	</definition>
 	
 	
 	<definition name="/boardAdvance/qnaAddBoard" extends="baseLayout">
 		<put-attribute name="title" value="게시글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/qnaAdd.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/qna/qnaAdd.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/qnaDetail" extends="baseLayout">
 		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/qnaDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/qna/qnaDetail.jsp"></put-attribute>
 	
 	</definition>
 	
 	<definition name="/boardAdvance/qnaUpdate" extends="baseLayout">
 		<put-attribute name="title" value="게시글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/qnaUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/qna/qnaUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/qnaRemove" extends="baseLayout">
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/qnaRemove.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/qna/qnaRemove.jsp"></put-attribute>
 	</definition>
 	
 	<!-- 스터디 그룹 게시판 -->
 	
 	<definition name="/boardAdvance/studyList" extends="baseLayout">
 		<put-attribute name="title" value="스터디그룹 게시판"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/studyList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/studyGroup/studyList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyAddBoard" extends="baseLayout">
 		<put-attribute name="title" value="게시글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/studyAdd.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/studyGroup/studyAdd.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyDetail" extends="baseLayout">
 		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/studyDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/studyGroup/studyDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyUpdate" extends="baseLayout">
 		<put-attribute name="title" value="게시글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/studyUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/studyGroup/studyUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyRemove" extends="baseLayout">
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/studyRemove.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/studyGroup/studyRemove.jsp"></put-attribute>
 	</definition>
 	
 	<!--도서추천 게시판 -->
 	<definition name="/boardAdvance/bookList" extends="baseLayout">
 		<put-attribute name="title" value="도서추천 게시판"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/bookList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/book/bookList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/bookAddBoard" extends="baseLayout">
 		<put-attribute name="title" value="게시글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/bookAdd.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/book/bookAdd.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/bookDetail" extends="baseLayout">
 		<put-attribute name="title" value="게시글 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/bookDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/book/bookDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/bookUpdate" extends="baseLayout">
 		<put-attribute name="title" value="게시글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/bookUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/book/bookUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/bookRemove" extends="baseLayout">
 		<put-attribute name="title" value="게시글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/bookRemove.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/book/bookRemove.jsp"></put-attribute>
 	</definition>
 	
 	

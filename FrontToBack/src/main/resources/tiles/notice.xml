@@ -3,27 +3,27 @@
 <tiles-definitions>
 	<definition name="boardAdvance/noticeList" extends="baseLayout">
 		<put-attribute name="title" value="공지사항"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/noticeList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/notice/noticeList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/noticeDetail" extends="baseLayout">
 		<put-attribute name="title" value="세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/board/noticeDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/board/notice/noticeDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/noticeAddReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeReply/noticeAddReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/noticeUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeReply/noticeUpdateReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/noticeRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeRemoveReply.jsp"></put-attribute>	
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/noticeReply/noticeRemoveReply.jsp"></put-attribute>	
 	</definition>
 </tiles-definitions>
 

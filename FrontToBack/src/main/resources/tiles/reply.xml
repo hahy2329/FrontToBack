@@ -3,64 +3,64 @@
 <tiles-definitions>
 	<definition name="/boardAdvance/knowledgeAddReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeReply/knowledgeAddReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeReply/knowledgeUpdateReply.jsp"></put-attribute>
 	
 	</definition>
 	
 	<definition name="/boardAdvance/knowledgeRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeRemoveReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/knowledgeReply/knowledgeRemoveReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/qnaAddReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaReply/qnaAddReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/qnaUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaReply/qnaUpdateReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/qnaRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaRemoveReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/qnaReply/qnaRemoveReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyAddReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyGroupReply/studyAddReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyGroupReply/studyUpdateReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/studyRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyRemoveReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/studyGroupReply/studyRemoveReply.jsp"></put-attribute>
 	</definition>
 	
 	
 	<definition name="/boardAdvance/bookAddReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookReply/bookAddReply.jsp"></put-attribute>
 	</definition>	
 	
 	<definition name="/boardAdvance/bookUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookReply/bookUpdateReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/boardAdvance/bookRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookRemoveReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/reply/bookReply/bookRemoveReply.jsp"></put-attribute>
 	</definition>
 	
 	
