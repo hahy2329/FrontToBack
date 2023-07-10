@@ -22,7 +22,7 @@
 				success : function(data){
 					
 					
-					location.href=data.documents[0].url;
+					console.log(data);
 					
 				}
 				
@@ -50,7 +50,7 @@
             <div class="col-lg-4 col-md-6 col-sm-7">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        <a href="${contextPath }/"><img src="${contextPath }/resources/ashion-master/img/FrontToBack.png" alt=""></a>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                     cilisis.</p>

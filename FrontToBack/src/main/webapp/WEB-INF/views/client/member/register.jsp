@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-
+	
 	var isValidId = false;
 	var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
 	var isValidEmail = false;

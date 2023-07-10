@@ -4,14 +4,14 @@
 <tiles-definitions>
 	<definition name="/bookSearch" extends="baseLayout">
 		<put-attribute name="title" value="API검색"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/api/bookSearch.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/api/bookSearch.jsp"></put-attribute>
 	
 	
 	</definition>
 	
 	<definition name="/video" extends="baseLayout">
 		<put-attribute name="title" value="API검색"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/api/video.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/client/api/video.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>
