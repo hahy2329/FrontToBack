@@ -94,5 +94,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/noticeRemoveReply.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/admin/memberList" extends="baseLayout">
+		<put-attribute name="title" value="회원리스트 조회(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/memberList.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>
 

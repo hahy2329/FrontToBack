@@ -124,6 +124,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getMyActivityBook(memberId);
 	}
 
+	@Override
+	public List<MemberDTO> getMemberList() throws Exception {
+		return memberDAO.getMemberList();
+	}
+
 	
 
 

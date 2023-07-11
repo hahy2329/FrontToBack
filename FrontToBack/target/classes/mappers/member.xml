@@ -161,5 +161,16 @@
 				MEMBER_ID = #{memberId}
 		
 		</select>
+		
+		<select id="getMemberList" resultType="MemberDTO">
+			
+			SELECT
+				*
+			FROM
+				MEMBER
+			ORDER BY JOIN_DT DESC
+		
+		
+		</select>
 	
 	</mapper>

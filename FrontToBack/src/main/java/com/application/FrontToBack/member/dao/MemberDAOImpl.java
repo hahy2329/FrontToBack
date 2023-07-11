@@ -88,6 +88,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList("member.getMyActivityBook", memberId);
 	}
 
+	@Override
+	public List<MemberDTO> getMemberList() throws Exception {
+		return sqlSession.selectList("member.getMemberList");
+	}
+
 	
 	
 	

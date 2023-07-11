@@ -1,12 +1,25 @@
 package com.application.FrontToBack.admin.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor.HSSFColorPredefined;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -26,6 +39,8 @@ import com.application.FrontToBack.bookBoard.service.BookBoardSerive;
 import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeReplyDTO;
 import com.application.FrontToBack.knowledgeBoard.service.KnowledgeBoardService;
+import com.application.FrontToBack.member.dto.MemberDTO;
+import com.application.FrontToBack.member.service.MemberService;
 import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 import com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO;
 import com.application.FrontToBack.noticeBoard.service.NoticeBoardService;
@@ -57,6 +72,9 @@ public class AdminController {
 	
 	@Autowired
 	private NoticeBoardService noticeBoardService;
+	
+	@Autowired
+	private MemberService memberService;
 	
 	
 	
@@ -998,6 +1016,110 @@ public class AdminController {
 		
 	}
 	
+	@GetMapping("/memberList")
+	public ModelAndView memberList() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		List<MemberDTO> memberList = memberService.getMemberList();
+		mv.addObject("memberList", memberList);
+		mv.setViewName("/admin/memberList");
+		
+		return mv;
+		
+	}
+	
+	
+	@GetMapping("/memberExcelExport")
+	public void memberExcelExport(HttpServletResponse response) throws Exception{
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_hh_mm");
+		String fileName = sdf.format(new Date()) +"_memberList.xls";
+		
+		
+		Workbook wb = new HSSFWorkbook();
+		Sheet sheet = wb.createSheet("회원리스트");
+		Row row = null;
+		Cell cell = null;
+		
+		int rowNo = 0;
+		
+		CellStyle headStyle = wb.createCellStyle();
+		
+		headStyle.setBorderTop(BorderStyle.THIN);
+		headStyle.setBorderBottom(BorderStyle.THIN);
+		headStyle.setBorderLeft(BorderStyle.THIN);
+		headStyle.setBorderRight(BorderStyle.THIN);
+		
+		
+		headStyle.setFillForegroundColor(HSSFColorPredefined.YELLOW.getIndex());
+		headStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+		
+		
+		headStyle.setAlignment(HorizontalAlignment.CENTER);
+		
+		CellStyle bodyStyle = wb.createCellStyle();
+		bodyStyle.setBorderTop(BorderStyle.THIN);
+		bodyStyle.setBorderBottom(BorderStyle.THIN);
+		bodyStyle.setBorderLeft(BorderStyle.THIN);
+		bodyStyle.setBorderRight(BorderStyle.THIN);
+		
+		 row = sheet.createRow(rowNo++);
+		    cell = row.createCell(0);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("회원아이디");
+		    cell = row.createCell(1);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("회원이름");
+		    cell = row.createCell(2);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("이메일");
+		    cell = row.createCell(3);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("이메일 수신");
+		    cell = row.createCell(4);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("포지션");
+		    cell = row.createCell(5);
+		    cell.setCellStyle(headStyle);
+		    cell.setCellValue("주소");
+		    
+		    
+		  for(MemberDTO memberDTO : memberService.getMemberList()) {
+			  
+			  row = sheet.createRow(rowNo++);
+		        cell = row.createCell(0);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getMemberId());  
+		        cell = row.createCell(1);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getMemberNm());  
+		        cell = row.createCell(2);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getEmail());
+		        cell = row.createCell(3);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getEmailstsYn());
+		        cell = row.createCell(4);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getSort());
+		        cell = row.createCell(5);
+		        cell.setCellStyle(bodyStyle);
+		        cell.setCellValue(memberDTO.getRoadAddress() + " " + memberDTO.getJibunAddress() + " " + memberDTO.getNamujiAddress());
+		        
+		        
+		  }
+		  
+		  
+		  response.setContentType("ms-vnd/excel");
+		  response.setHeader("Content-Disposition", "attachment;filename=" + fileName);
+		  
+		  
+		  wb.write(response.getOutputStream());
+		  wb.close();
+		
+		
+		
+	}
 	
 	
 }
