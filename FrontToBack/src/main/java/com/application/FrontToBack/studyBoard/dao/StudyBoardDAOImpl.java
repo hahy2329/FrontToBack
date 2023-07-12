@@ -93,5 +93,10 @@ public class StudyBoardDAOImpl implements StudyBoardDAO {
 		return sqlSession.selectList("study.getMainStudyBoard");
 	}
 
+	@Override
+	public StudyDTO getPopularBoard() throws Exception {
+		return sqlSession.selectOne("study.getSelectOnePopularBoard");
+	}
+
 	
 }

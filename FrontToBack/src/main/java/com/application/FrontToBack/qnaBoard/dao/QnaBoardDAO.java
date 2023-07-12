@@ -28,4 +28,6 @@ public interface QnaBoardDAO {
 	public void removeQnaReply(QnaReplyDTO qnaReplyDTO) throws Exception;
 	
 	public List<QnaDTO> getMainQnaBoard() throws Exception;
+	
+	public QnaDTO getPopularBoard() throws Exception;
 }

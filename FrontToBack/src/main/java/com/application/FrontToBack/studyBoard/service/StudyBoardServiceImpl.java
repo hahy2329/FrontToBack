@@ -123,4 +123,10 @@ public class StudyBoardServiceImpl implements StudyBoardService {
 	}
 
 
+	@Override
+	public StudyDTO getPopularBoard() throws Exception {
+		return studyBoardDAO.getPopularBoard();
+	}
+
+
 }

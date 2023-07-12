@@ -130,4 +130,11 @@ public class BookBoardServiceImpl implements BookBoardSerive {
 		return bookBoardDAO.getMainBookBoard();
 	}
 
+
+
+	@Override
+	public BookDTO getPopularBoard() throws Exception {
+		return bookBoardDAO.getPopularBoard();
+	}
+
 }

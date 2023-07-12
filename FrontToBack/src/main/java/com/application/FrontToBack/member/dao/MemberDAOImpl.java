@@ -93,6 +93,11 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectList("member.getMemberList");
 	}
 
+	@Override
+	public int getCountMember() throws Exception {
+		return sqlSession.selectOne("member.getCountMember");
+	}
+
 	
 	
 	

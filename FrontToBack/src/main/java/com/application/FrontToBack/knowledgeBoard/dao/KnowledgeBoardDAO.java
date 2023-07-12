@@ -28,6 +28,6 @@ public interface KnowledgeBoardDAO {
 	
 	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception;
 	
-	
+	public KnowledgeDTO getPopularBoard() throws Exception;
 	
 }

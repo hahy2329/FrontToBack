@@ -108,5 +108,10 @@ public class KnowledgeBoardDAOImpl implements KnowledgeBoardDAO {
 	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception {
 		return sqlSession.selectList("knowledge.getMainKnowledgeBoard");
 	}
+
+	@Override
+	public KnowledgeDTO getPopularBoard() throws Exception {
+		return sqlSession.selectOne("knowledge.getSelectOnePopularBoard");
+	}
 	
 }

@@ -115,6 +115,12 @@ public class QnaBoardServiceImpl implements QnaBoardService {
 		List<QnaDTO> qnaDTO = qnaBoardDAO.getMainQnaBoard();
 		return qnaDTO;
 	}
+
+
+	@Override
+	public QnaDTO getPopularBoard() throws Exception {
+		return qnaBoardDAO.getPopularBoard();
+	}
 	
 	
 }

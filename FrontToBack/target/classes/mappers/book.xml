@@ -252,5 +252,20 @@
 			LIMIT 3
 				
 		</select>
+		
+		<select id="getSelectOnePopularBoard" resultType="BookDTO">
+			
+			SELECT
+				*
+			FROM
+				BOOK
+			ORDER BY 
+				READ_CNT DESC
+			LIMIT
+				1
+		
+		
+		
+		</select>
 	
 </mapper>

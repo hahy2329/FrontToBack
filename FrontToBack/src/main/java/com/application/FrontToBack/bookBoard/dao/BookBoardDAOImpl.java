@@ -95,6 +95,11 @@ public class BookBoardDAOImpl implements BookBoardDAO {
 	public List<BookDTO> getMainBookBoard() throws Exception {
 		return sqlSession.selectList("book.getMainBookBoard");
 	}
+
+	@Override
+	public BookDTO getPopularBoard() throws Exception {
+		return sqlSession.selectOne("book.getSelectOnePopularBoard");
+	}
 	
 	
 	

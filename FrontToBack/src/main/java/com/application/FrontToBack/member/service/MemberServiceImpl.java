@@ -129,6 +129,11 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getMemberList();
 	}
 
+	@Override
+	public int getCountMember() throws Exception {
+		return memberDAO.getCountMember();
+	}
+
 	
 
 

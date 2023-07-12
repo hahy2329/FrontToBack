@@ -134,6 +134,12 @@ public class KnowledgeBoardServiceImpl implements KnowledgeBoardService {
 		List<KnowledgeDTO> knowledgeDTO = knowledgeBoardDAO.getMainKnowledgeBoard();
 		return knowledgeDTO;
 	}
+
+
+	@Override
+	public KnowledgeDTO getPopularBoard() throws Exception {
+		return knowledgeBoardDAO.getPopularBoard();
+	}
 	
 
 	

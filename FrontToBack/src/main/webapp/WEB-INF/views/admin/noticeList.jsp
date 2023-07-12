@@ -83,7 +83,7 @@
                                             <div class="card-body">
                                                 <ul>
                                                     <li><a href="#">회원삭제</a></li>
-                                                    <li><a href="#">회원리스트 조회</a></li>
+                                                    <li><a href="${contextPath }/admin/memberList">회원리스트 조회</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -114,7 +114,7 @@
                         <div class="trend__item__text">
                             <a href="${contextPath }/admin/noticeDetail?boardId=${noticeDTO.boardId}"><strong>${noticeDTO.subject }</strong></a>
                             <div class="rating">
-                                <p><i class="fa fa-heart-o"></i>&nbsp; ${noticeDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${noticeDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${noticeDTO.adminId }</p>
+                                <p><i class="fa fa-heart-o"></i>&nbsp; ${noticeDTO.readCnt }  / <i class="fa fa-clock-o"></i> &nbsp; <fmt:formatDate value="${noticeDTO.enrollDt }" pattern="yyyy-MM-dd"/> / ${noticeDTO.adminId }</p>
                             </div>
                         </div>
                     </div>

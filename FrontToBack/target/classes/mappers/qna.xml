@@ -250,6 +250,19 @@
 		
 		</select>
 		
+		<select id="getSelectOnePopularBoard" resultType="QnaDTO">
+		
+			SELECT 
+				*
+			FROM
+				QNA
+			ORDER BY
+				READ_CNT DESC
+			LIMIT
+				1
+		
+		</select>
+		
 		
 
 

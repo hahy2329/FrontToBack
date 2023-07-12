@@ -149,7 +149,28 @@ public class AdminController {
 	public ModelAndView adminPage() throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
+		KnowledgeDTO knowledgeDTO = knowledgeBoardService.getPopularBoard();
+		QnaDTO qnaDTO = qnaBoardService.getPopularBoard();
+		StudyDTO studyDTO = studyBoardService.getPopularBoard();
+		BookDTO bookDTO = bookBoardService.getPopularBoard();
+		int count = memberService.getCountMember();
+		
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy년 MM월 dd일");
+		Date now = new Date();
+		
+		String nowTime = sdf1.format(now);
+		
+		
+		
+		
 		mv.setViewName("/admin/adminPage");
+		mv.addObject("knowledgeDTO", knowledgeDTO);
+		mv.addObject("qnaDTO", qnaDTO);
+		mv.addObject("studyDTO", studyDTO);
+		mv.addObject("bookDTO", bookDTO);
+		mv.addObject("count", count);
+		mv.addObject("nowTime", nowTime);
+		
 		return mv;
 		
 		
@@ -781,7 +802,6 @@ public class AdminController {
 		searchMap.put("searchKeyword", searchKeyword);
 		searchMap.put("searchWord", searchWord);
 		mv.addObject("boardList", noticeBoardService.getBoardList(searchMap));
-		
 		
 		return mv;
 	}

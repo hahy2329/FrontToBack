@@ -31,4 +31,6 @@ public interface BookBoardSerive {
 	public void removeBookReply(BookReplyDTO bookReplyDTO) throws Exception;
 	
 	public List<BookDTO> getMainBookBoard() throws Exception;
+	
+	public BookDTO getPopularBoard() throws Exception;
 }

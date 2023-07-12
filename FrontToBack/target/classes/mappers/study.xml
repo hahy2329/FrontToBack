@@ -254,5 +254,21 @@
 		
 		</select>
 		
+		
+		<select id="getSelectOnePopularBoard" resultType="StudyDTO">
+			
+			SELECT
+				*
+			FROM 
+				STUDY
+			ORDER BY 
+				READ_CNT DESC
+			LIMIT 
+				1
+		
+		
+		
+		</select>
+		
 
 </mapper>

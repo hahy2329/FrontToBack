@@ -23,4 +23,6 @@ public interface MemberDAO {
 	public List<StudyDTO> getMyActivityStudy(String memberId) throws Exception;
 	public List<BookDTO> getMyActivityBook(String memberId) throws Exception;
 	public List<MemberDTO> getMemberList() throws Exception;
+	
+	public int getCountMember() throws Exception;
 }

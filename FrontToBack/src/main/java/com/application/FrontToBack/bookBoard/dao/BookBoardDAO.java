@@ -34,4 +34,6 @@ public interface BookBoardDAO {
 	
 	public List<BookDTO> getMainBookBoard() throws Exception;
 	
+	public BookDTO getPopularBoard() throws Exception;
+	
 }

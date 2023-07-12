@@ -172,5 +172,15 @@
 		
 		
 		</select>
+		
+		<select id="getCountMember" resultType="int">
+			
+			SELECT
+				COUNT(*)
+			FROM 
+				MEMBER
+		
+		
+		</select>
 	
 	</mapper>

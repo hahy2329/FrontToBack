@@ -95,5 +95,10 @@ public class QnaBoardDAOImpl implements QnaBoardDAO {
 	public List<QnaDTO> getMainQnaBoard() throws Exception {
 		return sqlSession.selectList("qna.getMainQnaBoard");
 	}
+
+	@Override
+	public QnaDTO getPopularBoard() throws Exception {
+		return sqlSession.selectOne("qna.getSelectOnePopularBoard");
+	}
 	
 }

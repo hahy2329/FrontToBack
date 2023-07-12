@@ -30,4 +30,5 @@ public interface StudyBoardDAO {
 	
 	public List<StudyDTO> getMainStudyBoard() throws Exception;
 	
+	public StudyDTO getPopularBoard() throws Exception;
 }

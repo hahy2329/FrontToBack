@@ -27,5 +27,7 @@ public interface KnowledgeBoardService {
 	
 	public List<KnowledgeDTO> getMainKnowledgeBoard() throws Exception;
 	
+	public KnowledgeDTO getPopularBoard() throws Exception;
+	
 	
 }

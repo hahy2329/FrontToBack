@@ -23,5 +23,7 @@ public interface MemberService {
 	public List<BookDTO> getMyActivityBook(String memberId) throws Exception;
 	public List<MemberDTO> getMemberList() throws Exception;
 	
+	public int getCountMember() throws Exception;
+	
 	
 }

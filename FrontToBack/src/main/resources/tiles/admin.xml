@@ -9,7 +9,7 @@
 	
 	<definition name="/admin/adminPage" extends="baseLayout">
 		<put-attribute name="title" value="관리자 페이지"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/management.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminPage.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/knowledgeList" extends="baseLayout">

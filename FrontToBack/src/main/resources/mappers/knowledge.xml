@@ -264,6 +264,19 @@
 			LIMIT 5
 		
 		</select>
-	
+		
+		<select id="getSelectOnePopularBoard" resultType="KnowledgeDTO">
+			
+			SELECT 
+				*
+			FROM 
+				KNOWLEDGE
+			ORDER BY 
+				READ_CNT DESC
+			LIMIT
+				1
+		
+		
+		</select>
 	</mapper>
 			
