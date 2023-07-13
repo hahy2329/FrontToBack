@@ -9,12 +9,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+	var check = false;
+	
 	$().ready(function(){
+		
+		$("#btnOverlapped").click(function(){
 			
-		
-		var memberId = $("#memberId").val();
-		var check;
-		
+			$(".answer").empty();
+			
+			var memberId = $("#memberId").val();
+			
+			if(memberId == ''){
+				alert("ID를 입력해주세요.");
+				return;
+			}
+			
 			$.ajax({
 				
 				type: "get",
@@ -22,12 +31,16 @@
 				success : function(data){
 					
 					if(data == "duplicate"){
+						alert("확인되었습니다.");
 						check=true;
+						$("#btnOverlapped").remove();
+						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." +"</p>");
 					}
 					
 					else{
-					
+						alert("ID를 다시 확인해주세요.");
 						check = false;
+						$(".answer").append("<p style='color: red;'>" +"ID를 다시 확인해주세요."+"</p>");
 						
 					}
 				}
@@ -35,14 +48,16 @@
 				
 				
 			});
-		
+		});
 		$("form").submit(function(){
 			
-			if(check){
+			
+			if(check == true){
+				
 				return true;
 			}
 			
-			else{
+			if(check == false){
 				alert("아이디를 다시 확인해주세요.");
 				return false;
 			}
@@ -136,7 +151,8 @@
                               <form action="${contextPath }/admin/memberDelete" method="post">
                             	<p>아이디<span>*</span></p>
                                 <input type="text" name="memberId" id="memberId" placeholder="아이디를 입력해주세요." required="required">
-                             
+                             	<input type="button" id="btnOverlapped" value="중복확인">
+                                <p class="answer"></p>
                                 
                                 <button type="submit" class="site-btn">삭제</button>
                                 

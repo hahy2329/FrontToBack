@@ -134,13 +134,10 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public String checkDuplicatedMemberId(String memberId) throws Exception {
-		if(memberId.equals(memberDAO.selectDuplicatedId(memberId))) {
-			
-			return "duplicate";
-		}
-		else {
-			return "NotDuplicate";
-		}
+		if(memberId.equals(memberDAO.selectDuplicatedId(memberId))) return "duplicate";
+		
+		else 		return "notDuplicate";
+		
 	}
 
 	

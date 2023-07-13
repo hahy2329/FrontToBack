@@ -87,7 +87,7 @@
             </div>
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
-                    <h6>사전 검색</h6>
+                    <h6>나무위키 검색</h6>
                     <form>
                         <input type="text" id="keywords" placeholder="키워드를 입력해주세요.">
                         <button type="submit" id="clicks" class="site-btn">검색</button>
