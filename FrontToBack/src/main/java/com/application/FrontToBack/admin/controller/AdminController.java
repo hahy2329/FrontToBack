@@ -1142,4 +1142,41 @@ public class AdminController {
 	}
 	
 	
+	@GetMapping("/memberDelete")
+	public ModelAndView memberDelete() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/admin/memberDelete");
+		return mv;
+		
+	}
+	
+	@GetMapping("/checkDuplicatedMemberId")
+	public ResponseEntity<String> checkDuplicatedMemberId(@RequestParam("memberId") String memberId) throws Exception{
+		
+		return new ResponseEntity<String>(adminService.checkDuplicatedMemberId(memberId),HttpStatus.OK);
+		
+	}
+	
+	
+	@PostMapping("/memberDelete")
+	public ResponseEntity<Object> memberDelete(String memberId, HttpServletRequest request) throws Exception{
+		
+		adminService.memberForceRemove(memberId);
+		
+		String message = "<script>";
+		message +="alert('정상적으로 삭제 되었습니다.');";
+		message +="location.href='" + request.getContextPath() + "/admin/adminPage';";
+		message +="</script>";
+		
+		HttpHeaders responseHeaders = new HttpHeaders();
+		responseHeaders.add("Content-Type", "text/html; charset=utf-8");
+		
+		return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
+		
+		
+		
+	}
+	
+	
 }

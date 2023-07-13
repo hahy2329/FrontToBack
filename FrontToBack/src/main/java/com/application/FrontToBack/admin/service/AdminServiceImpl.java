@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.application.FrontToBack.admin.dao.AdminDAO;
 import com.application.FrontToBack.admin.dto.AdminDTO;
+import com.application.FrontToBack.member.dao.MemberDAO;
 import com.application.FrontToBack.noticeBoard.dto.NoticeDTO;
 import com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO;
 
@@ -15,6 +16,9 @@ public class AdminServiceImpl implements AdminService {
 
 	@Autowired
 	private AdminDAO adminDAO;
+	
+	@Autowired
+	private MemberDAO memberDAO;
 	
 	@Override
 	public AdminDTO getAdminDetail(AdminDTO adminDTO) throws Exception {
@@ -120,6 +124,23 @@ public class AdminServiceImpl implements AdminService {
 	public void noticeRemoveReply(NoticeReplyDTO noticeReplyDTO) throws Exception {
 		adminDAO.noticeRemoveReply(noticeReplyDTO);
 		
+	}
+
+	@Override
+	public void memberForceRemove(String memberId) throws Exception {
+		adminDAO.memberForceRemove(memberId);
+		
+	}
+
+	@Override
+	public String checkDuplicatedMemberId(String memberId) throws Exception {
+		if(memberId.equals(memberDAO.selectDuplicatedId(memberId))) {
+			
+			return "duplicate";
+		}
+		else {
+			return "NotDuplicate";
+		}
 	}
 
 	

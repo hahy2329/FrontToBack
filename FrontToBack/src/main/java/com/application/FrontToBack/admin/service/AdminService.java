@@ -24,5 +24,7 @@ public interface AdminService {
 	public void noticeUpdateReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
 	public void noticeAddReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
 	public void noticeRemoveReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
+	public void memberForceRemove(String memberId) throws Exception;
+	public String checkDuplicatedMemberId(String memberId) throws Exception;
 	
 }

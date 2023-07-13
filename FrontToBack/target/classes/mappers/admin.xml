@@ -173,4 +173,12 @@
 	
 	
 	</delete>
+	
+	<delete id="memberForceRemove" parameterType="String">
+		
+		DELETE FROM MEMBER
+		
+		WHERE MEMBER_ID = #{memberId}
+	
+	</delete>
 </mapper>

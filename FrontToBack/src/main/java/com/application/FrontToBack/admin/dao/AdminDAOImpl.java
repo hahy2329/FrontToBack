@@ -117,6 +117,12 @@ public class AdminDAOImpl implements AdminDAO {
 		
 	}
 
+	@Override
+	public void memberForceRemove(String memberId) throws Exception {
+		sqlSession.delete("admin.memberForceRemove", memberId);
+		
+	}
+
 	
 
 }

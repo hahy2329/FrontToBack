@@ -55,7 +55,7 @@
                     <div class="shop__sidebar">
                         <div class="sidebar__categories">
                             <div class="section-title">
-                                <h4>공지사항</h4>
+                                <h4>관리</h4>
                             </div>
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">

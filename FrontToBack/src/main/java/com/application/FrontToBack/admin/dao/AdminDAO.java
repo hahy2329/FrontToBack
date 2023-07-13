@@ -26,6 +26,8 @@ public interface AdminDAO {
 	public void noticeUpdateReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
 	public void noticeAddReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
 	public void noticeRemoveReply(NoticeReplyDTO noticeReplyDTO) throws Exception;
+	
+	public void memberForceRemove(String memberId) throws Exception;
 
 }
  

@@ -60,7 +60,7 @@
                                         <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="#">회원삭제</a></li>
+                                                    <li><a href="${contextPath }/admin/memberDelete">회원삭제</a></li>
                                                     <li><a href="${contextPath }/admin/memberList">회원리스트 조회</a></li>
                                                 </ul>
                                             </div>
