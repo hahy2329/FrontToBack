@@ -27,6 +27,8 @@
 		
 		<typeAlias type="com.application.FrontToBack.noticeBoard.dto.NoticeDTO" alias="NoticeDTO"/>
 		<typeAlias type="com.application.FrontToBack.noticeBoard.dto.NoticeReplyDTO" alias="NoticeReplyDTO"/>
+		
+		<typeAlias type="com.application.FrontToBack.mail.dto.EmailDTO" alias="EmailDTO"/>
 	</typeAliases>		
 		
 </configuration>

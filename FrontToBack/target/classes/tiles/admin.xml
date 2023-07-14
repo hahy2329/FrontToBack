@@ -104,5 +104,10 @@
 		<put-attribute name="body" value="/WEB-INF/views/admin/memberDelete.jsp"></put-attribute>
 	</definition>
 	
+	<definition name="/email/write" extends="baseLayout">
+		<put-attribute name="title" value="메일발송(관리자용)"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/mailSend.jsp"></put-attribute>
+	</definition>
+	
 </tiles-definitions>
 
