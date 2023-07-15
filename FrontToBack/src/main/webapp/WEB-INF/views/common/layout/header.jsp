@@ -45,8 +45,8 @@
                             </li>
                           </c:if>
                          <c:if test="${sessionScope.adminId ne null }">
-                         	<li><a href="${contextPath }/admin/adminPage">관리</a></li>
-                         	<li><a href="https://dashboard.tawk.to/?lang=ko#/chat">채팅관리</a></li>
+                         	<li><a href="${contextPath }/admin/adminPage">홈페이지 관리</a></li>
+                         	<li><a href="https://dashboard.tawk.to/?lang=ko#/chat">상담 관리</a></li>
                          	<li><a href="${contextPath }/email/write">메일 발송</a></li>
                          </c:if>
                         </ul>

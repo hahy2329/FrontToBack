@@ -118,7 +118,7 @@ $().ready(function(){
                          
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
-                            <ul>
+                           	 <ul>
                                 <li>
                                     <h6><i class="fa fa-map-marker"></i> 개발자 : 한주석</h6>
                                 </li>
@@ -126,7 +126,7 @@ $().ready(function(){
                                     <h6><i class="fa fa-phone"></i> 포지션/전화번호 : 백엔드/123-4567-8922</h6>
                                 </li>
                                 <li>
-                                    <h6><i class="fa fa-headphones"></i> 이메일 : abcdef@abcdef.com</h6>
+                                    <h6><i class="fa fa-headphones"></i> 이메일 : gkswntjr2329@gmail.com</h6>
                                 </li>
                             </ul>
                         </div>
