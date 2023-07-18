@@ -8,59 +8,71 @@
 <title>Insert title here</title>
 <script>
 	
+
+	var isValid = false;
 	
-	$().ready(function(){	
-		$("form").submit(function(){
+	$().ready(function(){
+		
+		$("#btnOverlapped").click(function(){
 			
-			var passwd = $("#passwd").val();
+			$(".answer").empty();
+			
 			var memberId = $("#memberId").val();
+			var passwd = $("#passwd").val();
 			
-			
-			if($("#smsstsYn").val() != "Y"){
-				$(this).val("N");
+			if(passwd == ''){
+				alert("패스워드를 입력해주세요.");
+				return false;
 			}
 			
-			if($("#passwd").val()==$("#confirmPasswd").val()){
+			$.ajax({
 				
-				
-				$.ajax({
-					
-					type : "get",
-					url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
-					success : function(data){
-						if(data == "duplicate"){
-							
-							alert("정보를 확인중입니다. 잠시만 기다려주십시오.");
-							return true;
-							
-						}
+				type : "get",
+				url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
+				success : function(data){
+					if(data == "duplicate"){
 						
-						else{
-							alert("패스워드를 다시 확인해주세요.");
-							return false;
-						}
-						
+						alert("확인되었습니다.");
+						isValid=true;
+						$("#btnOverlapped").remove();
+						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
 						
 					}
 					
+					else{
+						alert("패스워드를 다시 확인해주세요.");
+						isValid=false;
+						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
+					}
 					
-				});
+					
+				}
 				
 				
-			}
+			});
 			
-			else{
-				alert("패스워드를 다시 확인해주세요.");
+		});
+		
+		$("form").submit(function(){
+			
+			if(isValid == false){
+				alert("패스워드를 확인해주세요.");
 				return false;
-				
 			}
 			
+			if(isValid == true){
+				
+				return true;
+			}
 			
 			
 		});
 		
-	});
 		
+		
+		
+	});
+			
 
 </script>
 </head>
@@ -113,13 +125,15 @@
                                     <input type="text" id="memberId" name="memberId"  value="${memberDTO.memberId }" readonly="readonly">
                                     
                                     
-                                    <p>이름 <span>*</span></p>
-                                    <input type="text" name="memberNm" placeholder="이름을 입력해주세요." required="required">
                                     
                                      <p>비밀번호 <span>*</span></p>
                                     <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력해주세요." required="required">
-                                    <p>비밀번호 확인<span>*</span></p>
-                                    <input type="password" id="confirmPasswd" placeholder="비밀번호를 한 번 더 입력부탁드립니다." required="required">
+                                    <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
+									<p class="answer"></p>
+
+
+                                    <p>이름 <span>*</span></p>
+                                    <input type="text" name="memberNm" placeholder="이름을 입력해주세요." required="required">
                                     
                                     <p>우편번호<span>*</span></p>
                                     <input type="text" id="zipcode" name="zipcode" style="width: 50%;" required="required">

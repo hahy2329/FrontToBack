@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -115,7 +116,7 @@ public class StudyBoardServiceImpl implements StudyBoardService {
 		
 	}
 
-
+	
 	@Override
 	public List<StudyDTO> getMainStudyBoard() throws Exception {
 		List<StudyDTO> studyDTO = studyBoardDAO.getMainStudyBoard();

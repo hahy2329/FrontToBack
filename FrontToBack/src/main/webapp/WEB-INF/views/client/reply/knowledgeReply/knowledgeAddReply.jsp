@@ -110,6 +110,7 @@ $().ready(function(){
                                 <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${boardId }">
                                 <button type="submit" class="site-btn">댓글쓰기</button>
+                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/knowledgeDetail?boardId=${boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>

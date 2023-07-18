@@ -2,14 +2,18 @@ package com.application.FrontToBack.member.controller;
 
 import org.springframework.http.HttpHeaders;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.application.FrontToBack.bookBoard.dto.BookDTO;
+import com.application.FrontToBack.knowledgeBoard.controller.KnowledgeBoardController;
 import com.application.FrontToBack.knowledgeBoard.dto.KnowledgeDTO;
 import com.application.FrontToBack.member.dto.MemberDTO;
 import com.application.FrontToBack.member.service.MemberService;
@@ -33,14 +38,33 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	public static boolean onScheduled = false;
 	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
+	
+	
+	@Scheduled(cron = "0 10-40 20 * * *")
+	public void autoUpdate() throws Exception{
+		
+		logger.info(new Date() + "스케줄러 실행");
+		
+		onScheduled = true;
+		
+	}
 	
 	
 	@GetMapping("/registerMember")
 	public ModelAndView registerMember() throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/member/registerMember");
-		return mv;
+		
+		if(onScheduled == true) {
+			mv.setViewName("/main/serverInspection");
+			return mv;
+		}
+		else {
+			mv.setViewName("/member/registerMember");
+			return mv;
+		}
 	}
 	
 	@GetMapping("/checkDuplicatedId")
@@ -83,8 +107,14 @@ public class MemberController {
 	@GetMapping("/loginMember")
 	public ModelAndView loginMember() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/member/loginMember");
-		return mv;
+		if(onScheduled == true) {
+			mv.setViewName("/main/serverInspection");
+			return mv;
+		}
+		else {
+			mv.setViewName("/member/loginMember");
+			return mv;
+		}
 	}
 	
 	
@@ -130,12 +160,18 @@ public class MemberController {
 	public ModelAndView updateMember(@RequestParam("memberId") String memberId) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
-		MemberDTO memberData = memberService.getDetailMember(memberId);
-		mv.addObject("memberDTO", memberData);
-		mv.setViewName("/member/updateMember");
 		
-		return mv;
-		
+		if(onScheduled == true) {
+			mv.setViewName("/main/serverInspection");
+			return mv;
+		}
+		else {
+			MemberDTO memberData = memberService.getDetailMember(memberId);
+			mv.addObject("memberDTO", memberData);
+			mv.setViewName("/member/updateMember");
+			
+			return mv;
+		}
 		
 		
 	}
@@ -181,12 +217,18 @@ public class MemberController {
 	public ModelAndView removeMember(@RequestParam("memberId") String memberId) throws Exception{
 		
 		ModelAndView mv = new ModelAndView();
-		MemberDTO memberData = memberService.getDetailMember(memberId);
-		mv.addObject("memberDTO", memberData);
-		mv.setViewName("/member/removeMember");
 		
-		return mv;
-		
+		if(onScheduled == true) {
+			mv.setViewName("/main/serverInspection");
+			return mv;
+		}
+		else {
+			MemberDTO memberData = memberService.getDetailMember(memberId);
+			mv.addObject("memberDTO", memberData);
+			mv.setViewName("/member/removeMember");
+			
+			return mv;
+		}	
 	}
 	
 	@PostMapping("/removeMember")
@@ -245,21 +287,27 @@ public class MemberController {
 	public ModelAndView myActivity(@RequestParam("memberId") String memberId) throws Exception {
 		
 		ModelAndView mv = new ModelAndView();
-		List<KnowledgeDTO> knowledgeList = memberService.getMyActivityKnowledge(memberId);
-		List<QnaDTO> qnaList = memberService.getMyActivityQna(memberId);
-		List<StudyDTO> studyList = memberService.getMyActivityStudy(memberId);
-		List<BookDTO> bookList = memberService.getMyActivityBook(memberId);
 		
-		mv.addObject("knowledgeList", knowledgeList);
-		mv.addObject("qnaList", qnaList);
-		mv.addObject("studyList", studyList);
-		mv.addObject("bookList", bookList);
+		if(onScheduled == true) {
+			mv.setViewName("/main/serverInspection");
+			return mv;
+		}
+		else {
+			List<KnowledgeDTO> knowledgeList = memberService.getMyActivityKnowledge(memberId);
+			List<QnaDTO> qnaList = memberService.getMyActivityQna(memberId);
+			List<StudyDTO> studyList = memberService.getMyActivityStudy(memberId);
+			List<BookDTO> bookList = memberService.getMyActivityBook(memberId);
+			
+			mv.addObject("knowledgeList", knowledgeList);
+			mv.addObject("qnaList", qnaList);
+			mv.addObject("studyList", studyList);
+			mv.addObject("bookList", bookList);
+			
+			mv.setViewName("/member/myActivity");
 		
-		mv.setViewName("/member/myActivity");
-		
-		return mv;
-		
-		
+			return mv;
+		}	
+			
 		
 	}
 	

@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.application.FrontToBack.HomeController;
 import com.application.FrontToBack.admin.dto.AdminDTO;
 import com.application.FrontToBack.admin.service.AdminService;
 import com.application.FrontToBack.bookBoard.dto.BookDTO;
@@ -54,6 +56,8 @@ import com.application.FrontToBack.studyBoard.service.StudyBoardService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	
 	
 	@Autowired
 	private AdminService adminService;
@@ -909,8 +913,8 @@ public class AdminController {
 		adminService.noticeRemove(noticeDTO);
 		
 		String message = "<script>";
-		message +="alert('정상적으로 수정 완료되었습니다.');";
-		message +="location.href='"+request.getContextPath()+"/admin/noticeDetail?boardId=" + noticeDTO.getBoardId() + "';";
+		message +="alert('정상적으로 삭제가 완료되었습니다.');";
+		message +="location.href='"+request.getContextPath()+"/admin/noticeList';";
 		message +="</script>";
 		
 		HttpHeaders responseHeaders = new HttpHeaders();
