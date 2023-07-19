@@ -17,6 +17,7 @@
                     <div class="breadcrumb__links">
                          <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
                          <a>관리</a>
+                         <a>공지사항</a>
                          <span>세부정보</span>
                     </div>
                 </div>

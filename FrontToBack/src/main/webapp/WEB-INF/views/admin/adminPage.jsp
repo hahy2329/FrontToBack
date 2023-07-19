@@ -17,7 +17,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb__links">
                         <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
-                        <span>관리</span>
+                        <span>홈페이지 관리</span>
                     </div>
                 </div>
             </div>
