@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
+
 	$().ready(function(){
 		
 		$("#clicks").click(function(){
@@ -15,14 +16,14 @@
 			
 			$.ajax({
 				
-				type : "GET",
+				method : "GET",
 				url : "https://dapi.kakao.com/v2/search/web",
 				data : {"query" : data},
 				headers : {"Authorization" : "KakaoAK 9291681c4b5f1c251ec456e619d7f1ed"},
 				success : function(data){
 					
-					
-					console.log(data);
+					var url = data.documents[0].url
+					location.href = url;
 					
 				}
 				
@@ -76,11 +77,11 @@
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4">
                 <div class="footer__widget">
-                    <h6>Account</h6>
+                    <h6>채용안내</h6>
                     <ul>
-                        <li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보변경</a></li>
-                        <li><a href="${contextPath }/member/removeMember?memberId=${sessionScope.memberId}">회원탈퇴</a></li>
-                        <li><a href="${contextPath }/member/myActivity?memberId=${sessionScope.memberId}">MY활동내역</a></li>
+                        <li><a href="https://www.jobkorea.co.kr/">잡코리아</a></li>
+                        <li><a href="https://www.saramin.co.kr/zf_user/">사람인</a></li>
+                        <li><a href="#">미지정</a></li>
                         <li><a href="#">미지정</a></li>
                     </ul>
                 </div>
@@ -88,7 +89,7 @@
             <div class="col-lg-4 col-md-8 col-sm-8">
                 <div class="footer__newslatter">
                     <h6>나무위키 검색</h6>
-                    <form>
+                    <form action="#">
                         <input type="text" id="keywords" placeholder="키워드를 입력해주세요.">
                         <button type="submit" id="clicks" class="site-btn">검색</button>
                     </form>
