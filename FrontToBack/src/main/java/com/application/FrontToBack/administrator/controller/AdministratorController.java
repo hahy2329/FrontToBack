@@ -18,4 +18,20 @@ public class AdministratorController {
 	}
 	
 	
+	@GetMapping("/inquiry")
+	public ModelAndView inquiry() throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/administrator/inquiry");
+		return mv;
+	}
+	
+	@GetMapping("/bug")
+	public ModelAndView bug() throws Exception{
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/administrator/bug");
+		return mv;
+		
+	}
+	
 }

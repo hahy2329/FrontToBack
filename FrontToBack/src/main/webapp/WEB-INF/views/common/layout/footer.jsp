@@ -68,9 +68,9 @@
                     <h6>Administrator</h6>
                     <ul>
                         <li><a href="${contextPath }/administrator/introduce">관리자 소개</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">문의사항</a></li>
-                        <li><a href="#">버그제보</a></li>
+                        <li><a href="${contextPath }/boardAdvance/noticeList">공지사항</a></li>
+                        <li><a href="${contextPath }/administrator/inquiry">문의사항</a></li>
+                        <li><a href="${contextPath }/administrator/bug">버그제보</a></li>
                     </ul>
                 </div>
             </div>

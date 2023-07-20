@@ -5,4 +5,14 @@
 		<put-attribute name="title" value="관리자 소개"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/administrator/introduce.jsp"></put-attribute>
 	</definition>
+	
+	<definition name="/administrator/inquiry" extends="baseLayout">
+		<put-attribute name="title" value="문의사항"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/administrator/inquiry.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/administrator/bug" extends="baseLayout">
+		<put-attribute name="title" value="버그제보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/administrator/bug.jsp"></put-attribute>
+	</definition>
 </tiles-definitions>
