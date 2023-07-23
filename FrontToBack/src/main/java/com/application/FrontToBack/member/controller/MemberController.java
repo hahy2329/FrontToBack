@@ -43,7 +43,7 @@ public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
 	
-	@Scheduled(cron = "0 10-40 20 * * *")
+	@Scheduled(cron = "0 10-40 23 * * *")
 	public void autoUpdate() throws Exception{
 		
 		logger.info(new Date() + "스케줄러 실행");
