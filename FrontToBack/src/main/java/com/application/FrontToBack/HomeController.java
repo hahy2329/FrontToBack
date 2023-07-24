@@ -92,7 +92,7 @@ public class HomeController {
 		}
 	}
 	
-	@Scheduled(cron = "0 10-40 23 * * *")
+	@Scheduled(cron = "0 10-30 23 * * *")
 	public void autoUpdate() throws Exception{
 		
 		logger.info(new Date() + "스케줄러 실행");
