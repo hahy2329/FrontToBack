@@ -59,9 +59,9 @@
                     <c:choose>
                     	<c:when test="${sessionScope.memberId eq null and sessionScope.adminId eq null }">
 	                        <div class="header__right__auth">
-	                            <a href="${contextPath }/member/loginMember">Login</a>
-	                            <a href="${contextPath }/admin/loginAdmin">Admin Login</a>
-	                            <a href="${contextPath }/member/registerMember">Register</a>
+	                            <strong><a href="${contextPath }/member/loginMember">Login</a></strong>
+	                            <a href="${contextPath }/admin/loginAdmin"></a>
+	                            <strong><a href="${contextPath }/member/registerMember">Register</a></strong>
 	                        </div>
                         </c:when>
                         <c:otherwise>
