@@ -37,6 +37,11 @@
                             </div>
                             <div class="categories__accordion">
                                 <div class="accordion" id="accordionExample">
+                                	<div class="card">
+                                        <div class="card-heading active">
+                                            <a data-target="#collapseOne" href="${contextPath }/admin/noticeList">공지사항</a>
+                                        </div>
+                                    </div>
                                     <div class="card">
                                         <div class="card-heading active">
                                             <a data-toggle="collapse" data-target="#collapseOne">커뮤니티</a>
@@ -44,7 +49,6 @@
                                         <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
                                             <div class="card-body">
                                                 <ul>
-                                                    <li><a href="${contextPath }/admin/noticeList">공지사항</a></li>
                                                     <li><a href="${contextPath }/admin/knowledgeList">지식</a></li>
                                                     <li><a href="${contextPath }/admin/qnaList">Q&A</a></li>
                                                     <li><a href="${contextPath }/admin/studyList">스터디그룹</a></li>
