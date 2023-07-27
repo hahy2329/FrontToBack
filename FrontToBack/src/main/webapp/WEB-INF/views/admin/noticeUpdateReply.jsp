@@ -102,7 +102,7 @@ $().ready(function(){
                             <h5>댓글 수정</h5>
                             <form action="${contextPath }/admin/noticeUpdateReply" method="post">
                             	
-                                <input type="text" name="adminId" id="adminId" placeholder="아이디" value="${noticeReplyDTO.memberId }"  required="required" maxlength="15" readonly="readonly"/>
+                                <input type="text" name="adminId" id="adminId" placeholder="아이디" value="${noticeReplyDTO.adminId }"  required="required" maxlength="15" readonly="readonly"/>
                                 <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
 								<p class="answer"></p>
@@ -110,8 +110,11 @@ $().ready(function(){
                                 <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${noticeReplyDTO.boardId }">
                                 <input type="hidden" name="replyId" value="${noticeReplyDTO.replyId }">
+                                <div>
+                                	<br>
+                                </div>
                                 <button type="submit" class="site-btn">수정</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/admin/noticeDetail?boardId=${noticeReplyDTO.boardId }'">뒤로가기</button>
+                                <button class="site-btn" onclick="location.href='${contextPath}/admin/noticeDetail?boardId=${noticeReplyDTO.boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>

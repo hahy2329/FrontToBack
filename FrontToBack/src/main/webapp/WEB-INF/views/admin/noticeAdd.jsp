@@ -115,6 +115,7 @@
                                 <button type="submit" class="site-btn">글쓰기</button>
                                 <button class="site-btn"><a href="${contextPath}/admin/noticeList" style="color: white;">목록보기</a></button>
                             </form>
+                            
                         </div>
                          <div>
                          	<br><br>

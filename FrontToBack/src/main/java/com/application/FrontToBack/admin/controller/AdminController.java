@@ -885,7 +885,7 @@ public class AdminController {
 		
 		String message = "<script>";
 		message +="alert('정상적으로 수정 완료되었습니다.');";
-		message +="location.href='"+request.getContextPath()+"/admin/noticeDetail" + noticeDTO.getBoardId() + "';";
+		message +="location.href='"+request.getContextPath()+"/admin/noticeDetail?boardId=" + noticeDTO.getBoardId() + "';";
 		message +="</script>";
 		
 		HttpHeaders responseHeaders = new HttpHeaders();
