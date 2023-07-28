@@ -91,21 +91,6 @@
             </div>
         </div>
     </div>
-	<!-- Breadcrumb Begin -->
-    <div class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__links">
-                        <a href="${contextPath }/"><i class="fa fa-home"></i> Home</a>
-                        <span>Update</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcrumb End -->
-
     <!-- Checkout Section Begin -->
     <section class="checkout spad">
         <div class="container">
@@ -133,23 +118,23 @@
 
 
                                     <p>이름 <span>*</span></p>
-                                    <input type="text" name="memberNm" placeholder="이름을 입력해주세요." required="required">
+                                    <input type="text" name="memberNm" value="${memberDTO.memberNm }" placeholder="이름을 입력해주세요." required="required">
                                     
                                     <p>우편번호<span>*</span></p>
-                                    <input type="text" id="zipcode" name="zipcode" style="width: 50%;" required="required">
+                                    <input type="text" id="zipcode" name="zipcode" value="${memberDTO.zipcode }" style="width: 50%;" required="required">
                                     <input type="button" value="검색" onclick="execDaumPostcode();" style="width: 20%; padding-left: 0">
                                     
                                     <p>도로명 주소 <span>*</span></p>
-                                    <input type="text" id="roadAddress" name="roadAddress" placeholder="도로명주소를 입력하세요." required="required">
+                                    <input type="text" id="roadAddress" name="roadAddress" value="${memberDTO.roadAddress }" placeholder="도로명주소를 입력하세요." required="required">
                                  	
                                  	<p>지번 주소 <span>*</span></p>
-                                    <input type="text" id="jibunAddress" name="jibunAddress" placeholder="지번주소를 입력하세요." required="required">
+                                    <input type="text" id="jibunAddress" name="jibunAddress" value="${memberDTO.jibunAddress }" placeholder="지번주소를 입력하세요." required="required">
                                     
                                      <p>나머지 주소 <span>*</span></p>
-                                    <input type="text" id="namujiAddress" name="namujiAddress" placeholder="나머지주소를 입력하세요.">
+                                    <input type="text" id="namujiAddress" name="namujiAddress" value="${memberDTO.namujiAddress }" placeholder="나머지주소를 입력하세요.">
                                     
                                     <p>email <span>*</span></p>
-                                    <input type="email" name="email" placeholder="이메일을 입력해주세요." required="required">
+                                    <input type="email" name="email" placeholder="이메일을 입력해주세요." value="${memberDTO.email }" required="required">
                                 </div>
                             </div>
                             
@@ -159,7 +144,7 @@
                                 
                                     <label for="acc">
                                         	이메일 수신 동의하시겠습니까?
-                                       <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y">
+                                       <input type="checkbox" id="emailstsYn" name="emailstsYn" value="Y"<c:if test="${memberDTO.emailstsYn eq 'Y' }">checked</c:if>>
                                         <span class="checkmark"></span>
                                     </label>
                                     <p>이메일 수신을 동의하실 경우, 사이트 내 새로운 정보가 업데이트 시 정기적으로 알림이 갈 예정입니다.</p>
@@ -169,11 +154,11 @@
                                 <div>
                                  <strong>포지션<span>*</span></strong><p></p>
                                     
-                                    	<input type="radio" name="sort" value="프론트엔드" required="required"> 프론트엔드&nbsp;
-                                    	<input type="radio" name="sort" value="백엔드" required="required"> 백엔드&nbsp;
-                                    	<input type="radio" name="sort" value="AI" required="required"> AI&nbsp;
-                                    	<input type="radio" name="sort" value="데이터분석" required="required"> 데이터 분석&nbsp;
-                                    	<input type="radio" name="sort" value="기타" required="required"> 기타 &nbsp;
+                                    	<input type="radio" name="sort" value="프론트엔드" required="required" <c:if test="${memberDTO.sort eq '프론트엔드' }">checked</c:if>> 프론트엔드&nbsp;
+                                    	<input type="radio" name="sort" value="백엔드" required="required" <c:if test="${memberDTO.sort eq '백엔드' }">checked</c:if>> 백엔드&nbsp;
+                                    	<input type="radio" name="sort" value="AI" required="required" <c:if test="${memberDTO.sort eq 'AI' }">checked</c:if>> AI&nbsp;
+                                    	<input type="radio" name="sort" value="데이터분석" required="required" <c:if test="${memberDTO.sort eq '데이터분석' }">checked</c:if>> 데이터 분석&nbsp;
+                                    	<input type="radio" name="sort" value="기타" required="required" <c:if test="${memberDTO.sort eq '기타' }">checked</c:if>> 기타 &nbsp;
                                  </div>
                                 
                                 
