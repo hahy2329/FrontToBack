@@ -111,7 +111,7 @@ $().ready(function(){
                                 <input type="hidden" name="replyId" value="${qnaReplyDTO.replyId }">
 								<input type="hidden" name="boardId" value="${qnaReplyDTO.boardId }">
                                 <button type="submit" class="site-btn">삭제</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/qnaDetail?boardId=${qnaReplyDTO.boardId }'">뒤로가기</button>
+                                <button class="site-btn" onclick="location.href='${contextPath}/boardAdvance/qnaDetail?boardId=${qnaReplyDTO.boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>

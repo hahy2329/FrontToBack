@@ -114,7 +114,7 @@
                                 <input type="text" name="sort" value="${qnaDTO.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">수정</button>
                                 <input type="hidden" name="boardId" value="${qnaDTO.boardId }">
-                                <button class="site-btn"><a href="${contextPath}/boardAdvance/qnaList" style="color: white;">목록보기</a></button>
+                                <button class="site-btn"><a href="${contextPath}/boardAdvance/qnaDetail?boardId=${qnaDTO.boardId}" style="color: white;">뒤로가기</a></button>
                             </form>
                         </div>
                          <div>

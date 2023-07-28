@@ -111,12 +111,11 @@ $().ready(function(){
                                 <input type="hidden" name="replyId" value="${studyReplyDTO.replyId }">
 								<input type="hidden" name="boardId" value="${studyReplyDTO.boardId }">
                                 <button type="submit" class="site-btn">삭제</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/studyDetail?boardId=${studyReplyDTO.boardId }'">뒤로가기</button>
+                                <button class="site-btn" onclick="location.href='${contextPath}/boardAdvance/studyDetail?boardId=${studyReplyDTO.boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
                          
                          <div class="contact__address">

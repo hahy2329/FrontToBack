@@ -26,6 +26,8 @@
                           <c:if test="${sessionScope.adminId eq null }">
                             <li><a href="${contextPath }/boardAdvance/noticeList">공지사항</a></li>
                           </c:if>
+                           <li><a href="${contextPath }/bookSearch">도서검색</a></li>
+                           <li><a href="${contextPath }/video">영상검색</a></li>
                           <c:if test="${sessionScope.memberId ne null }">
                           	 <li><a href="#">커뮤니티</a>
                                 <ul class="dropdown">
@@ -35,8 +37,6 @@
                                     <li><a href="${contextPath }/boardAdvance/bookList">도서 추천</a></li>
                                 </ul>
                             </li>
-                            <li><a href="${contextPath }/bookSearch">도서검색</a></li>
-                            <li><a href="${contextPath }/video">영상검색</a></li>
                             <li><a href="${contextPath }/member/myActivity?memberId=${sessionScope.memberId}">my활동내역</a></li>
                             <li><a href="./contact.html">개인정보</a>
                             	<ul class="dropdown">

@@ -109,8 +109,11 @@ $().ready(function(){
                                 <textarea rows="10" cols="50" placeholder="200자 이내로 작성하세요." name="content" required="required"></textarea>
                                 <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${boardId }">
+                                <div>
+                                	<br>
+                                </div>
                                 <button type="submit" class="site-btn">댓글쓰기</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/knowledgeDetail?boardId=${boardId }'">뒤로가기</button>
+                                <button class="site-btn" onclick="location.href='${contextPath}/boardAdvance/knowledgeDetail?boardId=${boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>

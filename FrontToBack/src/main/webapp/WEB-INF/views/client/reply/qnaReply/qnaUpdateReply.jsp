@@ -111,8 +111,11 @@ $().ready(function(){
                                 <script>CKEDITOR.replace("content")</script>
                                 <input type="hidden" name="boardId" value="${qnaReplyDTO.boardId }">
                                 <input type="hidden" name="replyId" value="${qnaReplyDTO.replyId }">
+                                <div>
+                                	<br>
+                                </div>
                                 <button type="submit" class="site-btn">수정</button>
-                                <button type="submit" class="site-btn" onclick="location.href='${contextPath}/boardAdvance/qnaDetail?boardId=${qnaReplyDTO.boardId }'">뒤로가기</button>
+                                <button class="site-btn" onclick="location.href='${contextPath}/boardAdvance/qnaDetail?boardId=${qnaReplyDTO.boardId }'">뒤로가기</button>
                             </form>
                         </div>
                          <div>

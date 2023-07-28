@@ -114,7 +114,7 @@
                                 <input type="text" name="sort" value="${knowledgeDTO.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">수정</button>
                                 <input type="hidden" name="boardId" value="${knowledgeDTO.boardId }">
-                                <button class="site-btn"><a href="${contextPath}/boardAdvance/knowledgeList" style="color: white;">목록보기</a></button>
+                                <button class="site-btn"><a href="${contextPath}/boardAdvance/knowledgeDetail?boardId=${knowledgeDTO.boardId}" style="color: white;">뒤로가기</a></button>
                             </form>
                         </div>
                          <div>

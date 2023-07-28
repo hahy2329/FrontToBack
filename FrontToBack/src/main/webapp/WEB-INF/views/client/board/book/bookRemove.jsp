@@ -113,7 +113,7 @@
                                 <input type="text" name="sort" value="${bookDTO.sort }" readonly="readonly">
                                 <button type="submit" class="site-btn">삭제</button>
                                 <input type="hidden" name="boardId" value="${bookDTO.boardId }">
-                                <button class="site-btn"><a href="${contextPath}/boardAdvance/bookList" style="color: white;">목록보기</a></button>
+                                <button class="site-btn"><a href="${contextPath}/boardAdvance/bookDetail?boardId=${bookDTO.boardId}" style="color: white;">뒤로가기</a></button>
                             </form>
                         </div>
                          <div>
