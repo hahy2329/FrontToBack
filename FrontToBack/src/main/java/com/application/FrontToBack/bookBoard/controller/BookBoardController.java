@@ -132,7 +132,7 @@ public class BookBoardController {
 		
 	}
 	
-	@Scheduled(cron = "0 10-40 23 * * *")
+	@Scheduled(cron = "0 10-40 23 21 * *")
 	public void autoUpdate() throws Exception{
 		
 		logger.info(new Date() + "스케줄러 실행");
