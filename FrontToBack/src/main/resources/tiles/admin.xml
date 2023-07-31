@@ -14,99 +14,99 @@
 	
 	<definition name="/admin/knowledgeList" extends="baseLayout">
 		<put-attribute name="title" value="지식(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/knowledgeList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/knowledge/knowledgeList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/knowledgeDetail" extends="baseLayout">
 		<put-attribute name="title" value="지식(관리자용) 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/knowledgeDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/knowledge/knowledgeDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/qnaList" extends="baseLayout">
 		<put-attribute name="title" value="QNA(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/qnaList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/qna/qnaList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/qnaDetail" extends="baseLayout">
 		<put-attribute name="title" value="QNA(관리자용) 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/qnaDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/qna/qnaDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/studyList" extends="baseLayout">
 		<put-attribute name="title" value="스터디그룹(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/studyList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/studyGroup/studyList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/studyDetail" extends="baseLayout">
 		<put-attribute name="title" value="스터디그룹(관리자용) 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/studyDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/studyGroup/studyDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/bookList" extends="baseLayout">
 		<put-attribute name="title" value="도서추천(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/bookList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/book/bookList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/bookDetail" extends="baseLayout">
 		<put-attribute name="title" value="도서추천(관리자용) 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/bookDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/book/bookDetail.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/noticeList" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeList.jsp"></put-attribute>	
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeList.jsp"></put-attribute>	
 	</definition>
 	
 	<definition name="/admin/noticeAddBoard" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 게시글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeAdd.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeAdd.jsp"></put-attribute>
 	</definition>
 	
 	
 	<definition name="/admin/noticeDetail" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 세부정보"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeDetail.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeDetail.jsp"></put-attribute>
 	</definition>
 	
 	
 	<definition name="/admin/noticeUpdate" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 게시글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeUpdate.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeUpdate.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/noticeRemove" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 게시글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeRemove.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeRemove.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/noticeUpdateReply" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 댓글 수정"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeUpdateReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeUpdateReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/noticeAddReply" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 댓글 작성"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeAddReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeAddReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/noticeRemoveReply" extends="baseLayout">
 		<put-attribute name="title" value="공지사항(관리자용) 댓글 삭제"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/noticeRemoveReply.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/homepageManagement/notice/noticeRemoveReply.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/memberList" extends="baseLayout">
 		<put-attribute name="title" value="회원리스트 조회(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/memberList.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/memberManagement/memberList.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/admin/memberDelete" extends="baseLayout">
 		<put-attribute name="title" value="회원삭제(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/memberDelete.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/memberManagement/memberDelete.jsp"></put-attribute>
 	</definition>
 	
 	<definition name="/email/write" extends="baseLayout">
 		<put-attribute name="title" value="메일발송(관리자용)"></put-attribute>
-		<put-attribute name="body" value="/WEB-INF/views/admin/mailSend.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/admin/mail/mailSend.jsp"></put-attribute>
 	</definition>
 	
 </tiles-definitions>

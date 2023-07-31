@@ -10,7 +10,7 @@
 <body>
 	<div align="center">
 		<h2>Page Not Found</h2>
-		<img src="${contextPath }/resources/bootstrap/img/404.PNG" alt="404에러 이미지">
+		<img src="${contextPath }/resources/ashion-master/img/404.PNG" alt="404에러 이미지">
 		<h4>페이지를 찾을 수 없습니다.</h4>
 	</div>
 </body>

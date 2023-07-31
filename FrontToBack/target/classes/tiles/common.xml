@@ -11,14 +11,36 @@
 	<definition name="/main" extends="baseLayout">
 		<put-attribute name="title" value="메인페이지"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/common/layout/main.jsp"></put-attribute>
-	
-	
 	</definition>
 	
 	<definition name="/main/serverInspection" extends="baseLayout">
 		<put-attribute name="title" value="서버점검"></put-attribute>
 		<put-attribute name="body" value="/WEB-INF/views/common/layout/serverInspection.jsp"></put-attribute>
+	</definition>
 	
+	<definition name="/bookSearch" extends="baseLayout">
+		<put-attribute name="title" value="도서검색"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/common/api/bookSearch.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/video" extends="baseLayout">
+		<put-attribute name="title" value="영상검색"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/common/api/video.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/administrator/introduce" extends="baseLayout">
+		<put-attribute name="title" value="관리자 소개"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/common/administrator/introduce.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/administrator/inquiry" extends="baseLayout">
+		<put-attribute name="title" value="문의사항"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/common/administrator/inquiry.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="/administrator/bug" extends="baseLayout">
+		<put-attribute name="title" value="버그제보"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/common/administrator/bug.jsp"></put-attribute>
 	</definition>
 
 </tiles-definitions>

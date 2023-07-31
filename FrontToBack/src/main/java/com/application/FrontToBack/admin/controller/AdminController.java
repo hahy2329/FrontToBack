@@ -993,7 +993,7 @@ public class AdminController {
 		
 		String message = "<script>";
 		message +="alert('정상적으로 수정되었습니다.');";
-		message +="location.href='"+ request.getContextPath() +"/admin/noticeDetail?boardId"+noticeReplyDTO.getBoardId()+"';";
+		message +="location.href='"+ request.getContextPath() +"/admin/noticeDetail?boardId="+noticeReplyDTO.getBoardId()+"';";
 		message +="</script>";
 		
 		HttpHeaders responseHeaders = new HttpHeaders();

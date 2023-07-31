@@ -155,7 +155,7 @@
 		UPDATE
 			NOTICEREPLY
 		SET
-			CONTENT = #{content}
+			CONTENT = #{content},
 			ENROLL_DT = NOW()
 		WHERE
 			REPLY_ID = #{replyId}
