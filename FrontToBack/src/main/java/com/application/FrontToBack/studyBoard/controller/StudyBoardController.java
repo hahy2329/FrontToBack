@@ -26,6 +26,7 @@ import com.application.FrontToBack.studyBoard.dto.StudyDTO;
 import com.application.FrontToBack.studyBoard.dto.StudyReplyDTO;
 import com.application.FrontToBack.studyBoard.service.StudyBoardService;
 
+
 @Controller
 @RequestMapping("/boardAdvance")
 public class StudyBoardController {
