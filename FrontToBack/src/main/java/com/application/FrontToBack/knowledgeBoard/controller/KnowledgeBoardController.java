@@ -303,10 +303,7 @@ public class KnowledgeBoardController {
 		
 	}
 	
-	@GetMapping("/checkDuplicatedPasswd")
-	public ResponseEntity<String> checkDuplicatedPasswd(@RequestParam("passwd") String passwd, @RequestParam("writer") String writer ) throws Exception{
-		return new ResponseEntity<String>(knowledgeBoardService.checkDuplicatedPasswd(writer, passwd),HttpStatus.OK);
-	}
+	
 	
 	@PostMapping("/knowledgeUpdateReply")
 	public ResponseEntity<Object> knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO, HttpServletRequest request) throws Exception{

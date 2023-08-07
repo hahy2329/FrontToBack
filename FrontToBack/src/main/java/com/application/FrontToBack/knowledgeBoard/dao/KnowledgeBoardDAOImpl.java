@@ -80,15 +80,7 @@ public class KnowledgeBoardDAOImpl implements KnowledgeBoardDAO {
 		return sqlSession.selectOne("knowledge.knowledgeReplyDetail", replyId);
 	}
 
-	@Override
-	public String getEncodePasswd(String writer) throws Exception {
-		return sqlSession.selectOne("knowledge.getEncodePasswd", writer);
-	}
 
-	@Override
-	public String checkDuplicatedWriter(String writer) throws Exception {
-		return sqlSession.selectOne("knowledge.selectOneDuplicateWriter", writer);
-	}
 
 	@Override
 	public void knowledgeUpdateReply(KnowledgeReplyDTO knowledgeReplyDTO) throws Exception {

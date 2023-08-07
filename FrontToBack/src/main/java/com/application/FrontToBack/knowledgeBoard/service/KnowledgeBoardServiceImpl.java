@@ -101,19 +101,7 @@ public class KnowledgeBoardServiceImpl implements KnowledgeBoardService {
 	}
 
 
-	@Override
-	public String checkDuplicatedPasswd(String writer, String passwd) throws Exception {
-		if(bCryptPasswordEncoder.matches(passwd, knowledgeBoardDAO.getEncodePasswd(writer))) return "duplicate";
-		else 			return "notDuplicate";
-		
-	}
 
-
-	@Override
-	public String checkDuplicatedWriter(String writer) throws Exception {
-		if(knowledgeBoardDAO.checkDuplicatedWriter(writer) == null)   return "duplicate"; 
-		else				return "notDuplicate";
-	}
 
 
 	@Override

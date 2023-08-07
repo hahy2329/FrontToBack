@@ -212,27 +212,6 @@
 		
 		</select>
 	
-		<select id="getEncodePasswd" parameterType="String" resultType="String">
-		
-			SELECT
-				PASSWD
-			FROM
-				KNOWLEDGEREPLY
-			WHERE
-				WRITER = #{writer}
-		
-		</select>
-		<select id="selectOneDuplicateWriter" parameterType="String" resultType="String">
-			
-			SELECT
-				WRITER
-			FROM
-				KNOWLEDGEREPLY
-			WHERE
-				WRITER = #{writer}
-		
-		
-		</select>
 		
 		<update id="updateKnowledgeReply" parameterType="KnowledgeReplyDTO">
 			
