@@ -77,7 +77,6 @@
 </script>
 </head>
 <body>
-    <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -92,9 +91,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-
-    <!-- Contact Section Begin -->
     <section class="contact spad">
         <div class="container">
             <div class="row">
@@ -115,13 +111,10 @@
                                 <button type="submit" class="site-btn">글쓰기</button>
                                 <button class="site-btn"><a href="${contextPath}/admin/noticeList" style="color: white;">목록보기</a></button>
                             </form>
-                            
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                            	 <ul>
@@ -138,11 +131,8 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
-<!-- Contact Section End -->
-
-
+       		 </div>
+    	</div>
+	</section>
 </body>
 </html>

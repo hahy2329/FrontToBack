@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	<div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -22,8 +21,6 @@
             </div>
         </div>
     </div>
-
- <!-- Contact Section Begin -->
     <section class="contact spad">
         <div class="container">
             <div class="row">
@@ -33,15 +30,11 @@
                         <div class="contact__form" align="center">
                             <h5>관리자 로그인</h5>
                             <form action="${contextPath }/admin/loginAdmin" method="post">
-                            
                             	<p>아이디<span>*</span></p>
                                 <input type="text" name="adminId" placeholder="아이디를 입력해주세요." required="required">
-                                
                                 <p>비밀번호</p>
                                 <input type="password" name="passwd" placeholder="비밀번호를 입력해주세요." required="required">
-                                
                                 <button type="submit" class="site-btn">로그인</button>
-                               
                             </form>
                         </div>
                         <div><br><br><hr></div>
@@ -61,11 +54,8 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
-<!-- Contact Section End -->
-	
-
+        	</div>
+    	</div>
+	</section>
 </body>
 </html>

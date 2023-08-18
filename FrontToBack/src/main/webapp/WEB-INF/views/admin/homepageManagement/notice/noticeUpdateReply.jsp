@@ -74,7 +74,6 @@ $().ready(function(){
 </script>
 </head>
 <body>
-	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -89,9 +88,6 @@ $().ready(function(){
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-
-    <!-- Contact Section Begin -->
     <section class="contact spad">
         <div class="container">
             <div class="row">
@@ -119,9 +115,7 @@ $().ready(function(){
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                             <ul>
@@ -138,10 +132,8 @@ $().ready(function(){
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
-<!-- Contact Section End -->
-	
+        	</div>
+    	</div>
+	</section>
 </body>
 </html>

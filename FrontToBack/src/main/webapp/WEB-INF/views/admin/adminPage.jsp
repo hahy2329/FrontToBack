@@ -9,8 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-    <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -23,9 +21,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-
-    <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -117,7 +112,6 @@
             </div>
             </div>
     	</section>
-    <!-- Shop Section End -->
     <section class="discount">
     <div class="container" align="center">
         <div class="row">
@@ -134,7 +128,7 @@
                         <h5><span>회원 수</span>${count } </h5>
                     </div>
                     <div>
-                            <h4><strong>${nowTime }</strong></h4>
+                         <h4><strong>${nowTime }</strong></h4>
                     </div>        
                 </div>
             </div>

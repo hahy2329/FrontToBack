@@ -8,9 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <body>
-
 	<div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -26,7 +24,6 @@
             </div>
         </div>
     </div>
-	<!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
@@ -83,12 +80,5 @@
             </div>
         </div>
     </section>
-    <!-- Blog Details Section End -->
-   
-
-   
-
-   
 </body>
-
 </html>

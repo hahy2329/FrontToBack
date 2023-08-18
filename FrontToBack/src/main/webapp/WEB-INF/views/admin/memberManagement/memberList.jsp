@@ -9,8 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-  	
-  	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -28,7 +26,6 @@
     <div>
     	<br><br>
     </div>
-    <!-- Breadcrumb End -->
     	<div align="center">
            <h4>회원리스트 조회</h4>
          </div>

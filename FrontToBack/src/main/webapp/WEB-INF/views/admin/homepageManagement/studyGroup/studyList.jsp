@@ -30,8 +30,6 @@
 </script>
 </head>
 <body>
-
-	 <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -46,9 +44,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-    
-    <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -98,13 +93,10 @@
                         </div>
                     </div>
                 </div>
-                 
-                    
                 <div class="trend__content">
                     <div class="section-title">
                         <h4>스터디그룹</h4>
                     </div>
-                    
                     <div align="right">
                      	조회 : <span style="color:red;">${allBoardCnt }</span>개
                 	<select id="onePageViewCnt" onchange="getBoardList()">
@@ -141,26 +133,16 @@
                  <p></p>
                         	<ul>
                         		<c:if test="${startPage > 10 }">
-                        			
                         				<a href="${contextPath }/admin/studyList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
-                        			
                         		</c:if>
                         		<c:forEach var="i" begin="${startPage }" end="${endPage }">
-                        			
                         				<a href="${contextPath }/admin/studyList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
-                        			
                         		</c:forEach>
                         		<c:if test="${endPage != allPageCnt && endPage >=10}">
-                        			
                         				<a href="${contextPath }/admin/studyList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
-                        			
-                        			
                         		</c:if>
                         	</ul>
                       </div>
-         
-    </section>
-    <!-- Shop Section End -->
-
+    			</section>
 </body>
 </html>

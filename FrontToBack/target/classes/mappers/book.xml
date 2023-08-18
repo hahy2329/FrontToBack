@@ -249,7 +249,7 @@
 				*			
 			FROM
 				BOOK
-			LIMIT 3
+			LIMIT 5
 				
 		</select>
 		

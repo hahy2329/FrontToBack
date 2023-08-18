@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <body>
    <div class="breadcrumb-option">
         <div class="container">
@@ -24,9 +23,6 @@
             </div>
         </div>
     </div>
-   
-   
-	<!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
@@ -66,7 +62,6 @@
                                         <h6><a href="${contextPath}/admin/noticeAddReply?boardId=${noticeDTO.boardId }">댓글 작성 <i class="fa fa-angle-right"></i></a></h6>
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                         <div class="blog__details__comment">
@@ -95,19 +90,11 @@
                                 </div>
                             </div>
                             </c:forEach>
-                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Details Section End -->
-   
-
-   
-
-   
 </body>
-
 </html>

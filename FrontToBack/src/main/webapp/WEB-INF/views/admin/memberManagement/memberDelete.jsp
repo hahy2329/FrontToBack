@@ -74,7 +74,6 @@
 </script>
 </head>
 <body>
-	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -89,10 +88,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-    
-    
- <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -142,35 +137,22 @@
                         </div>
                     </div>
                 </div>
-                 
-            
                 <div class="trend__content">
                     <div class="section-title">
                         <h4>회원삭제</h4>
                     </div>
-                    
-                    
-                    
                     <div class="contact__form" align="center">
                               <form action="${contextPath }/admin/memberDelete" method="post">
-                            	<p>아이디<span>*</span></p>
-                                <input type="text" name="memberId" id="memberId" placeholder="아이디를 입력해주세요." required="required">
-                             	<input type="button" id="btnOverlapped" value="중복확인">
-                                <p class="answer"></p>
-                                
-                                <button type="submit" class="site-btn">삭제</button>
-                                
+	                            	<p>아이디<span>*</span></p>
+	                                <input type="text" name="memberId" id="memberId" placeholder="아이디를 입력해주세요." required="required">
+	                             	<input type="button" id="btnOverlapped" value="중복확인">
+	                                <p class="answer"></p>
+	                                <button type="submit" class="site-btn">삭제</button>
                                </form> 
                       </div>
-                      
-                      </div>
-                     </div>
-                    </div>
-                      
-         
-    </section>
-    <!-- Shop Section End -->
-	
-	
+                  </div>
+                </div>
+               </div>
+   		 </section>
 </body>
 </html>

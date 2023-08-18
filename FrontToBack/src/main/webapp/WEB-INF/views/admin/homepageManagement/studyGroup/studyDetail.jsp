@@ -8,9 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <body>
-
 	<div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -26,7 +24,6 @@
             </div>
         </div>
     </div>
-	<!-- Blog Details Section Begin -->
     <section class="blog-details spad">
         <div class="container">
             <div class="row">
@@ -62,10 +59,8 @@
                             </div>
                         </div>
                         <div class="blog__details__comment">
-                            
                             <c:forEach var="replyDTO" items="${studyReplyDTO }">
                             <div class="blog__comment__item">
-                               
                                 <div class="blog__comment__item__text">
                                     <h6>${replyDTO.memberId }</h6>
                                     <p>${replyDTO.content }</p>
@@ -76,19 +71,11 @@
                                 </div>
                             </div>
                             </c:forEach>
-                           
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Blog Details Section End -->
-   
-
-   
-
-   
 </body>
-
 </html>

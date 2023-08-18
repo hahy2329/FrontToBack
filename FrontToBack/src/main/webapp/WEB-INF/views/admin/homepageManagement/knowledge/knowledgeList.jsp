@@ -30,8 +30,6 @@
 </script>
 </head>
 <body>
-
-	 <!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -46,9 +44,6 @@
             </div>
         </div>
     </div>
-    <!-- Breadcrumb End -->
-    
-    <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
             <div class="row">
@@ -98,8 +93,6 @@
                         </div>
                     </div>
                 </div>
-                 
-                    
                 <div class="trend__content">
                     <div class="section-title">
                         <h4>지식</h4>
@@ -138,29 +131,18 @@
                       <input type="button" value="검색" onclick="getBoardList()">
                 </div>
                  <div style="display: table; margin-left: auto; margin-right: auto">
-                 <p></p>
-                        	<ul>
-                        		<c:if test="${startPage > 10 }">
-                        			
-                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
-                        			
-                        		</c:if>
-                        		<c:forEach var="i" begin="${startPage }" end="${endPage }">
-                        			
-                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
-                        			
-                        		</c:forEach>
-                        		<c:if test="${endPage != allPageCnt && endPage >=10}">
-                        			
-                        				<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
-                        			
-                        			
-                        		</c:if>
-                        	</ul>
-                      </div>
-         
-    </section>
-    <!-- Shop Section End -->
-
+                     <ul>
+                        <c:if test="${startPage > 10 }">
+                        		<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage - 10}&onePageViewCnt=${onePageViewCnt }&searchKeyword=${searchKeyword }&searchWord=${searchWord }">이전 &nbsp;</a>
+                        </c:if>
+                        <c:forEach var="i" begin="${startPage }" end="${endPage }">
+                        		<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${i }&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">${i }&nbsp;</a>
+                        </c:forEach>
+                        <c:if test="${endPage != allPageCnt && endPage >=10}">
+                        		<a href="${contextPath }/admin/knowledgeList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
+                        </c:if>
+                     </ul>
+             	</div>
+   		 </section>
 </body>
 </html>
