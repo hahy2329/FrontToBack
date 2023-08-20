@@ -38,7 +38,7 @@
                                 </ul>
                             </li>
                             <li><a href="${contextPath }/member/myActivity?memberId=${sessionScope.memberId}">my활동내역</a></li>
-                            <li><a href="./contact.html">개인정보</a>
+                            <li><a href="#">개인정보</a>
                             	<ul class="dropdown">
                             		<li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보 변경</a></li>
                             		<li><a href="${contextPath }/member/removeMember?memberId=${sessionScope.memberId}">회원탈퇴</a></li>
