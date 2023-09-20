@@ -137,13 +137,10 @@ public class MemberController {
 				message +="</script>";
 			}
 			else {
-				
 				message ="<script>";
 				message +="alert('아이디 혹은 패스워드를 다시 확인해주세요.');";
 				message +="history.go(-1)";
 				message +="</script>";
-				
-				
 			}
 			HttpHeaders responseHeaders = new HttpHeaders();
 			responseHeaders.add("Content-Type", "text/html; charset=utf-8");

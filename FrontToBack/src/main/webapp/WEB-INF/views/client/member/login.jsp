@@ -28,19 +28,14 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__content">
-                        
                         <div class="contact__form" align="center">
                             <h5>로그인</h5>
                             <form action="${contextPath }/member/loginMember" method="post">
-                            
                             	<p>아이디<span>*</span></p>
-                                <input type="text" name="memberId" placeholder="아이디를 입력해주세요." required="required">
-                                
+                                	<input type="text" name="memberId" placeholder="아이디를 입력해주세요." required="required">
                                 <p>비밀번호</p>
-                                <input type="password" name="passwd" placeholder="비밀번호를 입력해주세요." required="required">
-                                
+                                	<input type="password" name="passwd" placeholder="비밀번호를 입력해주세요." required="required">
                                 <button type="submit" class="site-btn">로그인</button>
-                               
                             </form>
                         </div>
                         <div><br><br><hr></div>
@@ -60,9 +55,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+        	</div>
+    	</div>
+	</section>
 <!-- Contact Section End -->
 	
 

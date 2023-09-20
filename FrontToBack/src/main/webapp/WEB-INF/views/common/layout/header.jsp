@@ -8,8 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	 <!-- Header Section Begin -->
     <header class="header">
         <div class="container-fluid">
             <div class="row">
@@ -18,7 +16,6 @@
                         <a href="${contextPath }/"><img src="${contextPath }/resources/ashion-master/img/FrontToBack.png" alt=""></a>
                     </div>
                 </div>
-                <!-- admin카테고리 기능 및 로그인 페이지에 admin표기 즉 2가지 도 추가해야함 -->
                 <div class="col-xl-6 col-lg-7">
                     <nav class="header__menu">
                         <ul>
@@ -43,7 +40,6 @@
                             		<li><a href="${contextPath }/member/updateMember?memberId=${sessionScope.memberId}">개인정보 변경</a></li>
                             		<li><a href="${contextPath }/member/removeMember?memberId=${sessionScope.memberId}">회원탈퇴</a></li>
                             	</ul>
-                            
                             </li>
                           </c:if>
                          <c:if test="${sessionScope.adminId ne null }">
@@ -56,32 +52,29 @@
                 </div>
                 <div class="col-lg-3">
                     <div class="header__right">
-                    <c:choose>
-                    	<c:when test="${sessionScope.memberId eq null and sessionScope.adminId eq null }">
-	                        <div class="header__right__auth">
-	                            <strong><a href="${contextPath }/member/loginMember">Login</a></strong>
-	                            <a href="${contextPath }/admin/loginAdmin"></a>
-	                            <strong><a href="${contextPath }/member/registerMember">Register</a></strong>
-	                        </div>
-                        </c:when>
-                        <c:otherwise>
-	                        <c:if test="${sessionScope.memberId ne null }">
-	                        	 <div class="header__right__auth">
-		                            <a>${sessionScope.memberId }님 로그인 </a>
-		                            <a href="${contextPath }/member/logoutMember"> logout</a>
+	                    <c:choose>
+	                    	<c:when test="${sessionScope.memberId eq null and sessionScope.adminId eq null }">
+		                        <div class="header__right__auth">
+		                            <strong><a href="${contextPath }/member/loginMember">Login</a></strong>
+		                            <a href="${contextPath }/admin/loginAdmin"></a>
+		                            <strong><a href="${contextPath }/member/registerMember">Register</a></strong>
 		                        </div>
-		                     </c:if>
-		                     
-		                     <c:if test="${sessionScope.adminId ne null }">
-		                     	<div class="header__right__auth">
-		                            <a>${sessionScope.adminId }님 로그인 </a>
-		                            <a href="${contextPath }/admin/logoutAdmin"> logout</a>
-		                        </div>
-		                     </c:if>   
-                        </c:otherwise>
-                        
-                    </c:choose>
-                        
+	                        </c:when>
+	                        <c:otherwise>
+		                        <c:if test="${sessionScope.memberId ne null }">
+		                        	 <div class="header__right__auth">
+			                            <a>${sessionScope.memberId }님 로그인 </a>
+			                            <a href="${contextPath }/member/logoutMember"> logout</a>
+			                        </div>
+			                     </c:if>
+			                     <c:if test="${sessionScope.adminId ne null }">
+			                     	<div class="header__right__auth">
+			                            <a>${sessionScope.adminId }님 로그인 </a>
+			                            <a href="${contextPath }/admin/logoutAdmin"> logout</a>
+			                        </div>
+			                     </c:if>   
+	                        </c:otherwise>
+	                    </c:choose>
                     </div>
                 </div>
             </div>
@@ -91,7 +84,5 @@
         </div>
     </header>
     <!-- Header Section End -->
-	
-
 </body>
 </html>

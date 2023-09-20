@@ -27,7 +27,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String checkDuplicatedId(String memberId) throws Exception {
 		if(memberDAO.selectDuplicatedId(memberId) ==null) return "duplicate";
-		else		return "notDuplicate";
+		else return "notDuplicate";
 	}
 	
 	@Override
@@ -39,7 +39,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String checkDuplicatedEmail(String email) throws Exception {
 		if(memberDAO.selectDuplicatedEmail(email) == null) return "duplicate";
-		else		return "notDuplicate";
+		else return "notDuplicate";
 	}
 
 	@Override
