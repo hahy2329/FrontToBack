@@ -30,7 +30,7 @@
 </script>
 </head>
 <body>
-	   <!-- Breadcrumb Begin -->
+	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -45,10 +45,9 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<section class="shop-cart spad">
-   <div class="container">
-
-	<div class="row">
+	<section class="shop-cart spad">
+	   <div class="container">
+		<div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
                     <h2>스터디 그룹</h2>
@@ -73,7 +72,6 @@
                         				</select>
                         			</td>
                         		</tr>
-                        	
                                <tr align="center">
                                    <th>번호</th>
                                    <th>제목</th>
@@ -110,15 +108,11 @@
                             			<option value="subject">제목</option>
                             			<option value="memberId">아이디</option>
                             			<option value="content">내용</option>
-                            		
                             		</select>
                             		<input type="text" id="searchWord" name="searchWord" value="${searchWord }">
                             		<input type="button" value="검색" onclick="getBoardList()">
-                            	
                             	</td>
-                            
                             </tr>
-                            
                         </table>
                         <div style="display: table; margin-left: auto; margin-right: auto">
                         	<ul>
@@ -135,17 +129,14 @@
                         		<c:if test="${endPage != allPageCnt && endPage >=10}">
                         			<li>
                         				<a href="${contextPath }/baordAdvance/studyList?currentPageNumber=${startPage + 10}&onePageViewCnt=${onePageViewCnt  }&searchKeyword=${searchKeyword }&searchWord=${searchWord}">다음</a>
-                        			
                         			</li>
                         		</c:if>
                         	</ul>
                         </div>
-                        
-                        
                     </div>
-                </div>
-            </div>
-            </div>
-            </section>
+                	</div>
+            	</div>
+           	</div>
+         </section>
 </body>
 </html>

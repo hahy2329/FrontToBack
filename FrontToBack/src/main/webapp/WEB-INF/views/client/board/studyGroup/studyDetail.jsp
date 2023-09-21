@@ -8,7 +8,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
 <body>
 	<div class="breadcrumb-option">
         <div class="container">
@@ -64,7 +63,6 @@
                                         <h5><h6 style="font-weight: bold">댓글 리스트<h7 style="color: red;">&nbsp;(${allReplyCnt }개)</h7></h6></h5>
                                     </div>
                                 </div>
-                                
                                <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="blog__details__btn__item blog__details__btn__item--next">
                                      <c:if test="${sessionScope.memberId ne null }">
@@ -75,10 +73,8 @@
                             </div>
                         </div>
                         <div class="blog__details__comment">
-                            
                             <c:forEach var="replyDTO" items="${studyReplyDTO }">
                             <div class="blog__comment__item">
-                               
                                 <div class="blog__comment__item__text">
                                     <h6>${replyDTO.memberId }</h6>
                                     <p>${replyDTO.content }</p>
@@ -92,7 +88,6 @@
                                 </div>
                             </div>
                             </c:forEach>
-                           
                         </div>
                     </div>
                 </div>
