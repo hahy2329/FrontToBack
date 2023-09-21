@@ -18,6 +18,7 @@
 	
 	function getBoardList(){
 		
+		
 		var url = "${contextPath}/boardAdvance/knowledgeList";
 			url +="?searchKeyword=" + $("#searchKeyword").val();
 			url +="&searchWord="+$("#searchWord").val();
@@ -30,7 +31,7 @@
 </script>
 </head>
 <body>
-	   <!-- Breadcrumb Begin -->
+	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -45,10 +46,10 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<section class="shop-cart spad">
-   <div class="container">
-
-	<div class="row">
+    
+	<section class="shop-cart spad">
+		   <div class="container">
+			<div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
                     <h2>지식</h2>
@@ -66,15 +67,15 @@
                         				조회 : <span style="color: red;">${allBoardCnt }</span>개
                         			</td>
                         			<td colspan="5" align="right">
-                        				<select id="onePageViewCnt" onchange="getBoardList()">
-                        					<option>5</option>
-                        					<option>7</option>
-                        					<option>10</option>
+                        				<input type="hidden" id="changeInput">
+                        				<select id="onePageViewCnt" onchange="getBoardList();">
+                        					<option <c:if test="${onePageViewCnt eq 5 }">selected</c:if>>5</option>
+                        					<option <c:if test="${onePageViewCnt eq 7 }">selected</c:if>>7</option>
+                        					<option <c:if test="${onePageViewCnt eq 10 }">selected</c:if>>10</option>
                         				</select>
                         			</td>
                         		</tr>
-                        	
-                               <tr align="center">
+                                <tr align="center">
                                    <th>번호</th>
                                    <th>제목</th>
                                    <th>아이디</th>
@@ -95,7 +96,6 @@
                                 		<td><fmt:formatDate value="${knowledgeDTO.enrollDt }" pattern="yyyy-MM-dd"/></td>
                                 		<td>${knowledgeDTO.readCnt }</td>
                                 	</tr>
-                                
                                 </c:forEach>
                             </tbody>
                             <tr align="right">
@@ -110,15 +110,11 @@
                             			<option value="subject">제목</option>
                             			<option value="memberId">아이디</option>
                             			<option value="content">내용</option>
-                            		
                             		</select>
                             		<input type="text" id="searchWord" name="searchWord" value="${searchWord }">
                             		<input type="button" value="검색" onclick="getBoardList()">
-                            	
                             	</td>
-                            
                             </tr>
-                            
                         </table>
                         <div style="display: table; margin-left: auto; margin-right: auto">
                         	<ul>
@@ -146,6 +142,6 @@
                 </div>
             </div>
             </div>
-            </section>
+     </section>
 </body>
 </html>

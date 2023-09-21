@@ -67,9 +67,9 @@
                         			</td>
                         			<td colspan="5" align="right">
                         				<select id="onePageViewCnt" onchange="getBoardList()">
-                        					<option>5</option>
-                        					<option>7</option>
-                        					<option>10</option>
+                        					<option <c:if test="${onePageViewCnt eq 5 }">selected</c:if>>5</option>
+                        					<option <c:if test="${onePageViewCnt eq 7 }">selected</c:if>>7</option>
+                        					<option <c:if test="${onePageViewCnt eq 10 }">selected</c:if>>10</option>
                         				</select>
                         			</td>
                         		</tr>

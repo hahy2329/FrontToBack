@@ -180,8 +180,6 @@ public class MemberController {
 		String message = "";
 		
 		if(memberService.updateMember(memberDTO)) {
-			
-			
 			message = "<script>";
 			message +="alert('확인 결과, 정상적으로 수정 완료되었습니다.');";
 			message +="location.href='" + request.getContextPath() +"/';";
@@ -195,18 +193,11 @@ public class MemberController {
 			message +="alert('확인 결과, 패스워드가 올바르지 않습니다.');";
 			message +="history.go(-1)";
 			message +="</script>";
-			
-			
 		}
 			HttpHeaders responseHeaders = new HttpHeaders();
 			responseHeaders.add("Content-Type", "text/html; charset=utf-8");
 			
-			
 			return new ResponseEntity<Object>(message, responseHeaders, HttpStatus.OK);
-			
-		
-		
-		
 		
 	}
 	

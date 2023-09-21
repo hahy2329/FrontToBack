@@ -39,13 +39,9 @@
 						</if>
 						<if test='searchKeyword.equals("content")'>
 							CONTENT LIKE CONCAT('%', #{searchWord}, '%')
-						
 						</if>
-						
 				</otherwise>
-				
 			</choose>
-		
 		</select>
 		
 		<select id="selectListBoard" parameterType="hashmap" resultType="KnowledgeDTO">

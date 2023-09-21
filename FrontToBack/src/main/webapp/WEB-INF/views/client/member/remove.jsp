@@ -94,40 +94,26 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="checkout__form__input">
                                     <p>아이디 <span>*</span></p>
-                                    <input type="text" id="memberId" name="memberId"  value="${memberDTO.memberId }" readonly="readonly">
-                                    
-                                     <p>비밀번호 <span>*</span></p>
-                                    <input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력해주세요." required="required">
+                                    	<input type="text" id="memberId" name="memberId"  value="${memberDTO.memberId }" readonly="readonly">
+                                    <p>비밀번호 <span>*</span></p>
+                                    	<input type="password" name="passwd" id="passwd" placeholder="비밀번호를 입력해주세요." required="required">
                                     <p>비밀번호 확인<span>*</span></p>
-                                    <input type="password" id="confirmPasswd" placeholder="비밀번호를 한 번 더 입력부탁드립니다." required="required">
-                                    
+                                    	<input type="password" id="confirmPasswd" placeholder="비밀번호를 한 번 더 입력부탁드립니다." required="required">
                                 </div>
                             </div>
-                               
-                                
-                                
-                                 <div class="checkout__order">
+                            <div class="checkout__order">
                                 <h5>알림</h5>
-                                
                                 <div class="checkout__order__widget">
-                                   
-                                       	정말로 탈퇴하시겠습니까?
-                                    <p>탈퇴를 원치 않으실 경우 뒤로가기 버튼을 눌러주시고, 탈퇴를 계속 진행하실 경우 아래의 전송버튼을 눌러주세요.</p>
-                                  
+                                       	정말로 탈퇴하시겠습니까?<p>탈퇴를 원치 않으실 경우 뒤로가기 버튼을 눌러주시고, 탈퇴를 계속 진행하실 경우 아래의 전송버튼을 눌러주세요.</p>
                                 </div>
                                 <button type="submit" class="site-btn">전송</button>
                             </div>
                             </div>
                         </div>
-                  
-                        
                     </div>
                 </form>
             </div>
         </section>
         <!-- Checkout Section End -->
-	
-	
-	
 </body>
 </html>
