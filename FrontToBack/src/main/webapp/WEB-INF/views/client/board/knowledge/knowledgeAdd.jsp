@@ -36,9 +36,7 @@
 						isValid=true;
 						$("#btnOverlapped").remove();
 						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
-						
 					}
-					
 					else{
 						alert("패스워드를 다시 확인해주세요.");
 						isValid=false;
@@ -87,7 +85,6 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__content">
-                       
                         <div class="contact__form">
                             <h5>게시글 작성</h5>
                             <form action="${contextPath }/boardAdvance/knowledgeAddBoard" method="post">
@@ -122,8 +119,8 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
+          </div>
+      </div>
 </section>
 <!-- Contact Section End -->
 

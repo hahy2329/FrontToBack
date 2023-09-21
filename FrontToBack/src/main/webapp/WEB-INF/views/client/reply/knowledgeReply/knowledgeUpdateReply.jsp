@@ -8,69 +8,56 @@
 <title>add reply</title>
 <script>
 	
-var isValid = false;
+	var isValid = false;
 
-$().ready(function(){
-	
-	$("#btnOverlapped").click(function(){
+	$().ready(function(){
 		
-		$(".answer").empty();
-		
-		var memberId = $("#memberId").val();
-		var passwd = $("#passwd").val();
-		
-		if(passwd == ''){
-			alert("패스워드를 입력해주세요.");
-			return false;
-		}
-		
-		$.ajax({
+		$("#btnOverlapped").click(function(){
 			
-			type : "get",
-			url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
-			success : function(data){
-				if(data == "duplicate"){
-					
-					alert("확인되었습니다.");
-					isValid=true;
-					$("#btnOverlapped").remove();
-					$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
-					
-				}
-				
-				else{
-					alert("패스워드를 다시 확인해주세요.");
-					isValid=false;
-					$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
-				}
-				
-				
+			$(".answer").empty();
+			
+			var memberId = $("#memberId").val();
+			var passwd = $("#passwd").val();
+			
+			if(passwd == ''){
+				alert("패스워드를 입력해주세요.");
+				return false;
 			}
 			
-			
+			$.ajax({
+				
+				type : "get",
+				url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
+				success : function(data){
+					if(data == "duplicate"){
+						
+						alert("확인되었습니다.");
+						isValid=true;
+						$("#btnOverlapped").remove();
+						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
+						
+					}
+					else{
+						alert("패스워드를 다시 확인해주세요.");
+						isValid=false;
+						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
+					}
+				}
+			});
 		});
 		
-	});
-	
-	$("form").submit(function(){
-		
-		if(isValid == false){
-			alert("패스워드를 확인해주세요.");
-			return false;
-		}
-		
-		if(isValid == true){
+		$("form").submit(function(){
 			
-			return true;
-		}
-		
-		
+			if(isValid == false){
+				alert("패스워드를 확인해주세요.");
+				return false;
+			}
+			if(isValid == true){
+				
+				return true;
+			}
+		});
 	});
-	
-	
-	
-	
-});
 
 </script>
 </head>
@@ -102,7 +89,6 @@ $().ready(function(){
                         <div class="contact__form">
                             <h5>댓글 수정</h5>
                             <form action="${contextPath }/boardAdvance/knowledgeUpdateReply" method="post">
-                            	
                                 <input type="text" name="memberId" id="memberId" placeholder="아이디" value="${knowledgeReplyDTO.memberId }"  required="required" maxlength="15" readonly="readonly"/>
                                 <input type="password" name="passwd" id="passwd" required="required" placeholder="비밀번호">
                                 <input type="button"  class="site-btn" id="btnOverlapped" style="color: white;" value="인증" placeholder="비밀번호 재입력">
@@ -120,9 +106,7 @@ $().ready(function(){
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                             <ul>
@@ -139,9 +123,9 @@ $().ready(function(){
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+        	</div>
+    	</div>
+	</section>
 <!-- Contact Section End -->
 	
 </body>

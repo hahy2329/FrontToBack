@@ -44,33 +44,25 @@
 						isValid=false;
 						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
 					}
-					
-					
 				}
-				
-				
 			});
-			
 		});
 		
 		$("form").submit(function(){
 			
 			if(isValid == false){
+				
 				alert("패스워드를 확인해주세요.");
 				return false;
+				
 			}
 			
 			if(isValid == true){
 				
 				return true;
+				
 			}
-			
-			
 		});
-		
-		
-		
-		
 	});
 
 
@@ -100,7 +92,6 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__content">
-                       
                         <div class="contact__form">
                             <h5>게시글 작성</h5>
                             <form action="${contextPath }/boardAdvance/qnaAddBoard" method="post">
@@ -118,9 +109,7 @@
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                            	 <ul>
@@ -137,9 +126,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+	        </div>
+	    </div>
+	</section>
 <!-- Contact Section End -->
 
 

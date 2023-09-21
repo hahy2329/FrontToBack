@@ -38,19 +38,14 @@
 						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
 						
 					}
-					
 					else{
+						
 						alert("패스워드를 다시 확인해주세요.");
 						isValid=false;
 						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
 					}
-					
-					
 				}
-				
-				
 			});
-			
 		});
 		
 		$("form").submit(function(){
@@ -64,13 +59,7 @@
 				
 				return true;
 			}
-			
-			
 		});
-		
-		
-		
-		
 	});
 
 
@@ -119,9 +108,7 @@
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                             <ul>
@@ -138,9 +125,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+	        </div>
+	    </div>
+	</section>
 <!-- Contact Section End -->
 
 

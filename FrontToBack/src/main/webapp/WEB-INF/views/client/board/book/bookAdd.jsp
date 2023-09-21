@@ -44,13 +44,8 @@
 						isValid=false;
 						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
 					}
-					
-					
 				}
-				
-				
 			});
-			
 		});
 		
 		$("form").submit(function(){
@@ -59,18 +54,11 @@
 				alert("패스워드를 확인해주세요.");
 				return false;
 			}
-			
 			if(isValid == true){
 				
 				return true;
 			}
-			
-			
 		});
-		
-		
-		
-		
 	});
 
 
@@ -118,9 +106,7 @@
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                             <h5>FRONTTOBACK INFO</h5>
                            	 <ul>
@@ -137,9 +123,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+	        </div>
+	    </div>
+	</section>
 <!-- Contact Section End -->
 
 

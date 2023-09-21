@@ -8,69 +8,62 @@
 <title>add reply</title>
 <script>
 	
-var isValid = false;
-
-$().ready(function(){
+	var isValid = false;
 	
-	$("#btnOverlapped").click(function(){
+	$().ready(function(){
 		
-		$(".answer").empty();
-		
-		var memberId = $("#memberId").val();
-		var passwd = $("#passwd").val();
-		
-		if(passwd == ''){
-			alert("패스워드를 입력해주세요.");
-			return false;
-		}
-		
-		$.ajax({
+		$("#btnOverlapped").click(function(){
 			
-			type : "get",
-			url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
-			success : function(data){
-				if(data == "duplicate"){
-					
-					alert("확인되었습니다.");
-					isValid=true;
-					$("#btnOverlapped").remove();
-					$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
-					
-				}
-				
-				else{
-					alert("패스워드를 다시 확인해주세요.");
-					isValid=false;
-					$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
-				}
-				
-				
+			$(".answer").empty();
+			
+			var memberId = $("#memberId").val();
+			var passwd = $("#passwd").val();
+			
+			if(passwd == ''){
+				alert("패스워드를 입력해주세요.");
+				return false;
 			}
 			
-			
+			$.ajax({
+				
+				type : "get",
+				url : "${contextPath}/member/checkDuplicatedPasswd?passwd="+passwd+"&memberId="+memberId,
+				success : function(data){
+					
+					if(data == "duplicate"){
+						
+						alert("확인되었습니다.");
+						isValid=true;
+						$("#btnOverlapped").remove();
+						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
+						
+					}
+					else{
+						
+						alert("패스워드를 다시 확인해주세요.");
+						isValid=false;
+						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
+						
+					}
+				}
+			});
 		});
 		
-	});
-	
-	$("form").submit(function(){
-		
-		if(isValid == false){
-			alert("패스워드를 확인해주세요.");
-			return false;
-		}
-		
-		if(isValid == true){
+		$("form").submit(function(){
 			
-			return true;
-		}
-		
-		
+			if(isValid == false){
+				
+				alert("패스워드를 확인해주세요.");
+				return false;
+				
+			}
+			if(isValid == true){
+				
+				return true;
+				
+			}
+		});
 	});
-	
-	
-	
-	
-});
 
 </script>
 </head>
@@ -86,7 +79,6 @@ $().ready(function(){
                         <a>도서 추천</a>
                         <span>댓글 삭제</span>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -116,9 +108,7 @@ $().ready(function(){
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                             <ul>
@@ -135,9 +125,9 @@ $().ready(function(){
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+	        </div>
+	    </div>
+	</section>
 <!-- Contact Section End -->
 	
 </body>

@@ -38,19 +38,13 @@
 						$(".answer").append("<p style='color: green;'>"+"확인되었습니다." + "</p>");
 						
 					}
-					
 					else{
 						alert("패스워드를 다시 확인해주세요.");
 						isValid=false;
 						$(".answer").append("<p style='color: red;'>"+"패스워드를 다시 확인해주세요." + "</p>");
 					}
-					
-					
 				}
-				
-				
 			});
-			
 		});
 		
 		$("form").submit(function(){
@@ -59,18 +53,11 @@
 				alert("패스워드를 확인해주세요.");
 				return false;
 			}
-			
 			if(isValid == true){
 				
 				return true;
 			}
-			
-			
 		});
-		
-		
-		
-		
 	});
 
 
@@ -100,7 +87,6 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__content">
-                       
                         <div class="contact__form">
                             <h5>게시글 삭제</h5>
                             <form action="${contextPath }/boardAdvance/qnaRemoveBoard" method="post">
@@ -118,9 +104,7 @@
                         </div>
                          <div>
                          	<br><br>
-                         
                          </div>
-                         
                          <div class="contact__address">
                              <h5>FRONTTOBACK INFO</h5>
                             <ul>
@@ -137,9 +121,9 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-</section>
+	        </div>
+	    </div>
+	</section>
 <!-- Contact Section End -->
 
 
