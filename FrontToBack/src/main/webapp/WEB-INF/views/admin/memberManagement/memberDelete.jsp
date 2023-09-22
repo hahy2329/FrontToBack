@@ -51,21 +51,17 @@
 		});
 		$("form").submit(function(){
 			
-			
 			if(check == true){
 				
 				return true;
 			}
 			
 			if(check == false){
+				
 				alert("아이디를 다시 확인해주세요.");
 				return false;
 			}
-			
 		});
-		
-		
-		
 	});
 
 
@@ -149,10 +145,10 @@
 	                                <p class="answer"></p>
 	                                <button type="submit" class="site-btn">삭제</button>
                                </form> 
-                      </div>
-                  </div>
+                     </div>
                 </div>
-               </div>
-   		 </section>
+              </div>
+            </div>
+   	  </section>
 </body>
 </html>

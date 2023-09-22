@@ -100,9 +100,9 @@
                     <div align="right">
                      	조회 : <span style="color:red;">${allBoardCnt }</span>개
                 	<select id="onePageViewCnt" onchange="getBoardList()">
-                		<option value="5">5</option>
-                		<option value="7">7</option>
-                		<option value="10">10</option>
+                		<option <c:if test="${onePageViewCnt eq 5 }">selected</c:if>>5</option>
+                		<option <c:if test="${onePageViewCnt eq 7 }">selected</c:if>>7</option>
+                		<option <c:if test="${onePageViewCnt eq 10 }">selected</c:if>>10</option>
                 	</select>
                 	<p></p>
                 	</div>

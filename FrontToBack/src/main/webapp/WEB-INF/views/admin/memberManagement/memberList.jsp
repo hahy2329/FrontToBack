@@ -33,7 +33,7 @@
          	<br><br><br>
          </div>
             <div class="container">
-            <div class="row">
+              <div class="row">
                 <div class="col-lg-11">
                     <div class="shop__cart__table">
                         <table>
@@ -63,7 +63,6 @@
                                    		  </td>
                                 		</tr>
                             		</tbody>
-                            
                             	</c:forEach>
                             </c:if>
                             <c:if test="${memberList eq null }">
