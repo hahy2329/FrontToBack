@@ -68,29 +68,27 @@
                             </div>
                         </div>
                         <div class="blog__details__comment">
-                            
                             <c:forEach var="replyDTO" items="${noticeReplyDTO }">
-                            <div class="blog__comment__item">
-                               
-                                <div class="blog__comment__item__text">
-                                <c:if test="${replyDTO.memberId ne null }">
-                                    <h6>${replyDTO.memberId }</h6>
-                                </c:if>
-                                <c:if test="${replyDTO.adminId ne null }">
-                                	<h6>${replyDTO.adminId }</h6>
-                                </c:if>	    
-                                    <p>${replyDTO.content }</p>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
-                                        <c:if test="${sessionScope.memberId eq replyDTO.memberId }">
-                                        	<li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/noticeUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
-                                        	<li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/noticeRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
-                                    	</c:if>
-                                    </ul>
-                                </div>
-                            </div>
+	                            <div class="blog__comment__item">
+	                               
+	                                <div class="blog__comment__item__text">
+	                                <c:if test="${replyDTO.memberId ne null }">
+	                                    <h6>${replyDTO.memberId }</h6>
+	                                </c:if>
+	                                <c:if test="${replyDTO.adminId ne null }">
+	                                	<h6>${replyDTO.adminId }</h6>
+	                                </c:if>	    
+	                                    <p>${replyDTO.content }</p>
+	                                    <ul>
+	                                        <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
+	                                        <c:if test="${sessionScope.memberId eq replyDTO.memberId }">
+	                                        	<li><i class="fa fa-heart-o"></i><a href="${contextPath}/boardAdvance/noticeUpdateReply?replyId=${replyDTO.replyId }">수정</a></li>
+	                                        	<li><i class="fa fa-share"></i><a href="${contextPath}/boardAdvance/noticeRemoveReply?replyId=${replyDTO.replyId }">삭제</a></li>
+	                                    	</c:if>
+	                                    </ul>
+	                                </div>
+	                            </div>
                             </c:forEach>
-                           
                         </div>
                     </div>
                 </div>

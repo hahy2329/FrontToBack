@@ -30,7 +30,7 @@
 </script>
 </head>
 <body>
-	   <!-- Breadcrumb Begin -->
+	<!-- Breadcrumb Begin -->
     <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
@@ -45,10 +45,9 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-<section class="shop-cart spad">
-   <div class="container">
-
-	<div class="row">
+	<section class="shop-cart spad">
+	   <div class="container">
+		<div class="row">
                 <div class="col-lg-12">
                     <div class="shop__cart__table">
                     <h2>공지사항</h2>
@@ -73,7 +72,6 @@
                         				</select>
                         			</td>
                         		</tr>
-                        	
                                <tr align="center">
                                    <th>번호</th>
                                    <th>제목</th>
@@ -81,7 +79,7 @@
                                    <th>포지션</th>
                                    <th>작성일</th>
                                    <th>조회수</th>
-                                </tr>
+                               </tr>
                             <tbody id="boardList">
                                 <c:forEach var="noticeDTO" items="${boardList }">
                                 	<tr align="center">
@@ -105,14 +103,10 @@
                             			<option value="subject">제목</option>
                             			<option value="adminId">관리자 아이디</option>
                             			<option value="content">내용</option>
-                            		
                             		</select>
                             		<input type="text" id="searchWord" name="searchWord" value="${searchWord }">
                             		<input type="button" value="검색" onclick="getBoardList()">
                             	</div>
-                            	
-                            
-                        
                         <div style="display: table; margin-left: auto; margin-right: auto">
                         	<ul>
                         		<c:if test="${startPage > 10 }">
@@ -126,12 +120,10 @@
                         		</c:if>
                         	</ul>
                         </div>
-                        
-                        
                     </div>
                 </div>
             </div>
-            </div>
-            </section>
+         </div>
+      </section>
 </body>
 </html>

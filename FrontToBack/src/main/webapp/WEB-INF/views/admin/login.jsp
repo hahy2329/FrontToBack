@@ -31,10 +31,10 @@
                             <h5>관리자 로그인</h5>
                             <form action="${contextPath }/admin/loginAdmin" method="post">
                             	<p>아이디<span>*</span></p>
-                                <input type="text" name="adminId" placeholder="아이디를 입력해주세요." required="required">
+                                	<input type="text" name="adminId" placeholder="아이디를 입력해주세요." required="required">
                                 <p>비밀번호</p>
-                                <input type="password" name="passwd" placeholder="비밀번호를 입력해주세요." required="required">
-                                <button type="submit" class="site-btn">로그인</button>
+                                	<input type="password" name="passwd" placeholder="비밀번호를 입력해주세요." required="required">
+                                	<button type="submit" class="site-btn">로그인</button>
                             </form>
                         </div>
                         <div><br><br><hr></div>

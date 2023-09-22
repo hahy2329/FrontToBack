@@ -106,10 +106,10 @@
                                 <p><strong>도서추천</strong> /&nbsp;<i class="fa fa-heart-o"></i>&nbsp; ${bookDTO.readCnt } / <i class="fa fa-clock-o"></i> &nbsp;<fmt:formatDate value="${bookDTO.enrollDt }" pattern="yyyy-MM-dd"/> /${bookDTO.memberId }</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            </div>
+                      </div>
+                	</div>
+            	</div>
+              </div>
             </div>
     	</section>
     <section class="discount">

@@ -61,17 +61,17 @@
                         <div class="blog__details__comment">
                             
                             <c:forEach var="replyDTO" items="${knowledgeReplyDTO }">
-                            <div class="blog__comment__item">
-                               
-                                <div class="blog__comment__item__text">
-                                    <h6>${replyDTO.memberId }</h6>
-                                    <p>${replyDTO.content }</p>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
-                                        <li><i class="fa fa-share"></i><a href="${contextPath}/admin/knowledgeReplyForceRemove?replyId=${replyDTO.replyId }">강제삭제</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+	                            <div class="blog__comment__item">
+	                               
+	                                <div class="blog__comment__item__text">
+	                                    <h6>${replyDTO.memberId }</h6>
+	                                    <p>${replyDTO.content }</p>
+	                                    <ul>
+	                                        <li><i class="fa fa-clock-o"></i><fmt:formatDate value="${replyDTO.enrollDt }"/></li>
+	                                        <li><i class="fa fa-share"></i><a href="${contextPath}/admin/knowledgeReplyForceRemove?replyId=${replyDTO.replyId }">강제삭제</a></li>
+	                                    </ul>
+	                                </div>
+	                            </div>
                             </c:forEach>
                         </div>
                     </div>
