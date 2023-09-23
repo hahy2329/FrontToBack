@@ -1062,12 +1062,12 @@ public class AdminController {
 		
 		Workbook wb = new HSSFWorkbook();
 		Sheet sheet = wb.createSheet("회원리스트");
-		Row row = null;
-		Cell cell = null;
+		Row row = null; // 행
+		Cell cell = null; // 열 
+		 
+		int rowNo = 0; // 열 번호
 		
-		int rowNo = 0;
-		
-		CellStyle headStyle = wb.createCellStyle();
+		CellStyle headStyle = wb.createCellStyle(); // 셀 스타일
 		
 		headStyle.setBorderTop(BorderStyle.THIN);
 		headStyle.setBorderBottom(BorderStyle.THIN);

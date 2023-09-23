@@ -5,6 +5,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMessage.RecipientType;
 
+import org.springframework.mail.MailSender;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ public class EmailServiceImpl implements EmailService {
 	
 	@Inject
 	JavaMailSender mailSender;
+	
 	
 	
 	@Override
